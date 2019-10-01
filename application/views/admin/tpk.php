@@ -10,7 +10,6 @@
         </div>
 
         <div class="content mt-3">
-
         	<div class="col-sm-12">
                 <?php if($this->session->flashdata('t')) : ?>
 			  		<div class="alert alert-success alert-dismissible fade show" role="alert">
