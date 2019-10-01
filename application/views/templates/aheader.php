@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="<?= base_url('/'); ?>assets/css/style2.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("/assets/css/style.css"); ?>">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/79bf77632a.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -49,13 +50,13 @@
                     <li>
                         <a href="<?= base_url('/'); ?>admin/dashboard"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <?php if($admin['level'] == 0 || $admin['level'] == 1) : ?>
+                    <?php if ($admin['level'] == 0 || $admin['level'] == 1) : ?>
                         <li>
                             <a href="<?= base_url('/'); ?>admin/indexlaporan"> <i class="menu-icon fa fa-book"></i>PDF Laporan </a>
                         </li>
                     <?php endif; ?>
                     <h3 class="menu-title">Formulir</h3><!-- /.menu-title -->
-                    <?php if($admin['level'] == 0 || $admin['level'] == 1) : ?>
+                    <?php if ($admin['level'] == 0 || $admin['level'] == 1) : ?>
                         <li class="menu-item-has-children dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-envelope"></i>Pendaftaran Email</a>
                             <ul class="sub-menu children dropdown-menu">
@@ -73,7 +74,7 @@
                             </ul>
                         </li>
                     <?php endif; ?>
-                    <?php if($admin['level'] == 0 || $admin['level'] == 1 || $admin['level'] == 2) : ?>
+                    <?php if ($admin['level'] == 0 || $admin['level'] == 1 || $admin['level'] == 2) : ?>
                         <li class="menu-item-has-children dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-server"></i>Data Center</a>
                             <ul class="sub-menu children dropdown-menu">
@@ -82,18 +83,18 @@
                             </ul>
                         </li>
                     <?php endif; ?>
-                    <?php if($admin['level'] == 0 || $admin['level'] == 1 || $admin['level'] == 4) : ?>
+                    <?php if ($admin['level'] == 0 || $admin['level'] == 1 || $admin['level'] == 4) : ?>
                         <li>
                             <a href="<?= base_url('/'); ?>admin/k"> <i class="menu-icon fa fa-archive"></i>Keluhan</a>
                         </li>
                     <?php endif; ?>
-                    <?php if($admin['level'] == 0 || $admin['level'] == 1 || $admin['level'] == 3) : ?>
+                    <?php if ($admin['level'] == 0 || $admin['level'] == 1 || $admin['level'] == 3) : ?>
                         <li>
                             <a href="<?= base_url('/'); ?>admin/jb"> <i class="menu-icon fa fa-laptop"></i>Pemasangan Jaringan</a>
                         </li>
                     <?php endif; ?>
                     <h3 class="menu-title">Lainnya</h3><!-- /.menu-title -->
-                    <?php if($admin['level'] == 0) : ?>
+                    <?php if ($admin['level'] == 0) : ?>
                         <li>
                             <a href="<?= base_url('/'); ?>admin/ta"> <i class="menu-icon fa fa-plus-circle"></i>Admin</a>
                         </li>
@@ -107,7 +108,7 @@
                             <a href="<?= base_url('/'); ?>admin/tpk"> <i class="menu-icon fa fa-plus-circle"></i>Perihal Keluhan</a>
                         </li>
                     <?php endif; ?>
-                    <?php if(!$admin['level'] == 0) : ?>
+                    <?php if (!$admin['level'] == 0) : ?>
                         <li>
                             <a href="<?= base_url('/'); ?>admin/da"> <i class="menu-icon fa fa-user"></i>Daftar Admin</a>
                         </li>
@@ -143,7 +144,9 @@
                             <img class="user-avatar rounded-circle" src="<?= base_url('assets/img/profile/') . $admin['img']; ?>" alt="User Avatar">
                         </a>
                         <div class="user-menu dropdown-menu">
-                            <hr><p class="text-center" style="font-size: 14px;"><?= $admin['nama']; ?></p><hr>
+                            <hr>
+                            <p class="text-center" style="font-size: 14px;"><?= $admin['nama']; ?></p>
+                            <hr>
                             <a class="nav-link" href="<?= base_url(); ?>admin/profile"><i class="fa fa-user"></i> My Profile</a>
                             <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-power-off"></i> Logout</a>
                         </div>
