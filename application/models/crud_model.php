@@ -3,7 +3,8 @@
 /**
  * 
  */
-class crud_model extends CI_model{
+class crud_model extends CI_model
+{
 
 
 	public function daftarm()
@@ -217,7 +218,7 @@ class crud_model extends CI_model{
 		$this->db->insert('jaringan_baru', $data);
 	}
 
-/*============================================================================================================================================================================================================================*/
+	/*============================================================================================================================================================================================================================*/
 
 	public function getdm()
 	{
@@ -226,11 +227,11 @@ class crud_model extends CI_model{
 
 	public function getdmid($id)
 	{
-		return $this->db->get_where('daftar_email_mahasiswa',['id' => $id])->row_array();
+		return $this->db->get_where('daftar_email_mahasiswa', ['id' => $id])->row_array();
 	}
 
 	public function hapusdm($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('daftar_email_mahasiswa');
 	}
@@ -264,11 +265,11 @@ class crud_model extends CI_model{
 
 	public function getrmid($id)
 	{
-		return $this->db->get_where('reset_password_mahasiswa',['id' => $id])->row_array();
+		return $this->db->get_where('reset_password_mahasiswa', ['id' => $id])->row_array();
 	}
 
 	public function hapusrm($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('reset_password_mahasiswa');
 	}
@@ -302,11 +303,11 @@ class crud_model extends CI_model{
 
 	public function getddid($id)
 	{
-		return $this->db->get_where('daftar_email_dosen',['id' => $id])->row_array();
+		return $this->db->get_where('daftar_email_dosen', ['id' => $id])->row_array();
 	}
 
 	public function hapusdd($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('daftar_email_dosen');
 	}
@@ -341,11 +342,11 @@ class crud_model extends CI_model{
 
 	public function getrdid($id)
 	{
-		return $this->db->get_where('reset_password_dosen',['id' => $id])->row_array();
+		return $this->db->get_where('reset_password_dosen', ['id' => $id])->row_array();
 	}
 
 	public function hapusrd($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('reset_password_dosen');
 	}
@@ -380,11 +381,11 @@ class crud_model extends CI_model{
 
 	public function getdlid($id)
 	{
-		return $this->db->get_where('daftar_email_lembaga',['id' => $id])->row_array();
+		return $this->db->get_where('daftar_email_lembaga', ['id' => $id])->row_array();
 	}
 
 	public function hapusdl($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('daftar_email_lembaga');
 	}
@@ -416,11 +417,11 @@ class crud_model extends CI_model{
 
 	public function getrlid($id)
 	{
-		return $this->db->get_where('reset_password_lembaga',['id' => $id])->row_array();
+		return $this->db->get_where('reset_password_lembaga', ['id' => $id])->row_array();
 	}
 
 	public function hapusrl($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('reset_password_lembaga');
 	}
@@ -452,11 +453,11 @@ class crud_model extends CI_model{
 
 	public function getkid($id)
 	{
-		return $this->db->get_where('keluhan',['id' => $id])->row_array();
+		return $this->db->get_where('keluhan', ['id' => $id])->row_array();
 	}
 
 	public function hapusk($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('keluhan');
 	}
@@ -493,11 +494,11 @@ class crud_model extends CI_model{
 
 	public function getgsid($id)
 	{
-		return $this->db->get_where('ganti_server',['id' => $id])->row_array();
+		return $this->db->get_where('ganti_server', ['id' => $id])->row_array();
 	}
 
 	public function hapusgs($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('ganti_server');
 	}
@@ -531,11 +532,11 @@ class crud_model extends CI_model{
 
 	public function getdcid($id)
 	{
-		return $this->db->get_where('kunjungan_dc',['id' => $id])->row_array();
+		return $this->db->get_where('kunjungan_dc', ['id' => $id])->row_array();
 	}
 
 	public function hapusdc($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('kunjungan_dc');
 	}
@@ -569,11 +570,11 @@ class crud_model extends CI_model{
 
 	public function getjbid($id)
 	{
-		return $this->db->get_where('jaringan_baru',['id' => $id])->row_array();
+		return $this->db->get_where('jaringan_baru', ['id' => $id])->row_array();
 	}
 
 	public function hapusjb($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('jaringan_baru');
 	}
@@ -600,11 +601,11 @@ class crud_model extends CI_model{
 		$this->db->update('jaringan_baru', $data);
 	}
 
-/*============================================================================================================================================================================================================================*/
+	/*============================================================================================================================================================================================================================*/
 
 	public function getdm2($limit, $start, $keyword = null)
-	{	
-		if($keyword){
+	{
+		if ($keyword) {
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('nim', $keyword);
 			$this->db->or_like('fakultas', $keyword);
@@ -616,8 +617,8 @@ class crud_model extends CI_model{
 	}
 
 	public function getrm2($limit, $start, $keyword = null)
-	{	
-		if($keyword){
+	{
+		if ($keyword) {
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('nim', $keyword);
 			$this->db->or_like('fakultas', $keyword);
@@ -629,8 +630,8 @@ class crud_model extends CI_model{
 	}
 
 	public function getdd2($limit, $start, $keyword = null)
-	{	
-		if($keyword){
+	{
+		if ($keyword) {
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('nip', $keyword);
 			$this->db->or_like('fakultas', $keyword);
@@ -642,8 +643,8 @@ class crud_model extends CI_model{
 	}
 
 	public function getrd2($limit, $start, $keyword = null)
-	{	
-		if($keyword){
+	{
+		if ($keyword) {
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('nip', $keyword);
 			$this->db->or_like('fakultas', $keyword);
@@ -655,8 +656,8 @@ class crud_model extends CI_model{
 	}
 
 	public function getdl2($limit, $start, $keyword = null)
-	{	
-		if($keyword){
+	{
+		if ($keyword) {
 			$this->db->like('nama_lembaga', $keyword);
 			$this->db->or_like('nama_penanggung', $keyword);
 			$this->db->or_like('tanggal', $keyword);
@@ -667,8 +668,8 @@ class crud_model extends CI_model{
 	}
 
 	public function getrl2($limit, $start, $keyword = null)
-	{	
-		if($keyword){
+	{
+		if ($keyword) {
 			$this->db->like('nama_lembaga', $keyword);
 			$this->db->or_like('nama_penanggung', $keyword);
 			$this->db->or_like('tanggal', $keyword);
@@ -679,8 +680,8 @@ class crud_model extends CI_model{
 	}
 
 	public function getk2($limit, $start, $keyword = null)
-	{	
-		if($keyword){
+	{
+		if ($keyword) {
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('ni', $keyword);
 			$this->db->or_like('fakultas', $keyword);
@@ -693,8 +694,8 @@ class crud_model extends CI_model{
 	}
 
 	public function getgs2($limit, $start, $keyword = null)
-	{	
-		if($keyword){
+	{
+		if ($keyword) {
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('ni', $keyword);
 			$this->db->or_like('tanggal', $keyword);
@@ -705,8 +706,8 @@ class crud_model extends CI_model{
 	}
 
 	public function getdc2($limit, $start, $keyword = null)
-	{	
-		if($keyword){
+	{
+		if ($keyword) {
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('ni', $keyword);
 			$this->db->or_like('tanggal', $keyword);
@@ -717,8 +718,8 @@ class crud_model extends CI_model{
 	}
 
 	public function getjb2($limit, $start, $keyword = null)
-	{	
-		if($keyword){
+	{
+		if ($keyword) {
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('ni', $keyword);
 			$this->db->or_like('tanggal', $keyword);
@@ -781,8 +782,8 @@ class crud_model extends CI_model{
 		return $this->db->get('jaringan_baru')->num_rows();
 	}
 
-/*============================================================================================================================================================================================================================*/
-	
+	/*============================================================================================================================================================================================================================*/
+
 	public function tambahf()
 	{
 		$data = [
@@ -828,89 +829,89 @@ class crud_model extends CI_model{
 	}
 
 	public function hapustf($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('fakultas');
 	}
 
 	public function hapustpk($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('perihal_keluhan');
 	}
 
 	public function hapusta($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('admin');
 	}
 
 	public function hapustj($id)
-	{	
+	{
 		$this->db->where('id', $id);
 		$this->db->delete('jurusan');
 	}
 
 	public function gettf()
-	{	
+	{
 		$this->db->order_by('id', 'ASC');
 		return $this->db->get('fakultas')->result_array();
 	}
 
 	public function getdf()
-	{	
+	{
 		$this->db->order_by('id', 'DESC');
 		return $this->db->get('fakultas')->result_array();
 	}
 
 	public function gettpk()
-	{	
+	{
 		$this->db->order_by('perihal', 'ASC');
 		return $this->db->get('perihal_keluhan')->result_array();
 	}
 
 	public function getdpk()
-	{	
+	{
 		$this->db->order_by('id', 'DESC');
 		return $this->db->get('perihal_keluhan')->result_array();
 	}
 
 	public function getta()
-	{	
+	{
 		$this->db->order_by('level', 'ASC');
 		return $this->db->get('admin')->result_array();
 	}
 
 	public function gettj()
-	{	
+	{
 		$this->db->order_by('jurusan', 'ASC');
 		return $this->db->get('jurusan')->result_array();
 	}
 
 	public function getdj()
-	{	
+	{
 		$this->db->order_by('jurusan', 'ASC');
 		return $this->db->get('jurusan')->result_array();
 	}
 
 	public function gettfid($id)
 	{
-		return $this->db->get_where('fakultas',['id' => $id])->row_array();
+		return $this->db->get_where('fakultas', ['id' => $id])->row_array();
 	}
 
 	public function gettpkid($id)
 	{
-		return $this->db->get_where('perihal_keluhan',['id' => $id])->row_array();
+		return $this->db->get_where('perihal_keluhan', ['id' => $id])->row_array();
 	}
 
 	public function gettaid($id)
 	{
-		return $this->db->get_where('admin',['id' => $id])->row_array();
+		return $this->db->get_where('admin', ['id' => $id])->row_array();
 	}
 
 	public function gettjid($id)
 	{
-		return $this->db->get_where('jurusan',['id' => $id])->row_array();
+		return $this->db->get_where('jurusan', ['id' => $id])->row_array();
 	}
 
 	public function edittf()
@@ -971,18 +972,18 @@ class crud_model extends CI_model{
 		$this->db->update('jurusan', $data);
 	}
 
-/*============================================================================================================================================================================================================================*/
+	/*============================================================================================================================================================================================================================*/
 
 	public function get_fakultas()
-    {
-        $this->db->order_by('fakultas.id', 'ASC');
-        return $this->db->get('fakultas')->result();
-    }
+	{
+		$this->db->order_by('fakultas.id', 'ASC');
+		return $this->db->get('fakultas')->result();
+	}
 
-    public function get_jurusan()
-    {
-        $this->db->order_by('jurusan.jurusan', 'ASC');
-        $this->db->join('fakultas', 'jurusan.jfakultas = fakultas.fakultas');
-        return $this->db->get('jurusan')->result();
-    }
+	public function get_jurusan()
+	{
+		$this->db->order_by('jurusan.jurusan', 'ASC');
+		$this->db->join('fakultas', 'jurusan.jfakultas = fakultas.fakultas');
+		return $this->db->get('jurusan')->result();
+	}
 }
