@@ -58,6 +58,7 @@ class crud_model extends CI_model
 			"nip" => $this->input->post('nip', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"unit" => $this->input->post('unit', true),
 			"telp" => $this->input->post('telp', true),
 			"email1" => $this->input->post('email1', true),
 			"email2" => $this->input->post('email2', true),
@@ -80,6 +81,7 @@ class crud_model extends CI_model
 			"nip" => $this->input->post('nip', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"unit" => $this->input->post('unit', true),
 			"telp" => $this->input->post('telp', true),
 			"email1" => $this->input->post('email1', true),
 			"email2" => $this->input->post('email2', true),
@@ -284,6 +286,7 @@ class crud_model extends CI_model
 			"nim" => $this->input->post('nim', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"unit" => $this->input->post('unit', true),
 			"telp" => $this->input->post('telp', true),
 			"email" => $this->input->post('email', true),
 			"status" => $this->input->post('status', true),
@@ -322,6 +325,7 @@ class crud_model extends CI_model
 			"nip" => $this->input->post('nip', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"unit" => $this->input->post('unit', true),
 			"telp" => $this->input->post('telp', true),
 			"email1" => $this->input->post('email1', true),
 			"email2" => $this->input->post('email2', true),
@@ -361,6 +365,7 @@ class crud_model extends CI_model
 			"nip" => $this->input->post('nip', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"unit" => $this->input->post('unit', true),
 			"telp" => $this->input->post('telp', true),
 			"email1" => $this->input->post('email1', true),
 			"email2" => $this->input->post('email2', true),
@@ -612,6 +617,7 @@ class crud_model extends CI_model
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('nim', $keyword);
 			$this->db->or_like('fakultas', $keyword);
+			$this->db->or_like('unit', $keyword);
 			$this->db->or_like('tanggal', $keyword);
 			$this->db->or_like('status', $keyword);
 		}
@@ -625,6 +631,7 @@ class crud_model extends CI_model
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('nim', $keyword);
 			$this->db->or_like('fakultas', $keyword);
+			$this->db->or_like('unit', $keyword);
 			$this->db->or_like('tanggal', $keyword);
 			$this->db->or_like('status', $keyword);
 		}
@@ -638,6 +645,7 @@ class crud_model extends CI_model
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('nip', $keyword);
 			$this->db->or_like('fakultas', $keyword);
+			$this->db->or_like('unit', $keyword);
 			$this->db->or_like('tanggal', $keyword);
 			$this->db->or_like('status', $keyword);
 		}
@@ -651,6 +659,7 @@ class crud_model extends CI_model
 			$this->db->like('nama', $keyword);
 			$this->db->or_like('nip', $keyword);
 			$this->db->or_like('fakultas', $keyword);
+			$this->db->or_like('unit', $keyword);
 			$this->db->or_like('tanggal', $keyword);
 			$this->db->or_like('status', $keyword);
 		}

@@ -42,7 +42,7 @@
 					</div>
 					<div class="form-group col-md">
 						<label for="telp">Nomor Telepon</label>
-						<input type="number" placeholder="Contoh : 6282128579730" class="form-control" id="telp" name="telp">
+						<input type="number" placeholder="Contoh : 6282128579730" class="form-control" id="telp" name="telp" value="62">
 					</div>
 				</div>
 				<div class="form-row">

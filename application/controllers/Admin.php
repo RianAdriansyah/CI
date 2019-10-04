@@ -217,8 +217,6 @@ class Admin extends CI_Controller
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
 		$this->session->userdata('user')])->row_array();
 
-
-
 		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|max_length[100]');
 		$this->form_validation->set_rules('nim', 'NIM', 'required|numeric|max_length[11]');
 		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
@@ -270,6 +268,7 @@ class Admin extends CI_Controller
 		$this->db->like('nama', $data['keyword']);
 		$this->db->or_like('nim', $data['keyword']);
 		$this->db->or_like('fakultas', $data['keyword']);
+		$this->db->or_like('unit', $data['keyword']);
 		$this->db->or_like('tanggal', $data['keyword']);
 		$this->db->or_like('status', $data['keyword']);
 		$this->db->from('reset_password_mahasiswa');
@@ -289,6 +288,48 @@ class Admin extends CI_Controller
 		$this->load->view('templates/aheader', $data);
 		$this->load->view('admin/rm', $data);
 		$this->load->view('templates/afooter');
+	}
+
+	public function trm()
+	{
+
+		$data = array(
+			'judul' => 'Reset Password Mahasiswa | SIAP UINSGD',
+			'fakultas' => $this->crud_model->get_fakultas(),
+			'jurusan' => $this->crud_model->get_jurusan(),
+			'unit' => $this->crud_model->gettu(),
+			'fakultas_selected' => '',
+			'jurusan_selected' => '',
+		);
+
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		$data['judul'] = 'Tambah Form Reset Password Mahasiswa | SIAP UINSGD';
+		$data['admin'] = $this->db->get_where('admin', ['user' =>
+		$this->session->userdata('user')])->row_array();
+
+		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|max_length[100]');
+		$this->form_validation->set_rules('nim', 'NIM', 'required|numeric|max_length[11]');
+		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
+		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+		$this->form_validation->set_rules('unit', 'Unit', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/trm', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->resetm();
+			$this->session->set_flashdata('trm', 'Form Reset Password Mahasiswa');
+			redirect('admin/rm');
+		}
 	}
 
 	public function dd()
@@ -323,6 +364,7 @@ class Admin extends CI_Controller
 		$this->db->like('nama', $data['keyword']);
 		$this->db->or_like('nip', $data['keyword']);
 		$this->db->or_like('fakultas', $data['keyword']);
+		$this->db->or_like('unit', $data['keyword']);
 		$this->db->or_like('tanggal', $data['keyword']);
 		$this->db->or_like('status', $data['keyword']);
 		$this->db->from('daftar_email_dosen');
@@ -376,6 +418,7 @@ class Admin extends CI_Controller
 		$this->db->like('nama', $data['keyword']);
 		$this->db->or_like('nip', $data['keyword']);
 		$this->db->or_like('fakultas', $data['keyword']);
+		$this->db->or_like('unit', $data['keyword']);
 		$this->db->or_like('tanggal', $data['keyword']);
 		$this->db->or_like('status', $data['keyword']);
 		$this->db->from('reset_password_dosen');
@@ -866,6 +909,7 @@ class Admin extends CI_Controller
 
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
+			'unit' => $this->crud_model->gettu(),
 			'fakultas_selected' => '',
 			'jurusan_selected' => '',
 		);
@@ -874,6 +918,7 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('nim', 'NIM', 'required|numeric|max_length[11]');
 		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[14]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('unit', 'Unit', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/aheader', $data);
 			$this->load->view('admin/editrm', $data);
@@ -1027,6 +1072,7 @@ class Admin extends CI_Controller
 
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
+			'unit' => $this->crud_model->gettu(),
 			'fakultas_selected' => '',
 			'jurusan_selected' => '',
 		);
@@ -1035,6 +1081,7 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[14]');
 		$this->form_validation->set_rules('email1', 'Email Yang Ingin Diajukan', 'required|valid_email|max_length[50]');
 		$this->form_validation->set_rules('email2', 'Email', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('unit', 'Unit', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/aheader', $data);
 			$this->load->view('admin/editdd', $data);
@@ -1076,6 +1123,7 @@ class Admin extends CI_Controller
 
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
+			'unit' => $this->crud_model->gettu(),
 			'fakultas_selected' => '',
 			'jurusan_selected' => '',
 		);
@@ -1842,6 +1890,7 @@ class Admin extends CI_Controller
 
 		$dompdf->stream('Laporan formulir pendaftaran email mahasiswa [' . date("d/m/Y") . '].pdf', array("Attachment" => false));
 	}
+
 
 	public function laporandd()
 	{

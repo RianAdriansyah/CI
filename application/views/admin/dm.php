@@ -86,7 +86,7 @@
 						<th scope="row" style="text-align: center;"><?= ++$start; ?></th>
 						<td><?= $row['nim']; ?></td>
 						<td><?= $row['nama']; ?></td>
-						<td><a href="https://wa.me/<?= $row['telp']; ?>?text=Selamat,%20akun%20email%20anda%20telah%20terdaftar%20%7C%20Email%20=%20<?= $row['nim']; ?>@student.uinsgd.ac.id%20%7C%20Password%20=%20uinbandung" target="_blank"><?= $row['telp']; ?></a></td>
+						<td><a href="https://wa.me/<?= $row['telp']; ?>?text=Selamat,%20akun%20email%20anda%20telah%20terdaftar%20%7C%20Email%20=%20<?= $row['nim']; ?>@student.uinsgd.ac.id%20%7C%20Password%20=%20uinbandung" target="_blank">+<?= $row['telp']; ?></a></td>
 						<td><?= $row['tanggal']; ?></td>
 						<td class="text-center">
 							<?php
