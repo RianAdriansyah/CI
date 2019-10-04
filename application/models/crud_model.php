@@ -14,6 +14,7 @@ class crud_model extends CI_model
 			"nim" => $this->input->post('nim', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"unit" => $this->input->post('unit', true),
 			"telp" => $this->input->post('telp', true),
 			"email" => $this->input->post('email', true),
 			"status" => $this->input->post('status', true),
@@ -34,6 +35,7 @@ class crud_model extends CI_model
 			"nama" => $this->input->post('nama', true),
 			"nim" => $this->input->post('nim', true),
 			"fakultas" => $this->input->post('fakultas', true),
+			"unit" => $this->input->post('unit', true),
 			"jurusan" => $this->input->post('jurusan', true),
 			"telp" => $this->input->post('telp', true),
 			"email" => $this->input->post('email', true),
@@ -243,6 +245,7 @@ class crud_model extends CI_model
 			"nim" => $this->input->post('nim', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"unit" => $this->input->post('unit', true),
 			"telp" => $this->input->post('telp', true),
 			"email" => $this->input->post('email', true),
 			"status" => $this->input->post('status', true),
@@ -793,6 +796,15 @@ class crud_model extends CI_model
 		$this->db->insert('fakultas', $data);
 	}
 
+	public function tambahu()
+	{
+		$data = [
+			"unit" => $this->input->post('unit', true)
+		];
+
+		$this->db->insert('unit', $data);
+	}
+
 	public function tambahpk()
 	{
 		$data = [
@@ -834,6 +846,12 @@ class crud_model extends CI_model
 		$this->db->delete('fakultas');
 	}
 
+	public function hapustu($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('unit');
+	}
+
 	public function hapustpk($id)
 	{
 		$this->db->where('id', $id);
@@ -856,6 +874,12 @@ class crud_model extends CI_model
 	{
 		$this->db->order_by('id', 'ASC');
 		return $this->db->get('fakultas')->result_array();
+	}
+
+	public function gettu()
+	{
+		$this->db->order_by('id', 'ASC');
+		return $this->db->get('unit')->result_array();
 	}
 
 	public function getdf()
@@ -899,6 +923,11 @@ class crud_model extends CI_model
 		return $this->db->get_where('fakultas', ['id' => $id])->row_array();
 	}
 
+	public function gettuid($id)
+	{
+		return $this->db->get_where('unit', ['id' => $id])->row_array();
+	}
+
 	public function gettpkid($id)
 	{
 		return $this->db->get_where('perihal_keluhan', ['id' => $id])->row_array();
@@ -923,6 +952,18 @@ class crud_model extends CI_model
 		$this->db->where('id', $this->input->post('id'));
 		$this->db->update('fakultas', $data);
 	}
+
+	public function edittu()
+	{
+		$data = [
+			"unit" => $this->input->post('unit', true)
+		];
+
+		$this->db->where('id', $this->input->post('id'));
+		$this->db->update('unit', $data);
+	}
+
+
 
 	public function edittfchain()
 	{
@@ -978,6 +1019,12 @@ class crud_model extends CI_model
 	{
 		$this->db->order_by('fakultas.id', 'ASC');
 		return $this->db->get('fakultas')->result();
+	}
+
+	public function get_unit()
+	{
+		$this->db->order_by('unit.id', 'ASC');
+		return $this->db->get('unit')->result();
 	}
 
 	public function get_jurusan()

@@ -174,6 +174,8 @@ class Admin extends CI_Controller
 		$this->db->or_like('fakultas', $data['keyword']);
 		$this->db->or_like('tanggal', $data['keyword']);
 		$this->db->or_like('status', $data['keyword']);
+		$this->db->or_like('jurusan', $data['keyword']);
+		$this->db->or_like('unit', $data['keyword']);
 		$config['base_url'] = 'http://localhost/ci/admin/dm';
 		$config['total_rows'] = $this->db->from('daftar_email_mahasiswa')->count_all_results();
 		$data['total_rows'] = $config['total_rows'];
@@ -199,6 +201,7 @@ class Admin extends CI_Controller
 			'judul' => 'Daftar Email Mahasiswa | SIAP UINSGD',
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
+			'unit' => $this->crud_model->gettu(),
 			'fakultas_selected' => '',
 			'jurusan_selected' => '',
 		);
@@ -222,6 +225,7 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
 		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
 		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+		$this->form_validation->set_rules('unit', 'Unit', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/aheader', $data);
@@ -810,14 +814,16 @@ class Admin extends CI_Controller
 
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
+			'unit' => $this->crud_model->gettu(),
 			'fakultas_selected' => '',
-			'jurusan_selected' => '',
+			'jurusan_selected' => ''
 		);
 
 		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|max_length[100]');
 		$this->form_validation->set_rules('nim', 'NIM', 'required|numeric|max_length[11]');
 		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[14]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('unit', 'Unit', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/aheader', $data);
 			$this->load->view('admin/editdm', $data);
@@ -1228,6 +1234,7 @@ class Admin extends CI_Controller
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
 		$this->session->userdata('user')])->row_array();
 		$data['fakultas'] = $this->crud_model->gettf();
+		$data['unit'] = $this->crud_model->gettu();
 		$this->form_validation->set_rules('nama_lembaga', 'Nama Lembaga', 'required|max_length[100]');
 		$this->form_validation->set_rules('nama_penanggung', 'Nama Penanggung Jawab', 'required|max_length[100]');
 		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[14]');
@@ -2279,6 +2286,33 @@ class Admin extends CI_Controller
 		}
 	}
 
+	public function tu()
+	{
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		$data['tu'] = $this->crud_model->gettu();
+
+		$data['judul'] = 'Tambah Unit | SIAP UINSGD';
+		$data['admin'] = $this->db->get_where('admin', ['user' =>
+		$this->session->userdata('user')])->row_array();
+		$this->form_validation->set_rules('unit', 'Unit', 'required|max_length[50]');
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/tu', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->tambahu();
+			$this->session->set_flashdata('tambahtu', 'tambah');
+			redirect('admin/tu');
+		}
+	}
+
+
 	public function tpk()
 	{
 		if (!$this->session->userdata('level') == 0) {
@@ -2400,6 +2434,19 @@ class Admin extends CI_Controller
 		redirect('admin/tf');
 	}
 
+	public function hapustu($id)
+	{
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		$this->crud_model->hapustu($id);
+		$this->session->set_flashdata('hapustu', 'Dihapus');
+		redirect('admin/tu');
+	}
+
 	public function hapustpk($id)
 	{
 		if (!$this->session->userdata('user')) {
@@ -2467,6 +2514,36 @@ class Admin extends CI_Controller
 			$this->crud_model->edittfchain();
 			$this->session->set_flashdata('edit', 'Edit');
 			redirect('admin/tf');
+		}
+	}
+
+	public function edittu($id)
+	{
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+
+		$data = array(
+			'judul' => 'Edit Unit | SIAP UINSGD',
+			'edit' => $this->crud_model->gettuid($id),
+			'status' => ['Belum Dikerjakan', 'Sudah Dikerjakan'],
+			'admin' => $this->db->get_where('admin', ['user' =>
+			$this->session->userdata('user')])->row_array(),
+		);
+
+		$this->form_validation->set_rules('unit', 'Unit', 'required|max_length[50]');
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/edittu', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->edittu();
+			$this->session->set_flashdata('edittu', 'Edit');
+			redirect('admin/tu');
 		}
 	}
 

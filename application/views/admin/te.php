@@ -79,14 +79,31 @@
                         <small class="form-text text-danger"><?= form_error('jurusan') ?></small>
                     </div>
                 </div>
-                <?php date_default_timezone_set('Asia/Jakarta'); ?>
-                <input type="hidden" id="status" name="status" value="Belum Dikerjakan">
-                <input type="hidden" id="edit" name="edit" value="Belum Di Edit">
-                <input type="hidden" id="tanggal" name="tanggal" value="<?= date("d.m.Y") ?>">
-                <input type="hidden" id="m" name="m" value="<?= date("m") ?>">
-                <input type="hidden" id="y" name="y" value="<?= date("Y") ?>">
-                <input type="hidden" id="jam" name="jam" value="<?= date("H:i:s") ?>">
-                <br><button type="submit" id="kirim" name="kirim" class="btn btn-success btn-block">Kirim Formulir</button>
+
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        <label for="unit">Unit</label>
+                        <select id="unit" name="unit" class="form-control">
+                            <option value="" disabled selected>-- Pilih Unit --</option>
+                            <?php
+                            foreach ($unit as $u) {
+                                ?>
+                                <option value="<?= $u['unit']; ?>"><?= $u['unit']; ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                        <small class="form-text text-danger"><?= form_error('unit') ?></small>
+                    </div>
+
+                    <?php date_default_timezone_set('Asia/Jakarta'); ?>
+                    <input type="hidden" id="status" name="status" value="Belum Dikerjakan">
+                    <input type="hidden" id="edit" name="edit" value="Belum Di Edit">
+                    <input type="hidden" id="tanggal" name="tanggal" value="<?= date("d.m.Y") ?>">
+                    <input type="hidden" id="m" name="m" value="<?= date("m") ?>">
+                    <input type="hidden" id="y" name="y" value="<?= date("Y") ?>">
+                    <input type="hidden" id="jam" name="jam" value="<?= date("H:i:s") ?>">
+                    <br><button type="submit" id="kirim" name="kirim" class="btn btn-success btn-block">Kirim Formulir</button>
             </form>
         </div>
     </div>

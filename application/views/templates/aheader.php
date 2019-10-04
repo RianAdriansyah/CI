@@ -48,17 +48,17 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="<?= base_url('/'); ?>admin/dashboard"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="<?= base_url('/'); ?>admin/dashboard" data-toggle="tooltip" data-placement="right" title="Dashboard"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <?php if ($admin['level'] == 0 || $admin['level'] == 1) : ?>
                         <li>
-                            <a href="<?= base_url('/'); ?>admin/indexlaporan"> <i class="menu-icon fa fa-book"></i>PDF Laporan </a>
+                            <a href="<?= base_url('/'); ?>admin/indexlaporan" data-toggle="tooltip" data-placement="right" title="PDF Laporan"> <i class="menu-icon fa fa-book"></i>PDF Laporan </a>
                         </li>
                     <?php endif; ?>
                     <h3 class="menu-title">Formulir</h3><!-- /.menu-title -->
                     <?php if ($admin['level'] == 0 || $admin['level'] == 1) : ?>
                         <li class="menu-item-has-children dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-envelope"></i>Pendaftaran Email</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" data-placement="right" title="Formulir Pendaftaran Email"> <i class="menu-icon fa fa-envelope"></i>Pendaftaran Email</a>
                             <ul class="sub-menu children dropdown-menu">
                                 <li><i class="fa fa-user-circle"></i><a href="<?= base_url('/'); ?>admin/dm">Mahasiswa</a></li>
                                 <li><i class="fa fa-graduation-cap"></i><a href="<?= base_url('/'); ?>admin/dd">Dosen</a></li>
@@ -66,7 +66,7 @@
                             </ul>
                         </li>
                         <li class="menu-item-has-children dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-key"></i>Reset Password Email</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" data-placement="right" title="Formulir Reset Password Email"> <i class="menu-icon fa fa-key"></i>Reset Password Email</a>
                             <ul class="sub-menu children dropdown-menu">
                                 <li><i class="fa fa-user-circle"></i><a href="<?= base_url('/'); ?>admin/rm">Mahasiswa</a></li>
                                 <li><i class="fa fa-graduation-cap"></i><a href="<?= base_url('/'); ?>admin/rd">Dosen</a></li>
@@ -76,7 +76,7 @@
                     <?php endif; ?>
                     <?php if ($admin['level'] == 0 || $admin['level'] == 1 || $admin['level'] == 2) : ?>
                         <li class="menu-item-has-children dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-server"></i>Data Center</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" data-placement="right" title="Data Center"> <i class="menu-icon fa fa-server"></i>Data Center</a>
                             <ul class="sub-menu children dropdown-menu">
                                 <li><i class="fa fa-server"></i><a href="<?= base_url('/'); ?>admin/gs">Pergantian Server</a></li>
                                 <li><i class="fa fa-server"></i><a href="<?= base_url('/'); ?>admin/dc">Kunjungan</a></li>
@@ -85,39 +85,42 @@
                     <?php endif; ?>
                     <?php if ($admin['level'] == 0 || $admin['level'] == 1 || $admin['level'] == 4) : ?>
                         <li>
-                            <a href="<?= base_url('/'); ?>admin/k"> <i class="menu-icon fa fa-archive"></i>Keluhan</a>
+                            <a href="<?= base_url('/'); ?>admin/k" data-toggle="tooltip" data-placement="right" title="Keluhan"> <i class="menu-icon fa fa-archive"></i>Keluhan</a>
                         </li>
                     <?php endif; ?>
                     <?php if ($admin['level'] == 0 || $admin['level'] == 1 || $admin['level'] == 3) : ?>
                         <li>
-                            <a href="<?= base_url('/'); ?>admin/jb"> <i class="menu-icon fa fa-laptop"></i>Pemasangan Jaringan</a>
+                            <a href="<?= base_url('/'); ?>admin/jb" data-toggle="tooltip" data-placement="right" title="Pemasangan Jaringan"> <i class="menu-icon fa fa-laptop"></i>Pemasangan Jaringan</a>
                         </li>
                     <?php endif; ?>
                     <h3 class="menu-title">Lainnya</h3><!-- /.menu-title -->
                     <?php if ($admin['level'] == 0) : ?>
                         <li>
-                            <a href="<?= base_url('/'); ?>admin/ta"> <i class="menu-icon fa fa-plus-circle"></i>Admin</a>
+                            <a href="<?= base_url('/'); ?>admin/ta" data-toggle="tooltip" data-placement="right" title="Tambah Admin"> <i class="menu-icon fa fa-plus-circle"></i>Admin</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('/'); ?>admin/tf"> <i class="menu-icon fa fa-plus-circle"></i>Fakultas</a>
+                            <a href="<?= base_url('/'); ?>admin/tf" data-toggle="tooltip" data-placement="right" title="Tambah Fakultas"> <i class="menu-icon fa fa-plus-circle"></i>Fakultas</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('/'); ?>admin/tj"> <i class="menu-icon fa fa-plus-circle"></i>Jurusan</a>
+                            <a href="<?= base_url('/'); ?>admin/tu" data-toggle="tooltip" data-placement="right" title="Tambah Unit"> <i class="menu-icon fa fa-plus-circle"></i>Unit</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('/'); ?>admin/tpk"> <i class="menu-icon fa fa-plus-circle"></i>Perihal Keluhan</a>
+                            <a href="<?= base_url('/'); ?>admin/tj" data-toggle="tooltip" data-placement="right" title="Tambah Jurusan"> <i class="menu-icon fa fa-plus-circle"></i>Jurusan</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('/'); ?>admin/tpk" data-toggle="tooltip" data-placement="right" title="Tambah Perihal Keluhan"> <i class="menu-icon fa fa-plus-circle"></i>Perihal Keluhan</a>
                         </li>
                     <?php endif; ?>
                     <?php if (!$admin['level'] == 0) : ?>
                         <li>
-                            <a href="<?= base_url('/'); ?>admin/da"> <i class="menu-icon fa fa-user"></i>Daftar Admin</a>
+                            <a href="<?= base_url('/'); ?>admin/da" data-toggle="tooltip" data-placement="right" title="Daftar Admin"> <i class="menu-icon fa fa-user"></i>Daftar Admin</a>
                         </li>
                     <?php endif; ?>
                     <li>
-                        <a href="<?= base_url('/'); ?>admin/about"> <i class="menu-icon fa fa-address-card"></i>About Us </a>
+                        <a href="<?= base_url('/'); ?>admin/about" data-toggle="tooltip" data-placement="right" title="About Us"> <i class="menu-icon fa fa-address-card"></i>About Us </a>
                     </li>
                     <li>
-                        <a data-toggle="modal" data-target="#exampleModal" href="#"> <i class="menu-icon ti-power-off"></i>Logout </a>
+                        <a data-toggle="modal" data-target="#exampleModal" href="#" data-toggle="tooltip" data-placement="right" title="Logout"> <i class="menu-icon ti-power-off"></i>Logout </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -144,8 +147,9 @@
                             <img class="user-avatar rounded-circle" src="<?= base_url('assets/img/profile/') . $admin['img']; ?>" alt="User Avatar">
                         </a>
                         <div class="user-menu dropdown-menu">
-                            <hr>
-                            <p class="text-center" style="font-size: 14px;"><?= $admin['nama']; ?></p>
+
+                            <p class="text-center mt-3" style="font-size: 14px;"><b><?= $admin['nama']; ?></b></p>
+
                             <hr>
                             <a class="nav-link" href="<?= base_url(); ?>admin/profile"><i class="fa fa-user"></i> My Profile</a>
                             <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-power-off"></i> Logout</a>

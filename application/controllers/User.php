@@ -37,8 +37,9 @@ class User extends CI_Controller
 			'judul' => 'Daftar Email Mahasiswa | SIAP UINSGD',
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
+			'unit' => $this->crud_model->gettu(),
 			'fakultas_selected' => '',
-			'jurusan_selected' => '',
+			'jurusan_selected' => ''
 		);
 
 		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|max_length[100]');
@@ -47,6 +48,7 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
 		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
 		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+		$this->form_validation->set_rules('unit', 'Unit', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/header', $data);
 			$this->load->view('templates/usernav');
@@ -73,6 +75,7 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
 		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
+		$this->form_validation->set_rules('unit', 'Unit', 'required');
 		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/header', $data);

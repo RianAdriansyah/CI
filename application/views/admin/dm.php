@@ -11,8 +11,8 @@
 <div class="content mt-3">
 
 	<div class="col-sm-10">
-		<a href="<?= base_url('admin/te') ?>" class="btn btn-primary mb-3">
-			<i class="fas fa-user-plus"> Mahasiswa</i></a>
+		<a href="<?= base_url('admin/te') ?>" class="btn btn-primary mb-3 rounded">
+			<i class="fas fa-user-plus"> Email Mahasiswa</i></a>
 		<form action="" method="post">
 			<div class="input-group mb-3">
 				<input name="keyword" value="<?= $keyword; ?>" type="text" class="form-control" placeholder="Cari Disini ..." autocomplete="off" autofocus>
