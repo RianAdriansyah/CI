@@ -36,7 +36,7 @@
 							</div>
 							<div class="form-group col-md">
 								<label for="nip">NIP</label>
-								<input value="<?= $edit['nip'] ?>" type="text" class="form-control" id="nip" name="nip">
+								<input value="<?= $edit['nip'] ?>" type="number" class="form-control" id="nip" name="nip">
 							</div>
 						</div>
 						<div class="form-row">
@@ -78,7 +78,7 @@
 						<div class="form-row">
 							<div class="form-group col-md">
 								<label for="telp">Nomor Telepon</label>
-								<input value="<?= $edit['telp'] ?>" type="text" class="form-control" id="telp" name="telp">
+								<input value="<?= $edit['telp'] ?>" type="number" class="form-control" id="telp" name="telp">
 							</div>
 							<div class="form-group col-md">
 								<label for="status">Status</label>

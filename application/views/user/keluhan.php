@@ -6,14 +6,6 @@
 			</center>
 		</div>
 		<div class="card-body">
-			<?php if (validation_errors()) : ?>
-				<div class="alert alert-danger alert-dismissible fade show" role="alert">
-					<?= validation_errors(); ?>
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-			<?php endif; ?>
 
 			<?php if ($this->session->flashdata('k')) : ?>
 				<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -28,21 +20,30 @@
 				<div class="form-row">
 					<div class="form-group col-md">
 						<label for="nama">Nama Lengkap</label>
-						<input type="text" class="form-control" id="nama" name="nama">
+						<input type="text" class="form-control" id="nama" name="nama" value="<?= set_value('nama'); ?>">
+						<?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
 					<div class="form-group col-md">
 						<label for="email">Email</label>
-						<input type="text" class="form-control" id="email" name="email">
+						<input type="text" class="form-control" id="email" name="email" value="<?= set_value('email'); ?>">
+						<?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md">
 						<label for="ni">NIM / NIP <sup>*</sup></label>
-						<input type="number" class="form-control" id="ni" name="ni">
+						<input type="number" class="form-control" id="ni" name="ni" value="<?= set_value('ni'); ?>">
+						<?= form_error('ni', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
-					<div class="form-group col-md">
-						<label for="telp">Nomor Telepon</label>
-						<input type="number" placeholder="Contoh : 6282128579730" class="form-control" id="telp" name="telp">
+					<div class="col-md">
+						<label for="telp">Nomor Telepon </label>
+						<div class="input-group mb-2">
+							<div class="input-group-prepend">
+								<div class="input-group-text">+62</div>
+							</div>
+							<input type="number" class="form-control" id="telp" name="telp" placeholder="Contoh : 81910186646" value="<?= set_value('telp'); ?>">
+						</div>
+						<?= form_error('telp', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
 				</div>
 				<div class="form-row">
@@ -58,6 +59,7 @@
 							}
 							?>
 						</select>
+						<?= form_error('fakultas', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
 					<div class="form-group col-md">
 						<label for="jurusan">Jurusan</label>
@@ -71,6 +73,7 @@
 							}
 							?>
 						</select>
+						<?= form_error('jurusan', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
 					<div class="form-group col-md">
 						<label for="perihal">Perihal Keluhan</label>
@@ -80,6 +83,7 @@
 								<option value="<?= $k['perihal']; ?>"><?= $k['perihal']; ?></option>
 							<?php endforeach; ?>
 						</select>
+						<?= form_error('perihal', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
 				</div>
 				<div class="form-row">

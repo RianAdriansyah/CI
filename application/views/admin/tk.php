@@ -1,8 +1,8 @@
 <div class="container">
-    <div class="card" style="margin-top: 40px; margin-bottom: 40px">
+    <div class="card" style="margin-top: 40px;margin-bottom: 40px">
         <div class="card-header">
             <center>
-                <h1>FORMULIR RESET PASSWORD MAHASISWA</h1>
+                <h1>FORMULIR KELUHAN</h1>
             </center>
         </div>
         <div class="card-body">
@@ -22,9 +22,9 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md">
-                        <label for="nim">NIM</label>
-                        <input type="number" class="form-control" id="nim" name="nim" value="<?= set_value('nim'); ?>">
-                        <?= form_error('nim', '<small class="text-danger pl-3">', '</small>'); ?>
+                        <label for="ni">NIM / NIP <sup>*</sup></label>
+                        <input type="number" class="form-control" id="ni" name="ni" value="<?= set_value('ni'); ?>">
+                        <?= form_error('ni', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                     <div class="col-md">
                         <label for="telp">Nomor Telepon </label>
@@ -66,35 +66,42 @@
                         </select>
                         <?= form_error('jurusan', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
-                </div>
-
-                <div class="form-row">
                     <div class="form-group col-md">
-                        <label for="unit">Unit</label>
-                        <select id="unit" name="unit" class="form-control">
-                            <option value="" disabled selected>-- Pilih Unit --</option>
-                            <?php
-                            foreach ($unit as $u) {
-                                ?>
-                                <option value="<?= $u['unit']; ?>"><?= $u['unit']; ?></option>
-                            <?php
-                            }
-                            ?>
+                        <label for="perihal">Perihal Keluhan</label>
+                        <select id="perihal" name="perihal" class="form-control">
+                            <option value="" disabled selected>-- Pilih Perihal --</option>
+                            <?php foreach ($perihal as $k) : ?>
+                                <option value="<?= $k['perihal']; ?>"><?= $k['perihal']; ?></option>
+                            <?php endforeach; ?>
                         </select>
-                        <?= form_error('unit', '<small class="text-danger pl-3">', '</small>'); ?>
+                        <?= form_error('perihal', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                 </div>
-
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        <label for="keluhan">Deskripsi keluhan</label>
+                        <textarea class="form-control" id="keluhan" name="keluhan" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        <div class="alert alert-info" role="alert">
+                            * = Tidak perlu di isi jika tidak ada.
+                        </div>
+                    </div>
+                </div>
                 <?php date_default_timezone_set('Asia/Jakarta'); ?>
-                <input type="hidden" id="status" name="status" value="Belum Dikerjakan">
                 <input type="hidden" id="edit" name="edit" value="Belum Di Edit">
+                <input type="hidden" id="solusi" name="solusi" value="Belum Ada Solusi">
+                <input type="hidden" id="status" name="status" value="Belum Dikerjakan">
                 <input type="hidden" id="tanggal" name="tanggal" value="<?= date("d.m.Y") ?>">
                 <input type="hidden" id="m" name="m" value="<?= date("m") ?>">
                 <input type="hidden" id="y" name="y" value="<?= date("Y") ?>">
                 <input type="hidden" id="jam" name="jam" value="<?= date("H:i:s") ?>">
+
                 <div class="form-row">
                     <div class="form-group col-md">
-                        <a type="button" class="btn btn-primary btn-block" href="<?= base_url('/'); ?>admin/rm"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
+                        <a type="button" class="btn btn-primary btn-block" href="<?= base_url('/'); ?>admin/k"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
                     </div>
                     <div class="form-group col-md">
                         <button type="submit" id="kirim" name="kirim" class="btn btn-success btn-block">Kirim Formulir</button>

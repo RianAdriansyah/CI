@@ -386,6 +386,91 @@ class Admin extends CI_Controller
 		$this->load->view('templates/afooter');
 	}
 
+	public function td()
+	{
+		$data = array(
+			'judul' => 'Daftar Email Dosen | SIAP UINSGD',
+			'fakultas' => $this->crud_model->get_fakultas(),
+			'jurusan' => $this->crud_model->get_jurusan(),
+			'unit' => $this->crud_model->gettu(),
+			'fakultas_selected' => '',
+			'jurusan_selected' => '',
+		);
+
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		$data['judul'] = 'Tambah Email Dosen | SIAP UINSGD';
+		$data['admin'] = $this->db->get_where('admin', ['user' =>
+		$this->session->userdata('user')])->row_array();
+
+		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|max_length[100]');
+		$this->form_validation->set_rules('nip', 'NIP', 'required|numeric|max_length[18]');
+		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
+		$this->form_validation->set_rules('email1', 'Email Yang Ingin Diajukan', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('email2', 'Email', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
+		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+		$this->form_validation->set_rules('unit', 'Unit', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/td', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->daftard();
+			$this->session->set_flashdata('td', 'Pendaftaran Email Dosen');
+			redirect('admin/dd');
+		}
+	}
+
+	public function trd()
+	{
+
+		$data = array(
+			'judul' => 'Formulir Reset Password Email Dosen | SIAP UINSGD',
+			'fakultas' => $this->crud_model->get_fakultas(),
+			'jurusan' => $this->crud_model->get_jurusan(),
+			'unit' => $this->crud_model->gettu(),
+			'fakultas_selected' => '',
+			'jurusan_selected' => '',
+		);
+
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		$data['judul'] = 'Formulir Reset Password Email Dosen | SIAP UINSGD';
+		$data['admin'] = $this->db->get_where('admin', ['user' =>
+		$this->session->userdata('user')])->row_array();
+
+		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|max_length[100]');
+		$this->form_validation->set_rules('nip', 'NIP', 'required|numeric|max_length[18]');
+		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
+		$this->form_validation->set_rules('email1', 'Email Yang Ingin Diajukan', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('email2', 'Email', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
+		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+		$this->form_validation->set_rules('unit', 'Unit', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/trd', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->resetd();
+			$this->session->set_flashdata('trd', 'Reset Pasword Email Dosen');
+			redirect('admin/rd');
+		}
+	}
+
 	public function rd()
 	{
 		switch ($this->session->userdata('level')) {
@@ -492,6 +577,65 @@ class Admin extends CI_Controller
 		$this->load->view('templates/afooter');
 	}
 
+	public function trl()
+	{
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		$data['judul'] = 'Formulir Reset Password Email Lembaga | SIAP UINSGD';
+		$data['admin'] = $this->db->get_where('admin', ['user' =>
+		$this->session->userdata('user')])->row_array();
+
+		$this->form_validation->set_rules('nama_lembaga', 'Nama Lembaga', 'required|max_length[100]');
+		$this->form_validation->set_rules('nama_penanggung', 'Nama Penanggung Jawab', 'required|max_length[100]');
+		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/trl', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->resetl();
+			$this->session->set_flashdata('trl', 'Reset Pasword Email Lembaga');
+			redirect('admin/rl');
+		}
+	}
+
+	public function tl()
+	{
+
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		$data['judul'] = 'Tambah Email Lembaga | SIAP UINSGD';
+		$data['admin'] = $this->db->get_where('admin', ['user' =>
+		$this->session->userdata('user')])->row_array();
+
+		$this->form_validation->set_rules('nama_lembaga', 'Nama Lembaga', 'required|max_length[100]');
+		$this->form_validation->set_rules('nama_penanggung', 'Nama Penanggung Jawab', 'required|max_length[100]');
+		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/tl', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->daftarl();
+			$this->session->set_flashdata('tl', 'Pendaftaran Email Lembaga');
+			redirect('admin/dl');
+		}
+	}
+
 	public function rl()
 	{
 		switch ($this->session->userdata('level')) {
@@ -558,8 +702,6 @@ class Admin extends CI_Controller
 				break;
 		}
 
-
-
 		if (!$this->session->userdata('user')) {
 			redirect('admin');
 		}
@@ -596,6 +738,49 @@ class Admin extends CI_Controller
 		$this->load->view('templates/aheader', $data);
 		$this->load->view('admin/k', $data);
 		$this->load->view('templates/afooter');
+	}
+
+	public function tk()
+	{
+
+		$data = array(
+			'judul' => 'Formulir Keluhan | SIAP UINSGD',
+			'perihal' => $this->crud_model->gettpk(),
+			'fakultas' => $this->crud_model->get_fakultas(),
+			'jurusan' => $this->crud_model->get_jurusan(),
+			'fakultas_selected' => '',
+			'jurusan_selected' => '',
+		);
+
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		$data['judul'] = 'Tambah Form Formulir Keluhan | SIAP UINSGD';
+		$data['admin'] = $this->db->get_where('admin', ['user' =>
+		$this->session->userdata('user')])->row_array();
+
+		$this->form_validation->set_rules('nama', 'Nama', 'required|max_length[100]');
+		$this->form_validation->set_rules('ni', 'NIM / NIP', 'numeric|max_length[100]');
+		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('keluhan', 'Deskripsi Keluhan', 'required');
+		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
+		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+		$this->form_validation->set_rules('perihal', 'Perihal Keluhan', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/tk', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->keluh();
+			$this->session->set_flashdata('tk', 'Form Keluhan');
+			redirect('admin/k');
+		}
 	}
 
 	public function gs()
@@ -662,6 +847,36 @@ class Admin extends CI_Controller
 		$this->load->view('templates/afooter');
 	}
 
+	public function tgs()
+	{
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		$data['judul'] = 'Formulir Pergantian Server Data Center | SIAP UINSGD';
+		$data['admin'] = $this->db->get_where('admin', ['user' =>
+		$this->session->userdata('user')])->row_array();
+
+		$this->form_validation->set_rules('nama', 'Nama', 'required|max_length[100]');
+		$this->form_validation->set_rules('ni', 'NIM / NIP', 'required|numeric|max_length[100]');
+		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('permohonan', 'Permohonan', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/tgs', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->ganti_server();
+			$this->session->set_flashdata('tgs', 'Pergantian Server Data Center');
+			redirect('admin/gs');
+		}
+	}
+
 	public function dc()
 	{
 
@@ -714,6 +929,36 @@ class Admin extends CI_Controller
 		$this->load->view('templates/afooter');
 	}
 
+	public function tdc()
+	{
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		$data['judul'] = 'Formulir Kunjungan Server Data Center | SIAP UINSGD';
+		$data['admin'] = $this->db->get_where('admin', ['user' =>
+		$this->session->userdata('user')])->row_array();
+
+		$this->form_validation->set_rules('nama', 'Nama', 'required|max_length[100]');
+		$this->form_validation->set_rules('ni', 'NIM / NIP', 'required|numeric|max_length[100]');
+		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('permohonan', 'Permohonan', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/tdc', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->kunjungan_dc();
+			$this->session->set_flashdata('tdc', 'Kunjungan Server Data Center');
+			redirect('admin/dc');
+		}
+	}
+
 	public function jb()
 	{
 
@@ -758,13 +1003,44 @@ class Admin extends CI_Controller
 
 		$data['jb'] = $this->crud_model->getjb2($config['per_page'], $data['start'], $data['keyword']);
 
-		$data['judul'] = 'Kunjungan Data Center | SIAP UINSGD';
+		$data['judul'] = 'Permohonan Pemasangan Jaringan Baru | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
 		$this->session->userdata('user')])->row_array();
 		$this->load->view('templates/aheader', $data);
 		$this->load->view('admin/jb', $data);
 		$this->load->view('templates/afooter');
 	}
+
+	public function tjb()
+	{
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		$data['judul'] = 'Formulir Pemasangan Jaringan Baru | SIAP UINSGD';
+		$data['admin'] = $this->db->get_where('admin', ['user' =>
+		$this->session->userdata('user')])->row_array();
+
+		$this->form_validation->set_rules('nama', 'Nama', 'required|max_length[100]');
+		$this->form_validation->set_rules('ni', 'NIM / NIP', 'required|numeric|max_length[100]');
+		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
+		$this->form_validation->set_rules('permohonan', 'Permohonan', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/tjb', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->jaringan_baru();
+			$this->session->set_flashdata('tjb', 'Pemasangan Jaringan Baru');
+			redirect('admin/jb');
+		}
+	}
+
 
 	/*============================================================================================================================================================================================================================*/
 

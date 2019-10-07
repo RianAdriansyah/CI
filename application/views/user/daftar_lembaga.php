@@ -6,14 +6,7 @@
 			</center>
 		</div>
 		<div class="card-body">
-			<?php if (validation_errors()) : ?>
-				<div class="alert alert-danger alert-dismissible fade show" role="alert">
-					<?= validation_errors(); ?>
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-			<?php endif; ?>
+
 			<?php if ($this->session->flashdata('dl')) : ?>
 				<div class="alert alert-success alert-dismissible fade show" role="alert">
 					Selamat, <b>Formulir <?= $this->session->flashdata('dl'); ?></b> telah berhasil dikirim, silahkan tunggu 2x24 jam untuk pemrosesan formulir. Jika formulir sudah dikerjakan, kami akan mengirim pesan pemberitahuan via <b>WhatsApp</b> ...
@@ -27,23 +20,32 @@
 				<div class="form-row">
 					<div class="form-group col-md">
 						<label for="nama_lembaga">Nama Lembaga</label>
-						<input type="text" class="form-control" id="nama_lembaga" name="nama_lembaga">
+						<input type="text" class="form-control" id="nama_lembaga" name="nama_lembaga" value="<?= set_value('nama_lembaga'); ?>">
+						<?= form_error('nama_lembaga', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md">
 						<label for="nama_penanggung">Nama Penanggung Jawab</label>
-						<input type="text" class="form-control" id="nama_penanggung" name="nama_penanggung">
+						<input type="text" class="form-control" id="nama_penanggung" name="nama_penanggung" value="<?= set_value('nama_penanggung'); ?>">
+						<?= form_error('nama_penanggung', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md">
 						<label for="email">Email Yang Ingin Diajukan</label>
-						<input type="text" placeholder="Contoh : namalembaga@uinsgd.ac.id" class="form-control" id="email" name="email">
+						<input type="text" placeholder="Contoh : namalembaga@uinsgd.ac.id" class="form-control" id="email" name="email" value="<?= set_value('email'); ?>">
+						<?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
-					<div class="form-group col-md">
-						<label for="telp">Nomor Telepon</label>
-						<input type="number" placeholder="Contoh : 6282128579730" class="form-control" id="telp" name="telp">
+					<div class="col-md">
+						<label for="telp">Nomor Telepon </label>
+						<div class="input-group mb-2">
+							<div class="input-group-prepend">
+								<div class="input-group-text">+62</div>
+							</div>
+							<input type="number" class="form-control" id="telp" name="telp" placeholder="Contoh : 81910186646" value="<?= set_value('telp'); ?>">
+						</div>
+						<?= form_error('telp', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
 				</div>
 				<?php date_default_timezone_set('Asia/Jakarta'); ?>

@@ -45,7 +45,7 @@
 		<?php endif; ?>
 	</div>
 
-	<div class="col-sm-12 col-lg-12">
+	<div class="col-lg-12">
 		<div class="card">
 			<div class="card-body">
 				<form style="padding: 5px;" action="" method="post">
@@ -122,8 +122,8 @@
 		Daftar Admin
 	</div>
 
-	<div class="col-sm-12 col-lg-12">
-		<table class="table" style="font-size: 12.5px;">
+	<div class="col-lg-12 table-responsive">
+		<table class="table" style="font-size: 14px;">
 			<thead class="thead-dark text-center">
 				<tr>
 					<th scope="col" width="5%">No</th>

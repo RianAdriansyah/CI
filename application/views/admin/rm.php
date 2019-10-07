@@ -13,7 +13,7 @@
 	<div class="col-sm-10">
 
 		<a href="<?= base_url('admin/trm') ?>" class="btn btn-primary mb-3 rounded">
-			<i class="fas fa-user-plus"> Form Reset Password Mahasiswa</i></a>
+			<i class="fas fa-folder-plus"></i> Formulir</a>
 
 		<form action="" method="post">
 			<div class="input-group mb-3">
@@ -25,12 +25,20 @@
 		</form>
 	</div>
 
-	<div class="col-sm-2">
+	<div class="col-sm-2 mt-5">
 		<div class="alert alert-light" role="alert">
 			<h6>Formulir : <?= $total_rows; ?></h6>
 		</div>
 	</div>
 	<div class="col-sm-12">
+		<?php if ($this->session->flashdata('trm')) : ?>
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+				Selamat, <b>Formulir <?= $this->session->flashdata('trm'); ?></b> telah berhasil dikirim, silahkan tunggu 2x24 jam untuk pemrosesan formulir. Jika formulir sudah dikerjakan, kami akan mengirim pesan pemberitahuan via <b>Email</b> yang anda input atau via <b>WhatsApp</b> jika anda tidak menginputkan email ...
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		<?php endif; ?>
 		<?php if ($this->session->flashdata('dhp')) : ?>
 			<div class="alert alert-danger alert-dismissible fade show" role="alert">
 				1 Formulir berhasil dihapus !
@@ -59,18 +67,10 @@
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->session->flashdata('trm')) : ?>
-			<div class="alert alert-success alert-dismissible fade show" role="alert">
-				Selamat, <b>Formulir <?= $this->session->flashdata('trm'); ?></b> telah berhasil dikirim, silahkan tunggu 2x24 jam untuk pemrosesan formulir. Jika formulir sudah dikerjakan, kami akan mengirim pesan pemberitahuan via <b>Email</b> yang anda input atau via <b>WhatsApp</b> jika anda tidak menginputkan email ...
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-		<?php endif; ?>
 	</div>
 
-	<div class="col-sm-12 col-lg-12">
-		<table class="table" style="font-size: 12.5px;">
+	<div class="col-lg-12 table-responsive">
+		<table class="table" style="font-size: 14px;">
 			<thead class="thead-dark text-center">
 				<tr>
 					<th scope="col">No</th>
@@ -96,7 +96,7 @@
 						<th scope="row" style="text-align: center;"><?= ++$start; ?></th>
 						<td><?= $row['nim']; ?></td>
 						<td><?= $row['nama']; ?></td>
-						<td><a href="https://wa.me/<?= $row['telp']; ?>?text=Selamat,%20akun%20email%20anda%20sudah%20reset%20password%20%7C%20Email%20=%20<?= $row['nim']; ?>@student.uinsgd.ac.id%20%7C%20Password%20=%20uinbandung" target="_blank"><?= $row['telp']; ?></a></td>
+						<td><a href="https://wa.me/<?= $row['telp']; ?>?text=Selamat,%20akun%20email%20anda%20sudah%20reset%20password%20%7C%20Email%20=%20<?= $row['nim']; ?>@student.uinsgd.ac.id%20%7C%20Password%20=%20uinbandung" target="_blank" class="text-primary" data-toggle="tooltip" data-placement="right" title="Contact Me">+<?= $row['telp']; ?></a></td>
 						<td><?= $row['tanggal']; ?></td>
 						<td class="text-center">
 							<?php

@@ -38,11 +38,11 @@
 						<div class="form-row">
 							<div class="form-group col-md">
 								<label for="nim">NIM</label>
-								<input value="<?= $edit['nim'] ?>" type="text" class="form-control" id="nim" name="nim">
+								<input value="<?= $edit['nim'] ?>" type="number" class="form-control" id="nim" name="nim">
 							</div>
 							<div class="form-group col-md">
 								<label for="telp">Nomor Telepon</label>
-								<input value="<?= $edit['telp'] ?>" type="text" class="form-control" id="telp" name="telp">
+								<input value="<?= $edit['telp'] ?>" type="number" class="form-control" id="telp" name="telp">
 							</div>
 						</div>
 						<div class="form-row">

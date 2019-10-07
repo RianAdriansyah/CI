@@ -159,8 +159,7 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('nama_penanggung', 'Nama Penanggung Jawab', 'required|max_length[100]');
 		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
-		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
-		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/header', $data);
 			$this->load->view('templates/usernav');
@@ -213,6 +212,7 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
 		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
 		$this->form_validation->set_rules('perihal', 'Perihal Keluhan', 'required');
+
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/header', $data);
 			$this->load->view('templates/usernav');
