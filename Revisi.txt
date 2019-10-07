@@ -13,11 +13,11 @@ x formulir jangan dihapus dari database
 ===================================
 input keluhan via admin
 difield tidak bisa dimasukan huruf bagian nim dan no telp (sudah)
-bagian fakultas yang muncul hanya fakultas aja
+bagian fakultas yang muncul hanya fakultas aja (sudah)
 tabel di ubah jadi data tabel
-pemisahan antara fakultas dan unit uin
-penambahan logo di header pdf laporan
-tambah kolom +62 di nomor telepon
+pemisahan antara fakultas dan unit uin (sudah)
+penambahan logo di header pdf laporan (sudah)
+tambah kolom +62 di nomor telepon (sudah)
 
 Wassalamualaikum!
 

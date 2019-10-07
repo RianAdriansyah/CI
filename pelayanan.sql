@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 27, 2019 at 09:54 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- Host: localhost
+-- Generation Time: Oct 07, 2019 at 01:14 AM
+-- Server version: 5.7.19
+-- PHP Version: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,11 +47,7 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`id`, `user`, `pass`, `nama`, `level`, `telp`, `email`, `img`, `bergabung`) VALUES
 (1, 'superadmin', 'helloworld', 'Super Admin', '0', '6282128579730', 'mailadmin1@uinsgd.ac.id', 'default0.png', '20.08.2019 14:00:00'),
 (2, 'siapuinsgd', 'siliwang!', 'Pelayanan UINSGD', '1', '6282128579730', 'mailadmin1@uinsgd.ac.id', 'default.png', '22.09.2019 09:35:49'),
-(3, 'test', 'test', 'Testing', '2', '08123456789', 'hgergashi@yahoo.com', 'default.png', '22.09.2019 09:47:33'),
-(4, 'test1', 'sadboy', 'sasboy', '4', '0812356789', 'fisip@uinsgd.ac.id', 'default.png', '23.09.2019 18:14:25'),
-(6, 'robot', 'robot', 'Robot', '3', '0000001', 'robot@r.id', 'default.png', '24.09.2019 07:44:37'),
-(9, 'superadminnnnn', 'nnnnnn', 'admiin', '1', '0233386868', 'a@gmail.com', 'default.png', '27.09.2019 12:42:49'),
-(10, 'rifqi1', 'rifqi1', 'rifwi', '3', '05552455245', 'rfi@gmail.com', 'default.png', '27.09.2019 13:50:51');
+(6, 'robot', 'robot', 'Robot', '3', '0000001', 'robot@r.id', 'default.png', '24.09.2019 07:44:37');
 
 -- --------------------------------------------------------
 
@@ -65,6 +61,7 @@ CREATE TABLE `daftar_email_dosen` (
   `nip` varchar(18) NOT NULL,
   `fakultas` varchar(50) NOT NULL,
   `jurusan` varchar(50) NOT NULL,
+  `unit` varchar(200) NOT NULL,
   `telp` varchar(13) NOT NULL,
   `email1` varchar(50) NOT NULL,
   `email2` varchar(50) NOT NULL,
@@ -80,8 +77,9 @@ CREATE TABLE `daftar_email_dosen` (
 -- Dumping data for table `daftar_email_dosen`
 --
 
-INSERT INTO `daftar_email_dosen` (`id`, `nama`, `nip`, `fakultas`, `jurusan`, `telp`, `email1`, `email2`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
-(1, 'asssssss', '1091877872', 'Adab & Humaniora', ' Pendidikan Kimia', '08123456789', 'gery@uinsgd.ac.id', 'a@g.com', 'Sudah Dikerjakan', '23.09.2019', '09', '2019', '15:15:30', '23.09.2019 15:26:33 oleh Super Admin');
+INSERT INTO `daftar_email_dosen` (`id`, `nama`, `nip`, `fakultas`, `jurusan`, `unit`, `telp`, `email1`, `email2`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
+(1, 'asssssss', '1091877872', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', 'TU', '08123456789', 'gery@uinsgd.ac.id', 'a@g.com', 'Sudah Dikerjakan', '23.09.2019', '09', '2019', '15:15:30', '04.10.2019 14:39:19 oleh Super Admin'),
+(2, 'Rian Adriansyah', '2342', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', 'TU', '6285659603699', 'nama@uinsgd.ac.id', 'apanama@uinsgd.ac.id', 'Belum Dikerjakan', '04.10.2019', '10', '2019', '13:37:06', '04.10.2019 14:19:33 oleh Super Admin');
 
 -- --------------------------------------------------------
 
@@ -125,6 +123,7 @@ CREATE TABLE `daftar_email_mahasiswa` (
   `nim` varchar(11) NOT NULL,
   `fakultas` varchar(50) NOT NULL,
   `jurusan` varchar(50) NOT NULL,
+  `unit` varchar(128) DEFAULT NULL,
   `telp` varchar(14) NOT NULL,
   `email` varchar(50) NOT NULL,
   `status` varchar(16) NOT NULL,
@@ -139,23 +138,32 @@ CREATE TABLE `daftar_email_mahasiswa` (
 -- Dumping data for table `daftar_email_mahasiswa`
 --
 
-INSERT INTO `daftar_email_mahasiswa` (`id`, `nama`, `nim`, `fakultas`, `jurusan`, `telp`, `email`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
-(2, 'Pirda Aulia', '1172090092', 'Mail Managemen', '', '628980490362', 'pirdaaulia06@gmail.com', 'Sudah Dikerjakan', '12.09.2019', '02', '2019', '08:12:59', '22.09.2019 08:30:40 oleh Super Admin'),
-(3, 'Maulana Sidiq Al-Alawi', '1172090051', 'Staf Puskom', '', '6283892802577', 'alawisidiq@gmail.com', 'Sudah Dikerjakan', '12.09.2019', '02', '2019', '08:13:12', '20.09.2019 15:04:13 oleh Super Admin'),
-(4, 'Pelayanan UINSGD 01', '1', '1', '', '0812356789', 'fisip@uinsgd.ac.id', 'Belum Dikerjakan', '22.09.2019', '01', '2019', '17:46:45', 'Belum Di Edit'),
-(5, 'bfgmobfg', '2314', '2', '', '2343', 'gary98k@gmail.com', 'Belum Dikerjakan', '22.09.2019', '01', '2019', '17:59:13', 'Belum Di Edit'),
-(6, 'Pelayanan UINSGD 01', '23189', 'Staf Administrasi', 'apa', '08123456789', 'gary98k@gmail.com', 'Sudah Dikerjakan', '22.09.2019', '12', '2020', '20:17:29', '22.09.2019 20:52:01 oleh Super Admin'),
-(7, 'fgd', '23189', 'Adab & Humaniora', 'ada', '0813456789', 'mailadmin1@uinsgd.ac.id', 'Belum Dikerjakan', '22.09.2019', '', '', '20:56:16', 'Belum Di Edit'),
-(8, 'rifqi', '2314', 'Adab & Humaniora', 'ada', '08123456789', 'hgergashi@yahoo.com', 'Sudah Dikerjakan', '23.09.2019', '', '', '11:30:48', '23.09.2019 11:34:08 oleh Super Admin'),
-(9, 'rifqi', '2314', 'Adab & Humaniora', 'Administrasi Negara', '0813456789', 'mailadmin1@uinsgd.ac.id', 'Sudah Dikerjakan', '23.09.2019', '09', '2019', '12:50:00', '27.09.2019 13:39:57 oleh Super Admin'),
-(10, 'weqew', '231', 'Ushuluddin', 'Fisika', '213123', 'hgergashi@yahoo.com', 'Belum Dikerjakan', '23.09.2019', '09', '2019', '12:50:19', '23.09.2019 13:50:26 oleh Super Admin'),
-(11, 'aa', '48111555555', 'Psikologi', 'Psikologi', '05552455245', 'a@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:44:20', 'Belum Di Edit'),
-(12, 'aaa', '1516654122', 'Mail Managemen', 'Mail Managemen', '0854655554', 'a@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:45:08', 'Belum Di Edit'),
-(13, 'admiin', '151665412', 'Psikologi', 'Psikologi', '08546555542', 'a@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:46:44', 'Belum Di Edit'),
-(14, 'aaas', '1516654', 'Syariah & Hukum', 'Ilmu Hukum ', '0233386868', 'afd@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:47:03', 'Belum Di Edit'),
-(15, 'admiinss', '481115555', 'Ilmu Sosial & Ilmu Politik', 'Manajemen', '023338686821', 'ad@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:47:25', 'Belum Di Edit'),
-(16, 'aa', '48111555555', 'Ilmu Sosial & Ilmu Politik', 'Manajemen', '0854655554', 'af@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:47:45', 'Belum Di Edit'),
-(17, 'admiinw', '48111555555', 'Psikologi', 'Psikologi', '05552455245', 'ddaa@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:47:59', 'Belum Di Edit');
+INSERT INTO `daftar_email_mahasiswa` (`id`, `nama`, `nim`, `fakultas`, `jurusan`, `unit`, `telp`, `email`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
+(2, 'Pirda Aulia', '1172090092', 'Mail Managemen', '', '', '628980490362', 'pirdaaulia06@gmail.com', 'Sudah Dikerjakan', '12.09.2019', '02', '2019', '08:12:59', '22.09.2019 08:30:40 oleh Super Admin'),
+(3, 'Maulana Sidiq Al-Alawi', '1172090051', 'Staf Puskom', '', '', '6283892802577', 'alawisidiq@gmail.com', 'Sudah Dikerjakan', '12.09.2019', '02', '2019', '08:13:12', '20.09.2019 15:04:13 oleh Super Admin'),
+(4, 'Pelayanan UINSGD 01', '1', '1', '', '', '0812356789', 'fisip@uinsgd.ac.id', 'Belum Dikerjakan', '22.09.2019', '01', '2019', '17:46:45', 'Belum Di Edit'),
+(5, 'bfgmobfg', '2314', '2', '', '', '2343', 'gary98k@gmail.com', 'Belum Dikerjakan', '22.09.2019', '01', '2019', '17:59:13', 'Belum Di Edit'),
+(6, 'Pelayanan UINSGD 01', '23189', 'Staf Administrasi', 'apa', '', '08123456789', 'gary98k@gmail.com', 'Sudah Dikerjakan', '22.09.2019', '12', '2020', '20:17:29', '22.09.2019 20:52:01 oleh Super Admin'),
+(7, 'fgd', '23189', 'Adab & Humaniora', 'ada', '', '0813456789', 'mailadmin1@uinsgd.ac.id', 'Belum Dikerjakan', '22.09.2019', '', '', '20:56:16', 'Belum Di Edit'),
+(8, 'rifqi', '2314', 'Adab & Humaniora', 'ada', '', '08123456789', 'hgergashi@yahoo.com', 'Sudah Dikerjakan', '23.09.2019', '', '', '11:30:48', '23.09.2019 11:34:08 oleh Super Admin'),
+(9, 'rifqi', '2314', 'Adab & Humaniora', 'Administrasi Negara', '', '0813456789', 'mailadmin1@uinsgd.ac.id', 'Sudah Dikerjakan', '23.09.2019', '09', '2019', '12:50:00', '27.09.2019 13:39:57 oleh Super Admin'),
+(10, 'weqew', '231', 'Ushuluddin', 'Fisika', '', '213123', 'hgergashi@yahoo.com', 'Belum Dikerjakan', '23.09.2019', '09', '2019', '12:50:19', '23.09.2019 13:50:26 oleh Super Admin'),
+(11, 'aa', '48111555555', 'Psikologi', 'Psikologi', '', '05552455245', 'a@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:44:20', 'Belum Di Edit'),
+(12, 'aaa', '1516654122', 'Mail Managemen', 'Mail Managemen', '', '0854655554', 'a@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:45:08', 'Belum Di Edit'),
+(13, 'admiin', '151665412', 'Psikologi', 'Psikologi', '', '08546555542', 'a@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:46:44', 'Belum Di Edit'),
+(14, 'aaas', '1516654', 'Syariah & Hukum', 'Ilmu Hukum ', '', '0233386868', 'afd@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:47:03', 'Belum Di Edit'),
+(15, 'admiinss', '481115555', 'Ilmu Sosial & Ilmu Politik', 'Manajemen', '', '023338686821', 'ad@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:47:25', 'Belum Di Edit'),
+(16, 'aa', '48111555555', 'Ilmu Sosial & Ilmu Politik', 'Manajemen', '', '0854655554', 'af@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:47:45', 'Belum Di Edit'),
+(17, 'admiinw', '48111555555', 'Psikologi', 'Psikologi', '', '05552455245', 'ddaa@gmail.com', 'Belum Dikerjakan', '27.09.2019', '09', '2019', '13:47:59', 'Belum Di Edit'),
+(18, 'Muramasa Senju', '12345654321', 'Adab & Humaniora', 'Administrasi Negara', '', '6281910186646', 'rianjh2@gmail.com', 'Sudah Dikerjakan', '27.09.2019', '09', '2019', '15:54:31', '01.10.2019 08:07:14 oleh Super Admin'),
+(19, 'Rian Adriansyah', '12343315427', 'Psikologi', 'Psikologi', '', '6281910186646', 'rianjh2@gmail.com', 'Belum Dikerjakan', '01.10.2019', '10', '2019', '14:58:36', 'Belum Di Edit'),
+(21, 'RianAd', '326757', 'Syariah & Hukum', 'Ekonomi Syariah', '', '6281910186646', 'zaynmalik@gmail.com', 'Belum Dikerjakan', '01.10.2019', '10', '2019', '15:13:36', 'Belum Di Edit'),
+(22, 'Naruto', '11269', 'Ilmu Sosial & Ilmu Politik', 'Administrasi Negara', '', '6285659603699', 'member@gmail.com', 'Belum Dikerjakan', '01.10.2019', '10', '2019', '15:15:49', 'Belum Di Edit'),
+(24, 'Risma Noor Amalia', '665339', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', 'TU', '6281910186646', 'zaynmalik@gmail.com', 'Belum Dikerjakan', '02.10.2019', '10', '2019', '10:42:38', '02.10.2019 11:02:15 oleh Super Admin'),
+(25, 'Rian Adriansyah', '3232', 'Sains & Teknologi', 'Fisika', 'PTIPD', '6281910186646', 'zaynmalik@gmail.com', 'Belum Dikerjakan', '02.10.2019', '10', '2019', '11:09:15', 'Belum Di Edit'),
+(26, 'RianAd', '665328', 'Dakwah & Komunikasi', 'Ilmu Komunikasi Prodi Hubungan Masyarakat', 'PTIPD', '6281910186646', 'zaynmalik@gmail.com', 'Belum Dikerjakan', '02.10.2019', '10', '2019', '11:21:07', 'Belum Di Edit'),
+(27, 'Rian Adriansyah', '69', 'Psikologi', 'Psikologi', NULL, '6281910186646', 'rianjh2@gmail.com', 'Belum Dikerjakan', '04.10.2019', '10', '2019', '10:04:29', 'Belum Di Edit'),
+(29, 'RianAd', '32329', 'Tidak ada', 'Tidak ada', 'TU', '6281910186646', 'rianjh2@gmail.com', 'Belum Dikerjakan', '04.10.2019', '10', '2019', '10:13:03', 'Belum Di Edit');
 
 -- --------------------------------------------------------
 
@@ -216,7 +224,7 @@ CREATE TABLE `ganti_server` (
 --
 
 INSERT INTO `ganti_server` (`id`, `nama`, `ni`, `telp`, `email`, `permohonan`, `solusi`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
-(1, 'rifqi', '213312', '08123456789', '', 'contoh', 'Belum Ada Solusi', 'Belum Dikerjakan', '20.09.2019', '', '', '07:46:51', 'Belum Di Edit');
+(1, 'rifqi', '213312', '08123456789', 'member@gmail.com', 'contoh', 'Belum Ada Solusi', 'Belum Dikerjakan', '20.09.2019', '', '', '07:46:51', '27.09.2019 15:17:29 oleh Super Admin');
 
 -- --------------------------------------------------------
 
@@ -542,6 +550,7 @@ CREATE TABLE `reset_password_dosen` (
   `nip` varchar(18) NOT NULL,
   `fakultas` varchar(50) NOT NULL,
   `jurusan` varchar(50) NOT NULL,
+  `unit` varchar(200) NOT NULL,
   `telp` varchar(13) NOT NULL,
   `email1` varchar(50) NOT NULL,
   `email2` varchar(50) NOT NULL,
@@ -557,8 +566,8 @@ CREATE TABLE `reset_password_dosen` (
 -- Dumping data for table `reset_password_dosen`
 --
 
-INSERT INTO `reset_password_dosen` (`id`, `nama`, `nip`, `fakultas`, `jurusan`, `telp`, `email1`, `email2`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
-(1, 'rifqi', '1091877872', 'Adab & Humaniora', 'Tidak ada', '08123456789', 'gery@uinsgd.ac.id', 'a@g.com', 'Sudah Dikerjakan', '20.09.2019', '', '', '07:46:19', '23.09.2019 15:31:01 oleh Super Admin');
+INSERT INTO `reset_password_dosen` (`id`, `nama`, `nip`, `fakultas`, `jurusan`, `unit`, `telp`, `email1`, `email2`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
+(1, 'rifqi', '1091877872', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', 'TU', '08123456789', 'gery@uinsgd.ac.id', 'a@g.com', 'Sudah Dikerjakan', '20.09.2019', '', '', '07:46:19', '04.10.2019 14:43:09 oleh Super Admin');
 
 -- --------------------------------------------------------
 
@@ -598,6 +607,7 @@ CREATE TABLE `reset_password_mahasiswa` (
   `nama` varchar(100) NOT NULL,
   `nim` varchar(11) NOT NULL,
   `fakultas` varchar(50) NOT NULL,
+  `unit` varchar(200) NOT NULL,
   `jurusan` varchar(50) NOT NULL,
   `telp` varchar(13) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -613,11 +623,31 @@ CREATE TABLE `reset_password_mahasiswa` (
 -- Dumping data for table `reset_password_mahasiswa`
 --
 
-INSERT INTO `reset_password_mahasiswa` (`id`, `nama`, `nim`, `fakultas`, `jurusan`, `telp`, `email`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
-(1, 'Rifqi', '011717171', 'Adab & Humaniora', '', '08123456789', 'hgergashi@yahoo.com', 'Sudah Dikerjakan', '20.09.2019', '', '', '07:45:53', '20.09.2019 15:39:48 oleh '),
-(2, 'gery', '1', 'Adab & Humaniora', '', '08123456789', 'mailadmin1@uinsgd.ac.id', 'Belum Dikerjakan', '22.09.2019', '', '', '12:37:29', 'Belum Di Edit'),
-(3, 'reset', '2314', 'Adab & Humaniora', 'ada', '08123456789', 'fisip@uinsgd.ac.id', 'Belum Dikerjakan', '23.09.2019', '09', '2019', '12:57:10', 'Belum Di Edit'),
-(4, 'fgd', '2314', 'Mail Managemen', 'Ilmu Komunikasi Prodi Jurnalistik', '08123456789', 'hgergashi@yahoo.com', 'Belum Dikerjakan', '23.09.2019', '09', '2019', '13:41:08', '23.09.2019 15:34:28 oleh Super Admin');
+INSERT INTO `reset_password_mahasiswa` (`id`, `nama`, `nim`, `fakultas`, `unit`, `jurusan`, `telp`, `email`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
+(1, 'Rifqi', '011717171', 'Adab & Humaniora', '', '', '08123456789', 'hgergashi@yahoo.com', 'Sudah Dikerjakan', '20.09.2019', '', '', '07:45:53', '20.09.2019 15:39:48 oleh '),
+(2, 'gery', '1', 'Adab & Humaniora', '', '', '08123456789', 'mailadmin1@uinsgd.ac.id', 'Belum Dikerjakan', '22.09.2019', '', '', '12:37:29', 'Belum Di Edit'),
+(3, 'reset', '2314', 'Adab & Humaniora', '', 'ada', '08123456789', 'fisip@uinsgd.ac.id', 'Belum Dikerjakan', '23.09.2019', '09', '2019', '12:57:10', 'Belum Di Edit'),
+(7, 'Rian Adriansyah', '9987', 'Adab & Humaniora', 'Tidak Ada', 'Bahasa dan Sastra Arab', '6281910186646', 'rianjh2@gmail.com', 'Sudah Dikerjakan', '04.10.2019', '10', '2019', '15:03:22', '04.10.2019 15:29:24 oleh Super Admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unit`
+--
+
+CREATE TABLE `unit` (
+  `id` int(11) NOT NULL,
+  `unit` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `unit`
+--
+
+INSERT INTO `unit` (`id`, `unit`) VALUES
+(1, 'PTIPD'),
+(5, 'TU'),
+(999, 'Tidak Ada');
 
 --
 -- Indexes for dumped tables
@@ -708,6 +738,12 @@ ALTER TABLE `reset_password_mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `unit`
+--
+ALTER TABLE `unit`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -715,13 +751,13 @@ ALTER TABLE `reset_password_mahasiswa`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `daftar_email_dosen`
 --
 ALTER TABLE `daftar_email_dosen`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `daftar_email_lembaga`
@@ -733,7 +769,7 @@ ALTER TABLE `daftar_email_lembaga`
 -- AUTO_INCREMENT for table `daftar_email_mahasiswa`
 --
 ALTER TABLE `daftar_email_mahasiswa`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `fakultas`
@@ -757,7 +793,7 @@ ALTER TABLE `jaringan_baru`
 -- AUTO_INCREMENT for table `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `keluhan`
@@ -793,7 +829,13 @@ ALTER TABLE `reset_password_lembaga`
 -- AUTO_INCREMENT for table `reset_password_mahasiswa`
 --
 ALTER TABLE `reset_password_mahasiswa`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `unit`
+--
+ALTER TABLE `unit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
