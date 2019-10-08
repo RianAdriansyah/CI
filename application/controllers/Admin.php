@@ -179,12 +179,12 @@ class Admin extends CI_Controller
 		$config['base_url'] = 'http://localhost/ci/admin/dm';
 		$config['total_rows'] = $this->db->from('daftar_email_mahasiswa')->count_all_results();
 		$data['total_rows'] = $config['total_rows'];
-		$config['per_page'] = 15;
+		// $config['per_page'] = 15;
 
 		$this->pagination->initialize($config);
 
 		$data['start'] = $this->uri->segment(3);
-		$data['dm'] = $this->crud_model->getdm2($config['per_page'], $data['start'], $data['keyword']);
+		$data['dm'] = $this->crud_model->getdm2($data['start'], $data['keyword']);
 
 		$data['judul'] = 'Pendaftaran Email Mahasiswa | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
