@@ -11,7 +11,7 @@ BELUM :
 x formulir jangan dihapus dari database
 
 ===================================
-input keluhan via admin
+input keluhan via admin (sudah)
 difield tidak bisa dimasukan huruf bagian nim dan no telp (sudah)
 bagian fakultas yang muncul hanya fakultas aja (sudah)
 tabel di ubah jadi data tabel

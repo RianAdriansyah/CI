@@ -34,10 +34,12 @@
 
         .title {
             font-size: 30px;
+            padding-left: 80px;
         }
 
         .title2 {
             font-size: 10px;
+            padding-left: 80px;
         }
 
         .mark1 {
@@ -65,9 +67,11 @@
     </style>
 </head><body>
     <header>
+    <img src="assets/img/logo1.png" style="position: absolute; width:60px; height: auto;">
         <b class="title">PTIPD UIN SUNAN GUNUNG DJATI</b><br>
-        <div class="title2">P U S A T &emsp; T E K N O L O G I &emsp; I N F O R M A S I &emsp; D A N &emsp; P A N G K A L A N &emsp; D A T A <br> U N I V E R S I T A S &emsp; I S L A M &emsp; N E G R I &emsp; S U N A N &emsp; G U N U N G &emsp; D J A T I</div>
-    </header>
+        <div class="title2">P U S A T &emsp; T E K N O L O G I &emsp; I N F O R M A S I &emsp; D A N &emsp; P A N G K A L A N &emsp; D A T A <br> U N I V E R S I T A S &emsp; I S L A M &emsp; N E G E R I &emsp; S U N A N &emsp; G U N U N G &emsp; D J A T I</div>
+    </header> 
+    <br>
     <hr>
     <?php if ($dd) : ?>
         <center>

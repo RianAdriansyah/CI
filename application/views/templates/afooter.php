@@ -38,6 +38,13 @@
 <script src="<?= base_url('/'); ?>vendors/jqvmap/dist/jquery.vmap.min.js"></script>
 <script src="<?= base_url('/'); ?>vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
 <script src="<?= base_url('/'); ?>vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#table_id').DataTable();
+  });
+</script>
 <script>
   (function($) {
     "use strict";
@@ -62,6 +69,7 @@
     $('[data-toggle="tooltip"]').tooltip()
   })
 </script>
+
 
 </body>
 

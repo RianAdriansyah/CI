@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("/assets/css/style.css"); ?>">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <script src="https://kit.fontawesome.com/79bf77632a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
 
 </head>
 

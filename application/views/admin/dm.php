@@ -127,3 +127,8 @@
 		}
 		setInterval('autoRefreshPage()', 60000);
 	</script>
+	<script>
+		$(document).ready(function() {
+			$('#table_id').DataTable();
+		});
+	</script>

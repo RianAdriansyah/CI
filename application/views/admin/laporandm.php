@@ -59,10 +59,11 @@
     </style>
 </head><body>
     <header>
-        <img src="assets/img/logo.png" style="position: absolute; width:60px; height: auto;">
+        <img src="assets/img/logo1.png" style="position: absolute; width:60px; height: auto;">
         <b class="title">PTIPD UIN SUNAN GUNUNG DJATI</b><br>
         <div class="title2">P U S A T &emsp; T E K N O L O G I &emsp; I N F O R M A S I &emsp; D A N &emsp; P A N G K A L A N &emsp; D A T A <br> U N I V E R S I T A S &emsp; I S L A M &emsp; N E G E R I &emsp; S U N A N &emsp; G U N U N G &emsp; D J A T I</div>
     </header>
+    <br>
     <hr>
     <?php if ($dm) : ?>
     <center><h5>LAPORAN FORMULIR PENDAFTARAN EMAIL MAHASISWA <?= $m3 .' '. $y3 ?></h5></center>
