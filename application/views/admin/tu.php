@@ -66,16 +66,16 @@
     </div>
 
     <div class="col-sm-12">
-        Daftar Unit
+        <h5 class="h5 mb-2 text-gray-800">Daftar Unit</h5>
     </div>
 
     <div class="col-lg-12 table-responsive">
-        <table class="table" style="font-size: 14px;">
+        <table class="table" style="font-size: 14px;" id="table_id">
             <thead class="thead-dark text-center">
                 <tr>
                     <th scope="col" width="10%">No</th>
                     <th scope="col" width="70%">Nama Unit</th>
-                    <th colspan="2" scope="col">Action</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -92,10 +92,14 @@
                     <tr>
                         <th scope="row" width="10%" style="text-align: center;"><?= ++$start; ?></th>
                         <td width="70%"><?= $row['unit']; ?></td>
-                        <td><a href="<?= base_url('/') ?>admin/edittu/<?= $row['id']; ?>" class="btn btn-block btn-sm btn-success" role="button">Edit</a></td>
-                        <td><a href="<?= base_url('/') ?>admin/hapustu/<?= $row['id']; ?>" class="btn btn-block btn-sm btn-danger" role="button" onclick="return confirm('Anda yakin ingin menghapus <?= $row['unit']; ?> ?')">Hapus</a></td>
+                        <td class="text-center">
+                            <a href="<?= base_url('/') ?>admin/edittu/<?= $row['id']; ?>" class="btn btn-sm btn-success" role="button" data-toggle="tooltip" data-placement="right" title="Edit"><i class="fas fa-fw fa-edit"></i></a>
+                            <a href="<?= base_url('/') ?>admin/hapustu/<?= $row['id']; ?>" class="btn btn-sm btn-danger" role="button" onclick="return confirm('Anda yakin ingin menghapus <?= $row['unit']; ?> ?')" data-toggle="tooltip" data-placement="right" title="Hapus"><i class="fas fa-fw fa-trash-alt"></i></a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <br>
     </div>
+</div>

@@ -14,18 +14,9 @@
 
 		<a href="<?= base_url('admin/tl') ?>" class="btn btn-primary mb-3 rounded">
 			<i class="fas fa-folder-plus"></i> Formulir</a>
-
-		<form action="" method="post">
-			<div class="input-group mb-3">
-				<input name="keyword" value="<?= $keyword; ?>" type="text" class="form-control" placeholder="Cari Disini ..." autocomplete="off" autofocus>
-				<div class="input-group-append">
-					<input class="btn btn-dark" type="submit" value="Search" name="submit" id="button-addon2"></input>
-				</div>
-			</div>
-		</form>
 	</div>
 
-	<div class="col-sm-2 mt-5">
+	<div class="col-sm-2">
 		<div class="alert alert-light" role="alert">
 			<h6>Formulir : <?= $total_rows; ?></h6>
 		</div>
@@ -58,7 +49,7 @@
 	</div>
 
 	<div class="col-lg-12 table-responsive">
-		<table class="table" style="font-size: 14px;">
+		<table class="table" style="font-size: 14px;" id="table_id">
 			<thead class="thead-dark text-center">
 				<tr>
 					<th scope="col">No</th>
@@ -67,7 +58,7 @@
 					<th scope="col">Telepon</th>
 					<th scope="col">Tanggal</th>
 					<th scope="col">Status</th>
-					<th colspan="3" scope="col">Action</th>
+					<th scope="col" style="width:100px;">Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -88,11 +79,13 @@
 								?>
 						</td>
 
-						<td><a href="<?= base_url('/') ?>admin/editdl/<?= $row['id']; ?>" class="btn btn-block btn-sm btn-success" role="button">Edit</a></td>
+						<td>
+							<a href="<?= base_url('/') ?>admin/editdl/<?= $row['id']; ?>" class="btn btn-sm btn-success" role="button" data-toggle="tooltip" data-placement="right" title="Edit"><i class="fas fa-fw fa-edit"></i></a>
 
-						<td><a href="<?= base_url('/') ?>admin/detaildl/<?= $row['id']; ?>" class="btn btn-block btn-sm btn-primary" role="button">Detail</a></td>
+							<a href="<?= base_url('/') ?>admin/detaildl/<?= $row['id']; ?>" class="btn btn-sm btn-primary" role="button" data-toggle="tooltip" data-placement="right" title="Detail"><i class="fas fa-fw fa-info-circle"></i></a>
 
-						<td><a href="<?= base_url('/') ?>admin/hapusdl/<?= $row['id']; ?>" class="btn btn-block btn-sm btn-danger" role="button" onclick="return confirm('Anda yakin ingin menghapus formulir ini ?')">Hapus</a></td>
+							<a href="<?= base_url('/') ?>admin/hapusdl/<?= $row['id']; ?>" class="btn btn-sm btn-danger" role="button" onclick="return confirm('Anda yakin ingin menghapus formulir ini ?')" data-toggle="tooltip" data-placement="right" title="Hapus"><i class="fas fa-fw fa-trash-alt"></i></a>
+						</td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>
@@ -107,9 +100,9 @@
 		<?php endif; ?>
 	</div>
 
-	<div class="col-sm-12 col-lg-12">
+	<!-- <div class="col-sm-12 col-lg-12">
 		<?= $this->pagination->create_links(); ?>
-	</div>
+	</div> -->
 
 	<script type="text/javascript">
 		function autoRefreshPage() {

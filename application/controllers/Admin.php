@@ -275,12 +275,12 @@ class Admin extends CI_Controller
 		$config['base_url'] = 'http://localhost/ci/admin/rm';
 		$config['total_rows'] = $this->db->count_all_results();
 		$data['total_rows'] = $config['total_rows'];
-		$config['per_page'] = 15;
+		// $config['per_page'] = 15;
 
 		$this->pagination->initialize($config);
 
 		$data['start'] = $this->uri->segment(3);
-		$data['rm'] = $this->crud_model->getrm2($config['per_page'], $data['start'], $data['keyword']);
+		$data['rm'] = $this->crud_model->getrm2($data['start'], $data['keyword']);
 
 		$data['judul'] = 'Reset Password Email Mahasiswa | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
@@ -371,12 +371,12 @@ class Admin extends CI_Controller
 		$config['base_url'] = 'http://localhost/ci/admin/dd';
 		$config['total_rows'] = $this->db->count_all_results();
 		$data['total_rows'] = $config['total_rows'];
-		$config['per_page'] = 15;
+		// $config['per_page'] = 15;
 
 		$this->pagination->initialize($config);
 
 		$data['start'] = $this->uri->segment(3);
-		$data['dd'] = $this->crud_model->getdd2($config['per_page'], $data['start'], $data['keyword']);
+		$data['dd'] = $this->crud_model->getdd2($data['start'], $data['keyword']);
 
 		$data['judul'] = 'Pendaftaran Email Dosen | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
@@ -510,12 +510,12 @@ class Admin extends CI_Controller
 		$config['base_url'] = 'http://localhost/ci/admin/rd';
 		$config['total_rows'] = $this->db->count_all_results();
 		$data['total_rows'] = $config['total_rows'];
-		$config['per_page'] = 15;
+		// $config['per_page'] = 15;
 
 		$this->pagination->initialize($config);
 
 		$data['start'] = $this->uri->segment(3);
-		$data['rd'] = $this->crud_model->getrd2($config['per_page'], $data['start'], $data['keyword']);
+		$data['rd'] = $this->crud_model->getrd2($data['start'], $data['keyword']);
 
 		$data['judul'] = 'Reset Password Email Dosen | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
@@ -673,12 +673,12 @@ class Admin extends CI_Controller
 		$config['base_url'] = 'http://localhost/ci/admin/rl';
 		$config['total_rows'] = $this->db->count_all_results();
 		$data['total_rows'] = $config['total_rows'];
-		$config['per_page'] = 15;
+		// $config['per_page'] = 15;
 
 		$this->pagination->initialize($config);
 
 		$data['start'] = $this->uri->segment(3);
-		$data['rl'] = $this->crud_model->getrl2($config['per_page'], $data['start'], $data['keyword']);
+		$data['rl'] = $this->crud_model->getrl2($data['start'], $data['keyword']);
 
 		$data['judul'] = 'Reset Password Email Lembaga | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
@@ -724,13 +724,13 @@ class Admin extends CI_Controller
 		$config['base_url'] = 'http://localhost/ci/admin/k';
 		$config['total_rows'] = $this->db->count_all_results();
 		$data['total_rows'] = $config['total_rows'];
-		$config['per_page'] = 15;
+		// $config['per_page'] = 15;
 
 		$this->pagination->initialize($config);
 
 		$data['start'] = $this->uri->segment(3);
 
-		$data['k'] = $this->crud_model->getk2($config['per_page'], $data['start'], $data['keyword']);
+		$data['k'] = $this->crud_model->getk2($data['start'], $data['keyword']);
 
 		$data['judul'] = 'Keluhan | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
@@ -831,13 +831,13 @@ class Admin extends CI_Controller
 		$config['base_url'] = 'http://localhost/ci/admin/gs';
 		$config['total_rows'] = $this->db->count_all_results();
 		$data['total_rows'] = $config['total_rows'];
-		$config['per_page'] = 15;
+		// $config['per_page'] = 15;
 
 		$this->pagination->initialize($config);
 
 		$data['start'] = $this->uri->segment(3);
 
-		$data['gs'] = $this->crud_model->getgs2($config['per_page'], $data['start'], $data['keyword']);
+		$data['gs'] = $this->crud_model->getgs2($data['start'], $data['keyword']);
 
 		$data['judul'] = 'Pergantian Server Data Center | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
@@ -913,13 +913,13 @@ class Admin extends CI_Controller
 		$config['base_url'] = 'http://localhost/ci/admin/dc';
 		$config['total_rows'] = $this->db->count_all_results();
 		$data['total_rows'] = $config['total_rows'];
-		$config['per_page'] = 15;
+		// $config['per_page'] = 15;
 
 		$this->pagination->initialize($config);
 
 		$data['start'] = $this->uri->segment(3);
 
-		$data['dc'] = $this->crud_model->getdc2($config['per_page'], $data['start'], $data['keyword']);
+		$data['dc'] = $this->crud_model->getdc2($data['start'], $data['keyword']);
 
 		$data['judul'] = 'Kunjungan Data Center | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
@@ -995,13 +995,13 @@ class Admin extends CI_Controller
 		$config['base_url'] = 'http://localhost/ci/admin/jb';
 		$config['total_rows'] = $this->db->count_all_results();
 		$data['total_rows'] = $config['total_rows'];
-		$config['per_page'] = 15;
+		// $config['per_page'] = 15;
 
 		$this->pagination->initialize($config);
 
 		$data['start'] = $this->uri->segment(3);
 
-		$data['jb'] = $this->crud_model->getjb2($config['per_page'], $data['start'], $data['keyword']);
+		$data['jb'] = $this->crud_model->getjb2($data['start'], $data['keyword']);
 
 		$data['judul'] = 'Permohonan Pemasangan Jaringan Baru | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>

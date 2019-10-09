@@ -119,11 +119,11 @@
 	</div>
 
 	<div class="col-sm-12">
-		Daftar Admin
+		<h5 class="h5 mb-2 text-gray-800">Daftar Admin</h5>
 	</div>
 
 	<div class="col-lg-12 table-responsive">
-		<table class="table" style="font-size: 14px;">
+		<table class="table" style="font-size: 14px;" id="table_id">
 			<thead class="thead-dark text-center">
 				<tr>
 					<th scope="col" width="5%">No</th>
@@ -134,7 +134,7 @@
 					<th scope="col" width="10%">Telepon</th>
 					<th scope="col" width="10%">Level</th>
 					<th scope="col" width="10%">Bergabung</th>
-					<th colspan="2" scope="col">Action</th>
+					<th scope="col" style="width:100px;">Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -150,12 +150,12 @@
 				foreach ($ta as $row) : ?>
 					<tr>
 						<th scope="row" width="5%" style="text-align: center;"><?= ++$start; ?></th>
-						<td width="15%"><?= $row['nama']; ?></td>
+						<td width="10%"><?= $row['nama']; ?></td>
 						<td width="10%"><?= $row['user']; ?></td>
 						<td width="10%"><?= $row['pass']; ?></td>
-						<td width="15%"><?= $row['email']; ?></td>
+						<td width="10%"><?= $row['email']; ?></td>
 						<td width="10%"><?= $row['telp']; ?></td>
-						<td width="15%" style="text-align: center;">
+						<td width="10%" style="text-align: center;">
 							<?php switch ($row['level']) {
 									case '0':
 										echo "0 Super Admin";
@@ -180,10 +180,13 @@
 						</td>
 						<td width="10%" style="text-align: center;"><?= $row['bergabung']; ?></td>
 						<?php if ($row['level'] == 0) : ?>
-							<td colspan="2"><a href="<?= base_url('/') ?>admin/editta/<?= $row['id']; ?>" class="btn btn-block btn-sm btn-success" role="button">Edit</a></td>
-						<?php else : ?>
-							<td><a href="<?= base_url('/') ?>admin/editta/<?= $row['id']; ?>" class="btn btn-block btn-sm btn-success" role="button">Edit</a></td>
-							<td><a href="<?= base_url('/') ?>admin/hapusta/<?= $row['id']; ?>" class="btn btn-block btn-sm btn-danger" role="button" onclick="return confirm('Anda yakin ingin menghapus <?= $row['nama']; ?>  ?')">Hapus</a></td>
+							<td class="text-center">
+								<a href="<?= base_url('/') ?>admin/editta/<?= $row['id']; ?>" class="btn btn-sm btn-success" role="button" data-toggle="tooltip" data-placement="right" title="Edit"><i class="fas fa-fw fa-edit"></i></a>
+							<?php else : ?>
+							<td class="text-center">
+								<a href="<?= base_url('/') ?>admin/editta/<?= $row['id']; ?>" class="btn btn-sm btn-success" role="button" data-toggle="tooltip" data-placement="right" title="Edit"><i class="fas fa-fw fa-edit"></i></a>
+								<a href="<?= base_url('/') ?>admin/hapusta/<?= $row['id']; ?>" class="btn btn-sm btn-danger" role="button" onclick="return confirm('Anda yakin ingin menghapus <?= $row['nama']; ?>  ?')" data-toggle="tooltip" data-placement="right" title="Hapus"><i class="fas fa-fw fa-trash-alt"></i></a>
+							</td>
 						<?php endif; ?>
 					</tr>
 				<?php endforeach; ?>
@@ -282,3 +285,4 @@
 			</div>
 		</div>
 	</div>
+</div>

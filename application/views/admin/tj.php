@@ -75,17 +75,17 @@
 	</div>
 
 	<div class="col-sm-12">
-		Daftar Jurusan
+		<h5 class="h5 mb-2 text-gray-800">Daftar Jurusan</h5>
 	</div>
 
 	<div class="col-lg-12 table-responsive">
-		<table class="table" style="font-size: 14px;">
+		<table class="table" style="font-size: 14px;" id="table_id">
 			<thead class="thead-dark text-center">
 				<tr>
 					<th scope="col" width="10%">No</th>
 					<th scope="col" width="35%">Jurusan</th>
 					<th scope="col" width="35%">Fakultas</th>
-					<th colspan="2" scope="col">Action</th>
+					<th scope="col">Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -103,10 +103,14 @@
 						<th scope="row" width="10%" style="text-align: center;"><?= ++$start; ?></th>
 						<td width="35%"><?= $row['jurusan']; ?></td>
 						<td width="35%"><?= $row['jfakultas']; ?></td>
-						<td><a href="<?= base_url('/') ?>admin/edittj/<?= $row['id']; ?>" class="btn btn-block btn-sm btn-success" role="button">Edit</a></td>
-						<td><a href="<?= base_url('/') ?>admin/hapustj/<?= $row['id']; ?>" class="btn btn-block btn-sm btn-danger" role="button" onclick="return confirm('Anda yakin ingin menghapus <?= $row['jurusan']; ?> ?')">Hapus</a></td>
+						<td class="text-center">
+							<a href="<?= base_url('/') ?>admin/edittj/<?= $row['id']; ?>" class="btn btn-sm btn-success" role="button" data-toggle="tooltip" data-placement="right" title="Edit"><i class="fas fa-fw fa-edit"></i></a>
+							<a href="<?= base_url('/') ?>admin/hapustj/<?= $row['id']; ?>" class="btn btn-sm btn-danger" role="button" onclick="return confirm('Anda yakin ingin menghapus <?= $row['jurusan']; ?> ?')" data-toggle="tooltip" data-placement="right" title="Hapus"><i class="fas fa-fw fa-trash-alt"></i></a>
+						</td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>
 		</table>
+		<br>
 	</div>
+</div>

@@ -13,14 +13,7 @@
 	<div class="col-lg-10">
 		<a href="<?= base_url('admin/te') ?>" class="btn btn-primary mb-3 rounded">
 			<i class="fas fa-fw fa-folder-plus"></i> Formulir</a>
-		<!-- <form action="" method="post">
-			<div class="input-group mb-3">
-				<input name="keyword" value="<?= $keyword; ?>" type="text" class="form-control" placeholder="Cari Disini ..." autocomplete="off" autofocus>
-				<div class="input-group-append">
-					<input class="btn btn-dark" type="submit" value="Search" name="submit" id="button-addon2"></input>
-				</div>
-			</div>
-		</form> -->
+
 	</div>
 
 	<div class="col-lg-2">
@@ -79,7 +72,6 @@
 					<th scope="col">Status</th>
 
 					<th scope="col" style="width:100px;">Action</th>
-
 				</tr>
 			</thead>
 			<tbody>
@@ -101,11 +93,12 @@
 						</td>
 
 						<td class="text-center">
-							<a href="<?= base_url('/') ?>admin/editdm/<?= $row['id']; ?>" class="btn btn-sm btn-success rounded" role="button"><i class="fas fa-fw fa-edit" data-toggle="tooltip" data-placement="right" title="Edit"></i></a>
+							<a href="<?= base_url('/') ?>admin/editdm/<?= $row['id']; ?>" class="btn btn-sm btn-success rounded" role="button" data-toggle="tooltip" data-placement="right" title="Edit"><i class="fas fa-fw fa-edit"></i></a>
 
-							<a href="<?= base_url('/') ?>admin/detaildm/<?= $row['id']; ?>" class="btn btn-sm btn-primary rounded" role="button"><i class="fas fa-fw fa-info-circle" data-toggle="tooltip" data-placement="right" title="Detail"></i></a>
+							<a href="<?= base_url('/') ?>admin/detaildm/<?= $row['id']; ?>" class="btn btn-sm btn-primary rounded" role="button" data-toggle="tooltip" data-placement="right" title="Detail"><i class="fas fa-fw fa-info-circle"></i></a>
 
-							<a href="<?= base_url('/') ?>admin/hapusdm/<?= $row['id']; ?>" class="btn btn-sm btn-danger rounded" role="button" onclick="return confirm('Anda yakin ingin menghapus formulir ini ?')"><i class="fas fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="right" title="Hapus"></i></a></td>
+							<a href="<?= base_url('/') ?>admin/hapusdm/<?= $row['id']; ?>" class="btn btn-sm btn-danger rounded" role="button" onclick="return confirm('Anda yakin ingin menghapus formulir ini ?')" data-toggle="tooltip" data-placement="right" title="Hapus"><i class="fas fa-fw fa-trash-alt"></i></a>
+						</td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>
@@ -129,9 +122,4 @@
 			window.location = window.location.href;
 		}
 		setInterval('autoRefreshPage()', 60000);
-	</script>
-	<script>
-		$(document).ready(function() {
-			$('#table_id').DataTable();
-		});
 	</script>
