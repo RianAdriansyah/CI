@@ -49,7 +49,7 @@
 	</div>
 
 	<div class="col-lg-12 table-responsive">
-		<table class="table" style="font-size: 14px;" id="table_id">
+		<table class="table table-hover" style="font-size: 14px;" id="table_id">
 			<thead class="thead-dark text-center">
 				<tr>
 					<th scope="col">No</th>

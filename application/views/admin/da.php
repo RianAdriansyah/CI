@@ -11,7 +11,7 @@
 <div class="content mt-3">
 
 	<div class="col-lg-12 table-responsive">
-		<table class="table" style="font-size: 12.5px;">
+		<table class="table table-hover" style="font-size: 12.5px;">
 			<thead class="thead-dark text-center">
 				<tr>
 					<th scope="col" width="5%">No</th>

@@ -24,7 +24,7 @@
         		<div class="card mb-3" style="max-width: 540px;">
         			<div class="row no-gutters">
         				<div class="col-md-4">
-        					<img src="<?= base_url('assets/img/profile/01.jpg'); ?>">
+        					<img src="<?= base_url('assets/img/profile/rian.jpg'); ?>">
         				</div>
         				<div class="col-md-8">
         					<div class="card-body">
@@ -58,7 +58,7 @@
         		<div class="card mb-3" style="max-width: 540px;">
         			<div class="row no-gutters">
         				<div class="col-md-4">
-        					<img src="<?= base_url('assets/img/profile/02.jpg'); ?>">
+        					<img src="<?= base_url('assets/img/profile/risma.jpeg'); ?>">
         				</div>
         				<div class="col-md-8">
         					<div class="card-body">
@@ -70,7 +70,7 @@
         									<p class="card-text"><i class="fa fa-phone"></i>&emsp;
         								</td>
         								<td>
-        									<p class="card-text">0821-2134-8421
+        									<p class="card-text">0822-1985-3370
         								</td>
         							</tr>
         							<tr>
@@ -78,7 +78,7 @@
         									<p class="card-text"><i class="fa fa-envelope"></i>&emsp;
         								</td>
         								<td>
-        									<p class="card-text">rismaamalia546a@gmail.com
+        									<p class="card-text">rismaamalia546@gmail.com
         								</td>
         							</tr>
         						</table>
@@ -92,7 +92,7 @@
         		<div class="card mb-3" style="max-width: 540px;">
         			<div class="row no-gutters">
         				<div class="col-md-4">
-        					<img src="<?= base_url('assets/img/profile/03.jpg'); ?>">
+        					<img src="<?= base_url('assets/img/profile/rifat.jpg'); ?>">
         				</div>
         				<div class="col-md-8">
         					<div class="card-body">
@@ -104,7 +104,7 @@
         									<p class="card-text"><i class="fa fa-phone"></i>&emsp;
         								</td>
         								<td>
-        									<p class="card-text">0856-5960-3699
+        									<p class="card-text">0813-3747-7892
         								</td>
         							</tr>
         							<tr>
@@ -112,7 +112,7 @@
         									<p class="card-text"><i class="fa fa-envelope"></i>&emsp;
         								</td>
         								<td>
-        									<p class="card-text">nyek@gmail.com
+        									<p class="card-text">muhammadrifat11@gmail.com
         								</td>
         							</tr>
         						</table>
@@ -126,7 +126,7 @@
         		<div class="card mb-3" style="max-width: 540px;">
         			<div class="row no-gutters">
         				<div class="col-md-4">
-        					<img src="<?= base_url('assets/img/profile/04.jpg'); ?>">
+        					<img src="<?= base_url('assets/img/profile/irma.jpeg'); ?>">
         				</div>
         				<div class="col-md-8">
         					<div class="card-body">
@@ -138,7 +138,7 @@
         									<p class="card-text"><i class="fa fa-phone"></i>&emsp;
         								</td>
         								<td>
-        									<p class="card-text">0878-2144-6052
+        									<p class="card-text">0899-7595-542
         								</td>
         							</tr>
         							<tr>
@@ -146,7 +146,7 @@
         									<p class="card-text"><i class="fa fa-envelope"></i>&emsp;
         								</td>
         								<td>
-        									<p class="card-text">irma@gmail.com
+        									<p class="card-text">irmaputri419@gmail.com
         								</td>
         							</tr>
         						</table>
