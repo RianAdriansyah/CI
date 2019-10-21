@@ -74,22 +74,7 @@
                         <?= form_error('jurusan', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md">
-                        <label for="unit">Unit</label>
-                        <select id="unit" name="unit" class="form-control">
-                            <option value="" disabled selected>-- Pilih Unit --</option>
-                            <?php
-                            foreach ($unit as $u) {
-                                ?>
-                                <option value="<?= $u['unit']; ?>"><?= $u['unit']; ?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>
-                        <?= form_error('unit', '<small class="text-danger pl-3">', '</small>'); ?>
-                    </div>
-                </div>
+
                 <?php date_default_timezone_set('Asia/Jakarta'); ?>
                 <input type="hidden" id="edit" name="edit" value="Belum Di Edit">
                 <input type="hidden" id="status" name="status" value="Belum Dikerjakan">

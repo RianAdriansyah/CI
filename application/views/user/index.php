@@ -51,7 +51,7 @@
 					<p style="font-size:14px;color: gray;">Jika formulir yang anda inginkan tidak tertera di atas, anda bisa langsung pergi ke bagian Pelayanan UIN Sunan Gunung Djati di Lecture Hall lt.2</p>
 				</div>
 			</div>
-			<div class="home3"><a href="<?= base_url(); ?>user/about" style="text-decoration: none;color: gray;">About Us</a>&emsp; Copyright © UIN Sunan Gunung Djati Bandung 2019</div>
+			<div class="home3"><a href="<?= base_url(); ?>user/about" style="text-decoration: none;color: gray;">About Us</a>&emsp; Copyright © UIN Sunan Gunung Djati Bandung <?= date('Y'); ?></div>
 		</div>
 	</div>
 </div>

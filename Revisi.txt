@@ -14,10 +14,45 @@ x formulir jangan dihapus dari database
 input keluhan via admin (sudah)
 difield tidak bisa dimasukan huruf bagian nim dan no telp (sudah)
 bagian fakultas yang muncul hanya fakultas aja (sudah)
-tabel di ubah jadi data tabel
+tabel di ubah jadi data tabel (sudah)
 pemisahan antara fakultas dan unit uin (sudah)
 penambahan logo di header pdf laporan (sudah)
 tambah kolom +62 di nomor telepon (sudah)
+
+
+Tambah pilihan status Sedang Dikerjakan
+ada verifikasi form ke email divisi
+select tahun di pdf
+di depan hanya pendaftaran, keluhan,pengajuan layanan
+
+unit
+umum
+ulp
+humas
+keuangan
+akademik
+kemahasiswaan
+kerjasama
+LPM
+pusat kerja sama
+perpustakaan
+pusat bisnis
+pusat bahasa
+jurnal
+kopertais
+poliklinik
+pusat karir
+pusat kajian wahyu memandu ilmu
+MAHAD
+LP2M
+Kepegawaian
+SPI
+Perencanaan
+REKTORAT
+
+Fakultas diisi unit gabisa di isi dan sebaliknya
+
+dibagian deskripsi keluhan ditambah placeholder "diisi dengan jelas keluhannya"
 
 Wassalamualaikum!
 

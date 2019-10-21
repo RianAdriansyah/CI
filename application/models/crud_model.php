@@ -14,7 +14,6 @@ class crud_model extends CI_model
 			"nim" => $this->input->post('nim', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
-			"unit" => $this->input->post('unit', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
 			"status" => $this->input->post('status', true),
@@ -35,7 +34,6 @@ class crud_model extends CI_model
 			"nama" => $this->input->post('nama', true),
 			"nim" => $this->input->post('nim', true),
 			"fakultas" => $this->input->post('fakultas', true),
-			"unit" => $this->input->post('unit', true),
 			"jurusan" => $this->input->post('jurusan', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
@@ -58,7 +56,6 @@ class crud_model extends CI_model
 			"nip" => $this->input->post('nip', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
-			"unit" => $this->input->post('unit', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email1" => $this->input->post('email1', true),
 			"email2" => $this->input->post('email2', true),
@@ -81,7 +78,6 @@ class crud_model extends CI_model
 			"nip" => $this->input->post('nip', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
-			"unit" => $this->input->post('unit', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email1" => $this->input->post('email1', true),
 			"email2" => $this->input->post('email2', true),
@@ -104,6 +100,7 @@ class crud_model extends CI_model
 			"nama_penanggung" => $this->input->post('nama_penanggung', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
+			"unit" => $this->input->post('unit', true),
 			"status" => $this->input->post('status', true),
 			"edit" => $this->input->post('edit', true),
 			"tanggal" => $this->input->post('tanggal', true),
@@ -123,6 +120,7 @@ class crud_model extends CI_model
 			"nama_penanggung" => $this->input->post('nama_penanggung', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
+			"unit" => $this->input->post('unit', true),
 			"status" => $this->input->post('status', true),
 			"edit" => $this->input->post('edit', true),
 			"tanggal" => $this->input->post('tanggal', true),
@@ -143,6 +141,7 @@ class crud_model extends CI_model
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"unit" => $this->input->post('unit', true),
 			"email" => $this->input->post('email', true),
 			"perihal" => $this->input->post('perihal', true),
 			"keluhan" => $this->input->post('keluhan', true),
@@ -247,7 +246,6 @@ class crud_model extends CI_model
 			"nim" => $this->input->post('nim', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
-			"unit" => $this->input->post('unit', true),
 			"telp" => ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
 			"status" => $this->input->post('status', true),
@@ -286,7 +284,6 @@ class crud_model extends CI_model
 			"nim" => $this->input->post('nim', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
-			"unit" => $this->input->post('unit', true),
 			"telp" => ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
 			"status" => $this->input->post('status', true),
@@ -325,7 +322,6 @@ class crud_model extends CI_model
 			"nip" => $this->input->post('nip', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
-			"unit" => $this->input->post('unit', true),
 			"telp" => ltrim($this->input->post('telp', true), '0'),
 			"email1" => $this->input->post('email1', true),
 			"email2" => $this->input->post('email2', true),
@@ -365,7 +361,6 @@ class crud_model extends CI_model
 			"nip" => $this->input->post('nip', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
-			"unit" => $this->input->post('unit', true),
 			"telp" => ltrim($this->input->post('telp', true), '0'),
 			"email1" => $this->input->post('email1', true),
 			"email2" => $this->input->post('email2', true),
@@ -405,6 +400,7 @@ class crud_model extends CI_model
 			"nama_penanggung" => $this->input->post('nama_penanggung', true),
 			"telp" => ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
+			"unit" => $this->input->post('unit', true),
 			"status" => $this->input->post('status', true),
 			"edit" => $this->input->post('edit', true),
 			"tanggal" => $this->input->post('tanggal', true),
@@ -441,6 +437,7 @@ class crud_model extends CI_model
 			"nama_penanggung" => $this->input->post('nama_penanggung', true),
 			"telp" => ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
+			"unit" => $this->input->post('unit', true),
 			"status" => $this->input->post('status', true),
 			"edit" => $this->input->post('edit', true),
 			"tanggal" => $this->input->post('tanggal', true),
@@ -887,7 +884,7 @@ class crud_model extends CI_model
 
 	public function gettu()
 	{
-		$this->db->order_by('id', 'ASC');
+		$this->db->order_by('unit', 'ASC');
 		return $this->db->get('unit')->result_array();
 	}
 

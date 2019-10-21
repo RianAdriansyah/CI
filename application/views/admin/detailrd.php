@@ -49,15 +49,6 @@
 					</tr>
 					<tr>
 						<td>
-							<p class="card-text">Unit
-						</td>
-						<td>
-							<p class="card-text">&emsp;:&emsp; <?= $detail['unit']; ?>
-						</td>
-					</tr>
-					<tr>
-					<tr>
-						<td>
 							<p class="card-text">Telepon
 						</td>
 						<td>
@@ -113,6 +104,8 @@
 								<?php
 								if ($detail['status'] == "Belum Dikerjakan") {
 									echo "<span class='badge badge-danger'>Belum Dikerjakan</span>";
+								} elseif ($detail['status'] == "Sedang Dikerjakan") {
+									echo "<span class='badge badge-warning'>Sedang Dikerjakan</span>";
 								} else {
 									echo "<span class='badge badge-success'>Sudah Dikerjakan</span>";
 								}

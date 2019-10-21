@@ -93,6 +93,10 @@
 							<?php
 								if ($row['status'] == "Belum Dikerjakan") {
 									echo "<span class='badge badge-danger'>Belum Dikerjakan</span>";
+								} elseif (
+									$row['status'] == "Sedang Dikerjakan"
+								) {
+									echo "<span class='badge badge-warning'>Sedang Dikerjakan</span>";
 								} else {
 									echo "<span class='badge badge-success'>Sudah Dikerjakan</span>";
 								}

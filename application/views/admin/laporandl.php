@@ -49,6 +49,12 @@
             height: 5px;
             background-color: #f20d0d;
         }
+        .mark3{
+            padding: 2px;
+            color: black;
+            height: 5px;
+            background-color: #FFBD33;
+        }
         tr, td{
             padding: 0px;
         }
@@ -114,10 +120,14 @@
                         <tr>
                             <td class="tbody" width="5%">Status</td>
                             <td class="tbody" width="95%">
-                                : <?php
+                            : <?php
                                     if ($row->status == "Belum Dikerjakan"){
                                         echo "<mark class='mark2'>Belum Dikerjakan</mark>";
-                                    }else{
+                                    }
+                                    elseif ($row->status == "Sedang Dikerjakan"){
+                                        echo "<mark class='mark3'>Sedang Dikerjakan</mark>";   
+                                    }
+                                    else{
                                         echo "<mark class='mark1'>Sudah Dikerjakan</mark>";
                                     }
                                 ?>

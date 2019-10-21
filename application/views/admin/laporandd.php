@@ -31,36 +31,36 @@
             text-align: center;
             padding: 4px;
         }
-
         .title {
             font-size: 30px;
             padding-left: 80px;
         }
-
         .title2 {
             font-size: 10px;
             padding-left: 80px;
         }
-
         .mark1 {
             padding: 2px;
             color: white;
             height: 5px;
             background-color: #32a852;
         }
-
         .mark2 {
             padding: 2px;
             color: white;
             height: 5px;
             background-color: #f20d0d;
         }
-
+        .mark3{
+            padding: 2px;
+            color: black;
+            height: 5px;
+            background-color: #FFBD33;
+        }
         tr,
         td {
             padding: 0px;
         }
-
         header {
             width: 100%;
         }
@@ -130,22 +130,21 @@
                                 <td class="tbody" width="95%">: <?= $row->edit ?></td>
                             </tr>
                             <tr>
-                                <td class="tbody" width="5%">Unit</td>
-                                <td class="tbody" width="95%">: <?= $row->unit ?></td>
-                            </tr>
-                            <tr>
                                 <td class="tbody" width="5%">Status</td>
                                 <td class="tbody" width="95%">
-                                    : <?php
-                                                if ($row->status == "Belum Dikerjakan") {
-                                                    echo "<mark class='mark2'>Belum Dikerjakan</mark>";
-                                                } else {
-                                                    echo "<mark class='mark1'>Sudah Dikerjakan</mark>";
-                                                }
-                                                ?>
+                                : <?php
+                                    if ($row->status == "Belum Dikerjakan"){
+                                        echo "<mark class='mark2'>Belum Dikerjakan</mark>";
+                                    }
+                                    elseif ($row->status == "Sedang Dikerjakan"){
+                                        echo "<mark class='mark3'>Sedang Dikerjakan</mark>";   
+                                    }
+                                    else{
+                                        echo "<mark class='mark1'>Sudah Dikerjakan</mark>";
+                                    }
+                                ?>
                                 </td>
                             </tr>
-
                         </table>
                     </td>
                 </tr>

@@ -89,7 +89,7 @@
 				<div class="form-row">
 					<div class="form-group col-md">
 						<label for="keluhan">Deskripsi keluhan</label>
-						<textarea class="form-control" id="keluhan" name="keluhan" rows="4"></textarea>
+						<textarea class="form-control" id="keluhan" name="keluhan" rows="4" placeholder="diisi dengan jelas"></textarea>
 					</div>
 				</div>
 				<div class="form-row">

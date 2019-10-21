@@ -95,20 +95,6 @@
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md">
-								<label for="unit">Unit</label>
-								<select id="unit" name="unit" class="form-control">
-									<?php foreach ($unit as $u) : ?>
-										<?php if ($u['unit'] == $edit['unit']) : ?>
-											<option value="<?= $u['unit']; ?>" selected><?= $u['unit']; ?></option>
-										<?php else : ?>
-											<option value="<?= $u['unit']; ?>"><?= $u['unit']; ?></option>
-										<?php endif; ?>
-									<?php endforeach; ?>
-								</select>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="form-group col-md">
 								<a type="button" class="btn btn-primary btn-block" href="<?= base_url('/'); ?>admin/rd"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
 							</div>
 							<div class="form-group col-md">
