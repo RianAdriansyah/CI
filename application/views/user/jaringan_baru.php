@@ -1,3 +1,9 @@
+<style>
+.card{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+</style>
+
 <div class="container">
 	<div class="card" style="margin-top: 40px;margin-bottom: 40px">
 		<div class="card-header">

@@ -1,0 +1,74 @@
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+    color: #242424;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #41b047;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #308534;
+}
+
+.home1 {
+    padding: 0px;
+    height: 700px;		    
+}
+
+.home2{
+    background-color: white;
+    text-align: center;
+    padding: 70px 50px 10px 50px;
+}
+
+.home3{
+    color: #9c9c9c;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 130px;
+}
+
+.homead1 {
+    padding: 0px;		    
+}
+
+.homead2{
+    background-color: white;
+    text-align: center;
+    padding: 100px 50px 10px 50px;
+}
+
+.homead3{
+    color: #9c9c9c;
+    font-size: 15px;
+    text-align: right;
+    margin-top: 220px;
+}
+
+.judul{
+    font-size: 60px;
+}
+
+.homebutton{
+    font-size: 14px;
+    margin-bottom:10px;
+}
+

@@ -19,13 +19,14 @@ pemisahan antara fakultas dan unit uin (sudah)
 penambahan logo di header pdf laporan (sudah)
 tambah kolom +62 di nomor telepon (sudah)
 
+--BARU--
 
-Tambah pilihan status Sedang Dikerjakan
+Tambah pilihan status Sedang Dikerjakan(sudah)
 ada verifikasi form ke email divisi
-select tahun di pdf
+select tahun di pdf(sudah)
 di depan hanya pendaftaran, keluhan,pengajuan layanan
 
-unit
+unit (sudah)
 umum
 ulp
 humas
@@ -52,7 +53,7 @@ REKTORAT
 
 Fakultas diisi unit gabisa di isi dan sebaliknya
 
-dibagian deskripsi keluhan ditambah placeholder "diisi dengan jelas keluhannya"
+dibagian deskripsi keluhan ditambah placeholder "diisi dengan jelas keluhannya"(sudah)
 
 Wassalamualaikum!
 

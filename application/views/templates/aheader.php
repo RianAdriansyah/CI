@@ -25,8 +25,14 @@
     <link rel="stylesheet" href="<?= base_url('/'); ?>assets/css/style2.css">
     <link rel="stylesheet" href="<?= base_url('/'); ?>assets/dataTables/datatables.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("/assets/css/style.css"); ?>">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'> -->
     <script src="https://kit.fontawesome.com/79bf77632a.js" crossorigin="anonymous"></script>
+
+    <style>
+*{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+</style>
 
 </head>
 

@@ -7,12 +7,21 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
           Pilih Layanan Lain
         </a>
         <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item bg-dark" style="color: white" href="<?= base_url(); ?>user/daftar_mahasiswa">Pendaftaran Email Mahasiswa</a>
+          
+          <a class="dropdown-item bg-dark text-white"href="<?= base_url(); ?>user/pendaftaran">Form Pendaftaran</a>
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item bg-dark text-white"href="<?= base_url(); ?>user/pengajuan">Form Pengajuan Layanan</a>
+
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item bg-dark text-white"href="<?= base_url(); ?>user/keluhan">Form Keluhan</a>
+          <!-- <a class="dropdown-item bg-dark" style="color: white" href="<?= base_url(); ?>user/daftar_mahasiswa">Pendaftaran Email Mahasiswa</a>
           <a class="dropdown-item bg-dark" style="color: white" href="<?= base_url(); ?>user/daftar_dosen">Pendaftaran Email Dosen</a>
           <a class="dropdown-item bg-dark" style="color: white" href="<?= base_url(); ?>user/daftar_lembaga">Pendaftaran Email Lembaga</a>
           <div class="dropdown-divider"></div>
@@ -24,7 +33,7 @@
           <a class="dropdown-item bg-dark" style="color: white" href="<?= base_url(); ?>user/kunjungan_dc">Kunjungan Data center</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item bg-dark" style="color: white" href="<?= base_url(); ?>user/keluhan">Formulir Keluhan</a>
-          <a class="dropdown-item bg-dark" style="color: white" href="<?= base_url(); ?>user/jaringan_baru">Permohonan Pemasangan Jaringan Baru</a>
+          <a class="dropdown-item bg-dark" style="color: white" href="<?= base_url(); ?>user/jaringan_baru">Permohonan Pemasangan Jaringan Baru</a> -->
         </div>
       </li>
     </ul>

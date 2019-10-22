@@ -12,11 +12,11 @@
         Anda yakin ingin logout ?
       </div>
       <div class="modal-footer">
-        <div class="col-sm-6">
-          <a href="#" data-dismiss="modal" class="btn btn-danger btn-block homebutton" role="button">Tidak</a>
+        <div class="col-sm-6 mx-auto">
+          <a href="#" data-dismiss="modal" class="btn btn-danger btn-block homebutton rounded" role="button">Tidak</a>
         </div>
-        <div class="col-sm-6">
-          <a href="<?= base_url(); ?>admin/logout" class="btn btn-primary btn-block homebutton" role="button">Iya</a>
+        <div class="col-sm-6 mx-auto">
+          <a href="<?= base_url(); ?>admin/logout" class="btn btn-primary btn-block homebutton rounded" role="button">Iya</a>
         </div>
       </div>
     </div>

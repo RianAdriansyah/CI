@@ -1,3 +1,8 @@
+<style>
+*{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+</style>
 
 	<div class="container-fluid">
 		<div class="row">
@@ -23,12 +28,24 @@
 
 				<br>
 		    	<form action="" method="post">
+				  
 				  <div class="form-group">
-				    <input type="text" class="form-control" id="user" name="user" placeholder="Masukkan username">
-				  </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="far fa-user-circle"></i></div>
+                            </div>
+                            <input type="text" class="form-control" id="user" name="user" placeholder="Username">
+                        </div>
+                    </div>
 				  <div class="form-group">
-				    <input type="password" class="form-control" id="pass" name="pass" placeholder="Masukkan Password">
-				  </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-key"></i></div>
+                            </div>
+                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+                        </div>
+                    </div>
+				  
 				  <button type="submit" class="btn btn-success btn-block">Login</button>
 				</form>
 		    	<div class="homead3"><a href="<?= base_url(); ?>user/about" style="text-decoration: none;color: gray;">About Us</a>&emsp; Copyright © UIN Sunan Gunung Djati Bandung 2019</div>

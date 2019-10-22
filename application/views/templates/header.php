@@ -18,7 +18,7 @@
   <link rel="shortcut icon" href="<?= base_url('/'); ?>assets/img/logo.png">
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url("/assets/css/style.css"); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url("/assets/css/stylee.css"); ?>">
 
   <script src="https://kit.fontawesome.com/79bf77632a.js" crossorigin="anonymous"></script>
 

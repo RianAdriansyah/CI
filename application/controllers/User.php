@@ -36,6 +36,14 @@ class User extends CI_Controller
 		$this->load->view('user/pendaftaran', $data);
 		$this->load->view('templates/footer');
 	}
+	public function pengajuan()
+	{
+		$data['judul'] = 'Pengajuan Layanan | SIAP UINSGD';
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/usernav');
+		$this->load->view('user/pengajuan', $data);
+		$this->load->view('templates/footer');
+	}
 
 	/*============================================================================================================================================================================================================================*/
 
