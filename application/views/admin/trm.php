@@ -75,6 +75,7 @@
                 <input type="hidden" id="m" name="m" value="<?= date("m") ?>">
                 <input type="hidden" id="y" name="y" value="<?= date("Y") ?>">
                 <input type="hidden" id="jam" name="jam" value="<?= date("H:i:s") ?>">
+                <input type="hidden" id="divisi" name="divisi" value="Pelayanan">
                 <div class="form-row">
                     <div class="form-group col-md">
                         <a type="button" class="btn btn-primary btn-block" href="<?= base_url('/'); ?>admin/rm"><i class="fa fa-chevron-circle-left"></i> Kembali</a>

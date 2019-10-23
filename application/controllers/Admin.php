@@ -201,6 +201,7 @@ class Admin extends CI_Controller
 			'judul' => 'Daftar Email Mahasiswa | SIAP UINSGD',
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
+			'divisi' => $this->crud_model->get_divisi(),
 			'fakultas_selected' => '',
 			'jurusan_selected' => '',
 		);
@@ -222,6 +223,7 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
 		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
 		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+		$this->form_validation->set_rules('divisi', 'Divisi', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/aheader', $data);
@@ -230,9 +232,49 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->daftarm();
 			$this->session->set_flashdata('te', 'Pendaftaran Email Mahasiswa');
+
+			// Konfigurasi email
+			$config = [
+				'mailtype'  => 'html',
+				'charset'   => 'utf-8',
+				'protocol'  => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_user' => 'mailadmin1@uinsgd.ac.id',    // Ganti dengan email gmail kamu
+				'smtp_pass' => 'sindoro2017',      // Password gmail kamu
+				'smtp_port' => 465,
+				'crlf'      => "\r\n",
+				'newline'   => "\r\n"
+			];
+
+			// Load library email dan konfigurasinya
+			$this->load->library('email', $config);
+
+			// Email dan nama pengirim
+			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
+
+			// Email penerima
+			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+
+			// Lampiran email, isi dengan url/path file
+			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+			// Subject email
+			$this->email->subject($data['judul']);
+
+			// Isi email
+			$this->email->message('Mahasiswa Mendaftar Email ! Cek <a class="btn btn-primary" href="localhost/ci/admin/dm">Disini</a>');
+
+			// Tampilkan pesan sukses atau error
+			if ($this->email->send()) {
+				echo 'Sukses! email berhasil dikirim.';
+			} else {
+				echo 'Gagal!';
+			}
+
 			redirect('admin/dm');
 		}
 	}
+
 
 	public function rm()
 	{
@@ -294,6 +336,7 @@ class Admin extends CI_Controller
 			'judul' => 'Reset Password Mahasiswa | SIAP UINSGD',
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
+			'divisi' => $this->crud_model->get_divisi(),
 			'fakultas_selected' => '',
 			'jurusan_selected' => '',
 		);
@@ -323,6 +366,43 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->resetm();
 			$this->session->set_flashdata('trm', 'Form Reset Password Mahasiswa');
+			// Konfigurasi email
+			$config = [
+				'mailtype'  => 'html',
+				'charset'   => 'utf-8',
+				'protocol'  => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_user' => 'mailadmin1@uinsgd.ac.id',    // Ganti dengan email gmail kamu
+				'smtp_pass' => 'sindoro2017',      // Password gmail kamu
+				'smtp_port' => 465,
+				'crlf'      => "\r\n",
+				'newline'   => "\r\n"
+			];
+
+			// Load library email dan konfigurasinya
+			$this->load->library('email', $config);
+
+			// Email dan nama pengirim
+			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
+
+			// Email penerima
+			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+
+			// Lampiran email, isi dengan url/path file
+			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+			// Subject email
+			$this->email->subject($data['judul']);
+
+			// Isi email
+			$this->email->message('Mahasiswa Mereset Password Email ! Cek <a class="btn btn-primary" href="localhost/ci/admin/rm">Disini</a>');
+
+			// Tampilkan pesan sukses atau error
+			if ($this->email->send()) {
+				echo 'Sukses! email berhasil dikirim.';
+			} else {
+				echo 'Gagal!';
+			}
 			redirect('admin/rm');
 		}
 	}
@@ -386,6 +466,7 @@ class Admin extends CI_Controller
 			'judul' => 'Daftar Email Dosen | SIAP UINSGD',
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
+			'divisi' => $this->crud_model->get_divisi(),
 			'fakultas_selected' => '',
 			'jurusan_selected' => '',
 		);
@@ -417,6 +498,43 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->daftard();
 			$this->session->set_flashdata('td', 'Pendaftaran Email Dosen');
+			// Konfigurasi email
+			$config = [
+				'mailtype'  => 'html',
+				'charset'   => 'utf-8',
+				'protocol'  => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_user' => 'mailadmin1@uinsgd.ac.id',    // Ganti dengan email gmail kamu
+				'smtp_pass' => 'sindoro2017',      // Password gmail kamu
+				'smtp_port' => 465,
+				'crlf'      => "\r\n",
+				'newline'   => "\r\n"
+			];
+
+			// Load library email dan konfigurasinya
+			$this->load->library('email', $config);
+
+			// Email dan nama pengirim
+			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
+
+			// Email penerima
+			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+
+			// Lampiran email, isi dengan url/path file
+			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+			// Subject email
+			$this->email->subject($data['judul']);
+
+			// Isi email
+			$this->email->message('Dosen Mendaftar Email ! Cek <a class="btn btn-primary" href="localhost/ci/admin/dd">Disini</a>');
+
+			// Tampilkan pesan sukses atau error
+			if ($this->email->send()) {
+				echo 'Sukses! email berhasil dikirim.';
+			} else {
+				echo 'Gagal!';
+			}
 			redirect('admin/dd');
 		}
 	}
@@ -428,6 +546,7 @@ class Admin extends CI_Controller
 			'judul' => 'Formulir Reset Password Email Dosen | SIAP UINSGD',
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
+			'divisi' => $this->crud_model->get_divisi(),
 			'fakultas_selected' => '',
 			'jurusan_selected' => '',
 		);
@@ -459,6 +578,45 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->resetd();
 			$this->session->set_flashdata('trd', 'Reset Pasword Email Dosen');
+
+			// Konfigurasi email
+			$config = [
+				'mailtype'  => 'html',
+				'charset'   => 'utf-8',
+				'protocol'  => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_user' => 'mailadmin1@uinsgd.ac.id',    // Ganti dengan email gmail kamu
+				'smtp_pass' => 'sindoro2017',      // Password gmail kamu
+				'smtp_port' => 465,
+				'crlf'      => "\r\n",
+				'newline'   => "\r\n"
+			];
+
+			// Load library email dan konfigurasinya
+			$this->load->library('email', $config);
+
+			// Email dan nama pengirim
+			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
+
+			// Email penerima
+			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+
+			// Lampiran email, isi dengan url/path file
+			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+			// Subject email
+			$this->email->subject($data['judul']);
+
+			// Isi email
+			$this->email->message('Dosen Mereset Password Email ! Cek <a class="btn btn-primary" href="localhost/ci/admin/rd">Disini</a>');
+
+			// Tampilkan pesan sukses atau error
+			if ($this->email->send()) {
+				echo 'Sukses! email berhasil dikirim.';
+			} else {
+				echo 'Gagal!';
+			}
+
 			redirect('admin/rd');
 		}
 	}
@@ -572,7 +730,8 @@ class Admin extends CI_Controller
 	{
 		$data = array(
 			'judul' => 'Daftar Email Mahasiswa | SIAP UINSGD',
-			'unit' => $this->crud_model->gettu()
+			'unit' => $this->crud_model->gettu(),
+			'divisi' => $this->crud_model->get_divisi()
 		);
 
 		if (!$this->session->userdata('level') == 0) {
@@ -599,6 +758,45 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->resetl();
 			$this->session->set_flashdata('trl', 'Reset Pasword Email Lembaga');
+
+			// Konfigurasi email
+			$config = [
+				'mailtype'  => 'html',
+				'charset'   => 'utf-8',
+				'protocol'  => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_user' => 'mailadmin1@uinsgd.ac.id',    // Ganti dengan email gmail kamu
+				'smtp_pass' => 'sindoro2017',      // Password gmail kamu
+				'smtp_port' => 465,
+				'crlf'      => "\r\n",
+				'newline'   => "\r\n"
+			];
+
+			// Load library email dan konfigurasinya
+			$this->load->library('email', $config);
+
+			// Email dan nama pengirim
+			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
+
+			// Email penerima
+			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+
+			// Lampiran email, isi dengan url/path file
+			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+			// Subject email
+			$this->email->subject($data['judul']);
+
+			// Isi email
+			$this->email->message('Lembaga Mereset Password Email ! Cek <a class="btn btn-primary" href="localhost/ci/admin/rl">Disini</a>');
+
+			// Tampilkan pesan sukses atau error
+			if ($this->email->send()) {
+				echo 'Sukses! email berhasil dikirim.';
+			} else {
+				echo 'Gagal!';
+			}
+
 			redirect('admin/rl');
 		}
 	}
@@ -606,8 +804,9 @@ class Admin extends CI_Controller
 	public function tl()
 	{
 		$data = array(
-			'judul' => 'Daftar Email Mahasiswa | SIAP UINSGD',
-			'unit' => $this->crud_model->gettu()
+			'judul' => 'Daftar Email Lembaga | SIAP UINSGD',
+			'unit' => $this->crud_model->gettu(),
+			'divisi' => $this->crud_model->get_divisi()
 		);
 
 		if (!$this->session->userdata('level') == 0) {
@@ -626,8 +825,7 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
 		$this->form_validation->set_rules('unit', 'Unit', 'required');
-		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
-		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/aheader', $data);
@@ -636,6 +834,45 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->daftarl();
 			$this->session->set_flashdata('tl', 'Pendaftaran Email Lembaga');
+
+			// Konfigurasi email
+			$config = [
+				'mailtype'  => 'html',
+				'charset'   => 'utf-8',
+				'protocol'  => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_user' => 'mailadmin1@uinsgd.ac.id',    // Ganti dengan email gmail kamu
+				'smtp_pass' => 'sindoro2017',      // Password gmail kamu
+				'smtp_port' => 465,
+				'crlf'      => "\r\n",
+				'newline'   => "\r\n"
+			];
+
+			// Load library email dan konfigurasinya
+			$this->load->library('email', $config);
+
+			// Email dan nama pengirim
+			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
+
+			// Email penerima
+			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+
+			// Lampiran email, isi dengan url/path file
+			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+			// Subject email
+			$this->email->subject($data['judul']);
+
+			// Isi email
+			$this->email->message('Lembaga Mendaftar Email ! Cek <a class="btn btn-primary" href="localhost/ci/admin/dl">Disini</a>');
+
+			// Tampilkan pesan sukses atau error
+			if ($this->email->send()) {
+				echo 'Sukses! email berhasil dikirim.';
+			} else {
+				echo 'Gagal!';
+			}
+
 			redirect('admin/dl');
 		}
 	}
@@ -855,6 +1092,11 @@ class Admin extends CI_Controller
 
 	public function tgs()
 	{
+		$data = array(
+			'judul' => 'Permohonan Ganti Server Data Center | SIAP UINSGD',
+			'divisi' => $this->crud_model->get_divisi()
+		);
+
 		if (!$this->session->userdata('level') == 0) {
 			redirect('admin');
 		}
@@ -879,6 +1121,45 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->ganti_server();
 			$this->session->set_flashdata('tgs', 'Pergantian Server Data Center');
+
+			// Konfigurasi email
+			$config = [
+				'mailtype'  => 'html',
+				'charset'   => 'utf-8',
+				'protocol'  => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_user' => 'mailadmin1@uinsgd.ac.id',    // Ganti dengan email gmail kamu
+				'smtp_pass' => 'sindoro2017',      // Password gmail kamu
+				'smtp_port' => 465,
+				'crlf'      => "\r\n",
+				'newline'   => "\r\n"
+			];
+
+			// Load library email dan konfigurasinya
+			$this->load->library('email', $config);
+
+			// Email dan nama pengirim
+			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
+
+			// Email penerima
+			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+
+			// Lampiran email, isi dengan url/path file
+			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+			// Subject email
+			$this->email->subject($data['judul']);
+
+			// Isi email
+			$this->email->message('Permohonan Ganti Server ! Cek <a class="btn btn-primary" href="localhost/ci/admin/gs">Disini</a>');
+
+			// Tampilkan pesan sukses atau error
+			if ($this->email->send()) {
+				echo 'Sukses! email berhasil dikirim.';
+			} else {
+				echo 'Gagal!';
+			}
+
 			redirect('admin/gs');
 		}
 	}
@@ -937,6 +1218,11 @@ class Admin extends CI_Controller
 
 	public function tdc()
 	{
+		$data = array(
+			'judul' => 'Kunjungan Data Center | SIAP UINSGD',
+			'divisi' => $this->crud_model->get_divisi()
+		);
+
 		if (!$this->session->userdata('level') == 0) {
 			redirect('admin');
 		}
@@ -961,6 +1247,45 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->kunjungan_dc();
 			$this->session->set_flashdata('tdc', 'Kunjungan Server Data Center');
+
+			// Konfigurasi email
+			$config = [
+				'mailtype'  => 'html',
+				'charset'   => 'utf-8',
+				'protocol'  => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_user' => 'mailadmin1@uinsgd.ac.id',    // Ganti dengan email gmail kamu
+				'smtp_pass' => 'sindoro2017',      // Password gmail kamu
+				'smtp_port' => 465,
+				'crlf'      => "\r\n",
+				'newline'   => "\r\n"
+			];
+
+			// Load library email dan konfigurasinya
+			$this->load->library('email', $config);
+
+			// Email dan nama pengirim
+			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
+
+			// Email penerima
+			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+
+			// Lampiran email, isi dengan url/path file
+			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+			// Subject email
+			$this->email->subject($data['judul']);
+
+			// Isi email
+			$this->email->message('Kunjungan Data Center ! Cek <a class="btn btn-primary" href="localhost/ci/admin/dc">Disini</a>');
+
+			// Tampilkan pesan sukses atau error
+			if ($this->email->send()) {
+				echo 'Sukses! email berhasil dikirim.';
+			} else {
+				echo 'Gagal!';
+			}
+
 			redirect('admin/dc');
 		}
 	}
@@ -1019,6 +1344,11 @@ class Admin extends CI_Controller
 
 	public function tjb()
 	{
+		$data = array(
+			'judul' => 'Permohonan Pemasangan Jaringan Baru | SIAP UINSGD',
+			'divisi' => $this->crud_model->get_divisi()
+		);
+
 		if (!$this->session->userdata('level') == 0) {
 			redirect('admin');
 		}
@@ -1043,6 +1373,45 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->jaringan_baru();
 			$this->session->set_flashdata('tjb', 'Pemasangan Jaringan Baru');
+
+			// Konfigurasi email
+			$config = [
+				'mailtype'  => 'html',
+				'charset'   => 'utf-8',
+				'protocol'  => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_user' => 'mailadmin1@uinsgd.ac.id',    // Ganti dengan email gmail kamu
+				'smtp_pass' => 'sindoro2017',      // Password gmail kamu
+				'smtp_port' => 465,
+				'crlf'      => "\r\n",
+				'newline'   => "\r\n"
+			];
+
+			// Load library email dan konfigurasinya
+			$this->load->library('email', $config);
+
+			// Email dan nama pengirim
+			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
+
+			// Email penerima
+			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+
+			// Lampiran email, isi dengan url/path file
+			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+			// Subject email
+			$this->email->subject($data['judul']);
+
+			// Isi email
+			$this->email->message('Permohonan Pemasangan Jaringan Baru ! Cek <a class="btn btn-primary" href="localhost/ci/admin/dd">Disini</a>');
+
+			// Tampilkan pesan sukses atau error
+			if ($this->email->send()) {
+				echo 'Sukses! email berhasil dikirim.';
+			} else {
+				echo 'Gagal!';
+			}
+
 			redirect('admin/jb');
 		}
 	}

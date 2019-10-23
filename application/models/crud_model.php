@@ -14,6 +14,7 @@ class crud_model extends CI_model
 			"nim" => $this->input->post('nim', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"divisi" => $this->input->post('divisi', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
 			"status" => $this->input->post('status', true),
@@ -35,6 +36,7 @@ class crud_model extends CI_model
 			"nim" => $this->input->post('nim', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"divisi" => $this->input->post('divisi', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
 			"status" => $this->input->post('status', true),
@@ -56,6 +58,7 @@ class crud_model extends CI_model
 			"nip" => $this->input->post('nip', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"divisi" => $this->input->post('divisi', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email1" => $this->input->post('email1', true),
 			"email2" => $this->input->post('email2', true),
@@ -78,6 +81,7 @@ class crud_model extends CI_model
 			"nip" => $this->input->post('nip', true),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"divisi" => $this->input->post('divisi', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email1" => $this->input->post('email1', true),
 			"email2" => $this->input->post('email2', true),
@@ -100,6 +104,7 @@ class crud_model extends CI_model
 			"nama_penanggung" => $this->input->post('nama_penanggung', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
+			"divisi" => $this->input->post('divisi', true),
 			"unit" => $this->input->post('unit', true),
 			"status" => $this->input->post('status', true),
 			"edit" => $this->input->post('edit', true),
@@ -120,6 +125,7 @@ class crud_model extends CI_model
 			"nama_penanggung" => $this->input->post('nama_penanggung', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
+			"divisi" => $this->input->post('divisi', true),
 			"unit" => $this->input->post('unit', true),
 			"status" => $this->input->post('status', true),
 			"edit" => $this->input->post('edit', true),
@@ -165,6 +171,7 @@ class crud_model extends CI_model
 			"ni" => $this->input->post('ni', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
+			"divisi" => $this->input->post('divisi', true),
 			"permohonan" => $this->input->post('permohonan', true),
 			"status" => $this->input->post('status', true),
 			"solusi" => $this->input->post('solusi', true),
@@ -186,6 +193,7 @@ class crud_model extends CI_model
 			"ni" => $this->input->post('ni', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
+			"divisi" => $this->input->post('divisi', true),
 			"permohonan" => $this->input->post('permohonan', true),
 			"status" => $this->input->post('status', true),
 			"solusi" => $this->input->post('solusi', true),
@@ -207,6 +215,7 @@ class crud_model extends CI_model
 			"ni" => $this->input->post('ni', true),
 			"telp" => '62' . ltrim($this->input->post('telp', true), '0'),
 			"email" => $this->input->post('email', true),
+			"divisi" => $this->input->post('divisi', true),
 			"permohonan" => $this->input->post('permohonan', true),
 			"status" => $this->input->post('status', true),
 			"solusi" => $this->input->post('solusi', true),
@@ -259,6 +268,15 @@ class crud_model extends CI_model
 
 		$this->db->where('id', $this->input->post('id'));
 		$this->db->update('daftar_email_mahasiswa', $data);
+	}
+
+	public function get_divisi()
+	{
+		return $this->db->get('divisi')->result_array();
+	}
+	public function get_divisiid($id)
+	{
+		return $this->db->get_where('divisi', ['id' => $id])->row_array();
 	}
 
 	public function getrm()

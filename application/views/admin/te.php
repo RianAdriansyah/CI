@@ -91,6 +91,7 @@
                 <input type="hidden" id="m" name="m" value="<?= date("m") ?>">
                 <input type="hidden" id="y" name="y" value="<?= date("Y") ?>">
                 <input type="hidden" id="jam" name="jam" value="<?= date("H:i:s") ?>">
+                <input type="hidden" id="divisi" name="divisi" value="Pelayanan">
                 <br>
                 <div class="form-row">
                     <div class="form-group col-md">

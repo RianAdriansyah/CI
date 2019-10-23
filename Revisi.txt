@@ -24,7 +24,7 @@ tambah kolom +62 di nomor telepon (sudah)
 Tambah pilihan status Sedang Dikerjakan(sudah)
 ada verifikasi form ke email divisi
 select tahun di pdf(sudah)
-di depan hanya pendaftaran, keluhan,pengajuan layanan
+di depan hanya pendaftaran, keluhan,pengajuan layanan(sudah)
 
 unit (sudah)
 umum

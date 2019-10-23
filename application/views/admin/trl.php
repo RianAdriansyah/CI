@@ -2,7 +2,7 @@
     <div class="card" style="margin-top: 40px; margin-bottom: 40px">
         <div class="card-header">
             <center>
-                <h1>FORMULIR PENDAFTARAN EMAIL LEMBAGA</h1>
+                <h1>FORMULIR RESET PASSWORD EMAIL LEMBAGA</h1>
             </center>
         </div>
         <div class="card-body">
@@ -62,6 +62,8 @@
                 <input type="hidden" id="m" name="m" value="<?= date("m") ?>">
                 <input type="hidden" id="y" name="y" value="<?= date("Y") ?>">
                 <input type="hidden" id="jam" name="jam" value="<?= date("H:i:s") ?>">
+                <input type="hidden" id="divisi" name="divisi" value="Pelayanan">
+
                 <div class="form-row">
                     <div class="form-group col-md">
                         <a type="button" class="btn btn-primary btn-block" href="<?= base_url('/'); ?>admin/dl"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
