@@ -29,10 +29,10 @@
     <script src="https://kit.fontawesome.com/79bf77632a.js" crossorigin="anonymous"></script>
 
     <style>
-*{
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-</style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
 
 </head>
 
@@ -116,6 +116,9 @@
                         </li>
                         <li>
                             <a href="<?= base_url('/'); ?>admin/tpk" data-toggle="tooltip" data-placement="right" title="Tambah Perihal Keluhan"> <i class="menu-icon fa fa-plus-circle"></i>Perihal Keluhan</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('/'); ?>admin/tdivisi" data-toggle="tooltip" data-placement="right" title="Tambah Divisi"> <i class="menu-icon fa fa-plus-circle"></i>Divisi</a>
                         </li>
                     <?php endif; ?>
                     <?php if (!$admin['level'] == 0) : ?>

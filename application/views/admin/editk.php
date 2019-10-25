@@ -26,14 +26,18 @@
 							<div class="form-group col-md">
 								<label for="nama">Nama Lengkap</label>
 								<input value="<?= $edit['nama'] ?>" type="text" class="form-control" id="nama" name="nama">
-								<?php date_default_timezone_set('Asia/Jakarta'); ?>
-								<input type="hidden" name="id" value="<?= $edit['id'] ?>">
-								<input type="hidden" name="tanggal" value="<?= $edit['tanggal'] ?>">
-								<input type="hidden" id="m" name="m" value="<?= $edit['m'] ?>">
-								<input type="hidden" id="y" name="y" value="<?= $edit['y'] ?>">
-								<input type="hidden" name="jam" value="<?= $edit['jam'] ?>">
-								<input type="hidden" id="edit" name="edit" value="<?php echo date("d.m.Y H:i:s") . (' oleh ') . $admin['nama'] ?>">
 							</div>
+							<div class="form-group col-md">
+								<label for="email">Email</label>
+								<input value="<?= $edit['email'] ?>" type="text" class="form-control" id="email" name="email">
+							</div>
+							<?php date_default_timezone_set('Asia/Jakarta'); ?>
+							<input type="hidden" name="id" value="<?= $edit['id'] ?>">
+							<input type="hidden" name="tanggal" value="<?= $edit['tanggal'] ?>">
+							<input type="hidden" id="m" name="m" value="<?= $edit['m'] ?>">
+							<input type="hidden" id="y" name="y" value="<?= $edit['y'] ?>">
+							<input type="hidden" name="jam" value="<?= $edit['jam'] ?>">
+							<input type="hidden" id="edit" name="edit" value="<?php echo date("d.m.Y H:i:s") . (' oleh ') . $admin['nama'] ?>">
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md">
@@ -52,7 +56,7 @@
 									<?php
 									foreach ($fakultas as $f) {
 										?>
-										<option <?php echo $fakultas_selected == $f->fakultas ? 'selected="selected"' : '' ?>value="<?php echo $f->fakultas ?>"><?php echo $f->fakultas ?></option>
+										<option <?php echo $edit['fakultas'] == $f->fakultas ? 'selected="selected"' : '' ?>value="<?php echo $f->fakultas ?>"><?php echo $f->fakultas ?></option>
 									<?php
 									}
 									?>
@@ -64,7 +68,7 @@
 									<?php
 									foreach ($jurusan as $j) {
 										?>
-										<option <?php echo $jurusan_selected == $j->jfakultas ? 'selected="selected"' : '' ?>class="<?php echo $j->jfakultas ?>" value="<?php echo $j->jurusan ?>"><?php echo $j->jurusan ?></option>
+										<option <?php echo $edit['jurusan'] == $j->jurusan ? 'selected="selected"' : '' ?>class="<?php echo $j->jfakultas ?>" value="<?php echo $j->jurusan ?>"><?php echo $j->jurusan ?></option>
 									<?php
 									}
 									?>
@@ -72,20 +76,42 @@
 							</div>
 						</div>
 						<div class="form-row">
+
 							<div class="form-group col-md">
-								<label for="email">Email</label>
-								<input value="<?= $edit['email'] ?>" type="text" class="form-control" id="email" name="email">
+								<label for="unit">Unit</label>
+								<select id="unit" name="unit" class="form-control">
+									<?php foreach ($unit as $u) : ?>
+										<?php if ($u['unit'] == $edit['unit']) : ?>
+											<option value="<?= $u['unit']; ?>" selected><?= $u['unit']; ?></option>
+										<?php else : ?>
+											<option value="<?= $u['unit']; ?>"><?= $u['unit']; ?></option>
+										<?php endif; ?>
+									<?php endforeach; ?>
+								</select>
+							</div>
+							<div class="form-group col-md">
+
+								<label for="divisi">Divisi</label>
+								<select id="divisi" name="divisi" class="form-control">
+									<?php
+									foreach ($divisi as $f) {
+										?>
+										<option <?php echo $edit['divisi'] == $f->namadivisi ? 'selected="selected"' : '' ?>value="<?php echo $f->namadivisi ?>"><?php echo $f->namadivisi ?></option>
+									<?php
+									}
+									?>
+								</select>
 							</div>
 							<div class="form-group col-md">
 								<label for="perihal">Perihal Keluhan</label>
 								<select id="perihal" name="perihal" class="form-control">
-									<?php foreach ($perihal as $k) : ?>
-										<?php if ($k['perihal'] == $edit['perihal']) : ?>
-											<option value="<?= $k['perihal']; ?>" selected><?= $k['perihal']; ?></option>
-										<?php else : ?>
-											<option value="<?= $k['perihal']; ?>"><?= $k['perihal']; ?></option>
-										<?php endif; ?>
-									<?php endforeach; ?>
+									<?php
+									foreach ($perihal as $j) {
+										?>
+										<option <?php echo $edit['perihal'] == $j->perihal ? 'selected="selected"' : '' ?>class="<?php echo $j->pdivisi ?>" value="<?php echo $j->perihal ?>"><?php echo $j->perihal ?></option>
+									<?php
+									}
+									?>
 								</select>
 							</div>
 						</div>
@@ -115,6 +141,7 @@
 								</select>
 							</div>
 						</div>
+
 						<div class="form-row">
 							<div class="form-group col-md">
 								<a type="button" class="btn btn-primary btn-block" href="<?= base_url('/'); ?>admin/k"><i class="fa fa-chevron-circle-left"></i> Kembali</a>

@@ -957,6 +957,7 @@ class Admin extends CI_Controller
 		$this->db->like('nama', $data['keyword']);
 		$this->db->or_like('ni', $data['keyword']);
 		$this->db->or_like('fakultas', $data['keyword']);
+		$this->db->or_like('unit', $data['keyword']);
 		$this->db->or_like('tanggal', $data['keyword']);
 		$this->db->or_like('perihal', $data['keyword']);
 		$this->db->or_like('status', $data['keyword']);
@@ -986,10 +987,13 @@ class Admin extends CI_Controller
 
 		$data = array(
 			'judul' => 'Formulir Keluhan | SIAP UINSGD',
-			'perihal' => $this->crud_model->gettpk(),
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
 			'unit' => $this->crud_model->gettu(),
+			'divisi' => $this->crud_model->get_divisi2(),
+			'perihal' => $this->crud_model->get_pk(),
+			'divisi_selected' => '',
+			'perihal_selected' => '',
 			'fakultas_selected' => '',
 			'jurusan_selected' => '',
 		);
@@ -1010,10 +1014,11 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[13]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
 		$this->form_validation->set_rules('keluhan', 'Deskripsi Keluhan', 'required');
-		$this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
-		$this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
-		$this->form_validation->set_rules('unit', 'Unit', 'required');
+		// $this->form_validation->set_rules('fakultas', 'Fakultas', 'required');
+		// $this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+		// $this->form_validation->set_rules('unit', 'Unit', 'required');
 		$this->form_validation->set_rules('perihal', 'Perihal Keluhan', 'required');
+		$this->form_validation->set_rules('divisi', 'Divisi', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/aheader', $data);
@@ -1022,6 +1027,57 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->keluh();
 			$this->session->set_flashdata('tk', 'Form Keluhan');
+
+			// Konfigurasi email
+			$config = [
+				'mailtype'  => 'html',
+				'charset'   => 'utf-8',
+				'protocol'  => 'smtp',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_user' => 'mailadmin1@uinsgd.ac.id',    // Ganti dengan email gmail kamu
+				'smtp_pass' => 'sindoro2017',      // Password gmail kamu
+				'smtp_port' => 465,
+				'crlf'      => "\r\n",
+				'newline'   => "\r\n"
+			];
+
+			// Load library email dan konfigurasinya
+			$this->load->library('email', $config);
+
+			// Email dan nama pengirim
+			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
+
+			// Email penerima
+			if ($this->input->post('divisi') == "Pangkalan Data") {
+				$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+			} elseif ($this->input->post('divisi') == "Infrastruktur & Jaringan") {
+				$this->email->to('tesaplikasici@gmail.com'); // Ganti dengan email tujuan kamu
+			} elseif ($this->input->post('divisi') == "Pengembangan Aplikasi") {
+				$this->email->to('assalaamsmk@gmail.com'); // Ganti dengan email tujuan kamu
+			} elseif ($this->input->post('divisi') == "Layanan & Administrasi Umum") {
+				$this->email->to('tesaplikasici@gmail.com'); // Ganti dengan email tujuan kamu
+			} elseif ($this->input->post('divisi') == "Monitoring & Security") {
+				$this->email->to('tesaplikasici@gmail.com'); // Ganti dengan email tujuan kamu
+			}
+
+
+			// Lampiran email, isi dengan url/path file
+			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
+
+			// Subject email
+			$this->email->subject($data['judul']);
+
+			// Isi email
+
+			$this->email->message('Formulir Keluhan Masuk ! Cek <a class="btn btn-primary" href="localhost/ci/admin/k">Disini</a>');
+
+
+			// Tampilkan pesan sukses atau error
+			if ($this->email->send()) {
+				echo 'Sukses! email berhasil dikirim.';
+			} else {
+				echo 'Gagal!';
+			}
 			redirect('admin/k');
 		}
 	}
@@ -2097,20 +2153,26 @@ class Admin extends CI_Controller
 			'judul' => 'Edit Formulir | SIAP UINSGD',
 			'edit' => $this->crud_model->getkid($id),
 			'status' => ['Belum Dikerjakan', 'Sedang Dikerjakan', 'Sudah Dikerjakan'],
-			'perihal' => $this->crud_model->gettpk(),
 			'admin' => $this->db->get_where('admin', ['user' =>
 			$this->session->userdata('user')])->row_array(),
 
 			'fakultas' => $this->crud_model->get_fakultas(),
 			'jurusan' => $this->crud_model->get_jurusan(),
+			'unit' => $this->crud_model->gettu(),
+			'perihal' => $this->crud_model->get_pk(),
+			'divisi' => $this->crud_model->get_divisi2(),
 			'fakultas_selected' => '',
 			'jurusan_selected' => '',
+			'perihal_selected' => '',
+			'divisi_selected' => ''
 		);
 		$this->form_validation->set_rules('nama', 'Nama', 'required|max_length[100]');
 		$this->form_validation->set_rules('ni', 'NIM / NIP', 'numeric|max_length[100]');
 		$this->form_validation->set_rules('telp', 'Nomor Telepon', 'required|numeric|max_length[14]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]');
 		$this->form_validation->set_rules('keluhan', 'Deskripsi Keluhan', 'required');
+		$this->form_validation->set_rules('divisi', 'Divisi', 'required');
+		$this->form_validation->set_rules('perihal', 'Perihal', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/aheader', $data);
 			$this->load->view('admin/editk', $data);
@@ -3026,11 +3088,14 @@ class Admin extends CI_Controller
 
 		$data['tpk'] = $this->crud_model->gettpk();
 		$data['dpk'] = $this->crud_model->getdpk();
+		$data['divisi'] = $this->crud_model->get_divisi();
 
 		$data['judul'] = 'Tambah Perihal Keluhan | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
 		$this->session->userdata('user')])->row_array();
-		$this->form_validation->set_rules('perihal', 'perihal', 'required|max_length[100]');
+		$this->form_validation->set_rules('perihal', 'Perihal', 'required');
+		$this->form_validation->set_rules('pdivisi', 'Divisi', 'required');
+
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/aheader', $data);
 			$this->load->view('admin/tpk', $data);
@@ -3100,6 +3165,35 @@ class Admin extends CI_Controller
 			$this->crud_model->tambahj();
 			$this->session->set_flashdata('t', 'tambah');
 			redirect('admin/tj');
+		}
+	}
+	public function tdivisi()
+	{
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		$data['tdivisi'] = $this->crud_model->gettdivisi();
+		$data['ddivisi'] = $this->crud_model->getddivisi();
+
+		$data['judul'] = 'Tambah Divisi | SIAP UINSGD';
+		$data['admin'] = $this->db->get_where('admin', ['user' =>
+		$this->session->userdata('user')])->row_array();
+		$this->form_validation->set_rules('divisi', 'Divisi', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required');
+
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/tambahdivisi', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->tambahdivisi();
+			$this->session->set_flashdata('tdivisi', 'tambah');
+			redirect('admin/tdivisi');
 		}
 	}
 
@@ -3187,6 +3281,18 @@ class Admin extends CI_Controller
 		$this->session->set_flashdata('dhp', 'Dihapus');
 		redirect('admin/tj');
 	}
+	public function hapustdivisi($id)
+	{
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+		$this->crud_model->hapustdivisi($id);
+		$this->session->set_flashdata('dhp', 'Dihapus');
+		redirect('admin/tdivisi');
+	}
 
 	public function edittf($id)
 	{
@@ -3262,12 +3368,14 @@ class Admin extends CI_Controller
 		$data = array(
 			'judul' => 'Edit Perihal Keluhan | SIAP UINSGD',
 			'edit' => $this->crud_model->gettpkid($id),
+			'divisi' => $this->crud_model->getddivisi(),
 			'status' => ['Belum Dikerjakan', 'Sudah Dikerjakan'],
 			'admin' => $this->db->get_where('admin', ['user' =>
 			$this->session->userdata('user')])->row_array(),
 		);
 
 		$this->form_validation->set_rules('perihal', 'Perihal', 'required|max_length[100]');
+		$this->form_validation->set_rules('pdivisi', 'Divisi', 'required|max_length[100]');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/aheader', $data);
 			$this->load->view('admin/edittpk', $data);
@@ -3344,6 +3452,37 @@ class Admin extends CI_Controller
 			$this->crud_model->edittj();
 			$this->session->set_flashdata('edit', 'Edit');
 			redirect('admin/tj');
+		}
+	}
+
+	public function editdivisi($id)
+	{
+		if (!$this->session->userdata('user')) {
+			redirect('admin');
+		}
+
+		if (!$this->session->userdata('level') == 0) {
+			redirect('admin');
+		}
+
+		$data = array(
+			'judul' => 'Edit Divisi | SIAP UINSGD',
+			'edit' => $this->crud_model->get_divisiid($id),
+			'admin' => $this->db->get_where('admin', ['user' =>
+			$this->session->userdata('user')])->row_array(),
+		);
+
+		$this->form_validation->set_rules('divisi', 'Divisi', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/aheader', $data);
+			$this->load->view('admin/editdivisi', $data);
+			$this->load->view('templates/afooter');
+		} else {
+			$this->crud_model->edittdivisi();
+			$this->crud_model->edittdchain();
+			$this->session->set_flashdata('edit', 'Edit');
+			redirect('admin/tdivisi');
 		}
 	}
 }

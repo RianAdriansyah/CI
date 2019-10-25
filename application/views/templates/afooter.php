@@ -32,6 +32,9 @@
 <script>
   $("#jurusan").chained("#fakultas");
 </script>
+<script>
+  $("#perihal").chained("#divisi");
+</script>
 <script src="<?= base_url('/'); ?>vendors/chart.js/dist/Chart.bundle.min.js"></script>
 <script src="<?= base_url('/'); ?>assets/js/dashboard.js"></script>
 <script src="<?= base_url('/'); ?>assets/js/widgets.js"></script>

@@ -1,7 +1,7 @@
 <style>
-.card{
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+	.card {
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
 </style>
 
 <div class="container">
@@ -69,6 +69,7 @@
 				<input type="hidden" id="m" name="m" value="<?= date("m") ?>">
 				<input type="hidden" id="y" name="y" value="<?= date("Y") ?>">
 				<input type="hidden" id="jam" name="jam" value="<?= date("H:i:s") ?>">
+				<input type="hidden" id="divisi" name="divisi" value="Pelayanan">
 				<br><button type="submit" id="kirim" name="kirim" class="btn btn-success btn-block">Kirim Formulir</button>
 			</form>
 		</div>

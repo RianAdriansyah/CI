@@ -37,7 +37,11 @@
 								<p class="card-text">Fakultas
 							</td>
 							<td>
-								<p class="card-text">&emsp;:&emsp; <?= $detail['fakultas']; ?>
+								<?php if ($detail['fakultas'] == null) : ?>
+									<p class="card-text">&emsp;:&emsp; Tidak Ada </p>
+								<?php else : ?>
+									<p class="card-text">&emsp;:&emsp; <?= $detail['fakultas']; ?>
+									<?php endif; ?>
 							</td>
 						</tr>
 						<tr>
@@ -45,7 +49,31 @@
 								<p class="card-text">Jurusan
 							</td>
 							<td>
-								<p class="card-text">&emsp;:&emsp; <?= $detail['jurusan']; ?>
+								<?php if ($detail['jurusan'] == null) : ?>
+									<p class="card-text">&emsp;:&emsp; Tidak Ada </p>
+								<?php else : ?>
+									<p class="card-text">&emsp;:&emsp; <?= $detail['jurusan']; ?>
+									<?php endif; ?>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="card-text">Unit
+							</td>
+							<td>
+								<?php if ($detail['unit'] == null) : ?>
+									<p class="card-text">&emsp;:&emsp; Tidak Ada </p>
+								<?php else : ?>
+									<p class="card-text">&emsp;:&emsp; <?= $detail['unit']; ?>
+									<?php endif; ?>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="card-text">Divisi
+							</td>
+							<td>
+								<p class="card-text">&emsp;:&emsp; <?= $detail['divisi']; ?>
 							</td>
 						</tr>
 						<tr>

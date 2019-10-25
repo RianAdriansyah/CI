@@ -50,55 +50,77 @@
 			<div class="card-body">
 				<form style="padding: 5px;" action="" method="post">
 					<div class="form-row">
-						<div class="form-group col-sm-5">
+						<div class="form-group col-sm-8">
 							<label for="perihal">Perihal Keluhan</label>
 						</div>
-						<div class="form-group col-sm-10">
+						<div class="form-group col-sm-4">
+							<label for="perihal">Divisi</label>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-sm-8">
 							<input type="text" class="form-control" id="perihal" name="perihal">
 						</div>
-						<div class="form-group col-sm-2">
-							<button type="submit" id="kirim" name="kirim" class="btn btn-primary btn-block rounded"><i class="fas fa-plus-circle"></i></button>
+						<div class="form-group col-sm-4">
+							<select id="pdivisi" name="pdivisi" class="form-control">
+								<option value="" disabled selected>-- Pilih Divisi --</option>
+								<?php
+								foreach ($divisi as $u) {
+									?>
+									<option value="<?= $u['namadivisi']; ?>"><?= $u['namadivisi']; ?></option>
+								<?php
+								}
+								?>
+							</select>
+							<?= form_error('divisi', '<small class="text-danger pl-3">', '</small>'); ?>
 						</div>
+					</div>
+
+					<div class="form-group">
+						<button type="submit" id="kirim" name="kirim" class="btn btn-primary btn-block rounded"><i class="fas fa-plus-circle"></i></button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+</div>
 
-	<div class="col-sm-12">
-		<h5 class="h5 mb-2 text-gray-800">Daftar Perihal Keluhan</h5>
-	</div>
+<div class="col-sm-12">
+	<h5 class="h5 mb-2 text-gray-800">Daftar Perihal Keluhan</h5>
+</div>
 
-	<div class="col-lg-12 table-responsive">
-		<table class="table table-hover" style="font-size: 14px;" id="table_id">
-			<thead class="thead-dark text-center">
+<div class="col-lg-12 table-responsive">
+	<table class="table table-hover" style="font-size: 14px;" id="table_id">
+		<thead class="thead-dark text-center">
+			<tr>
+				<th scope="col" width="10%">No</th>
+				<th scope="col" width="40%">Perihal Keluhan</th>
+				<th scope="col" width="40%">Divisi</th>
+				<th scope="col">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php if (empty($dpk)) : ?>
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					Perihal Keluhan Kosong.
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			<?php endif; ?>
+			<?php $start = 0;
+			foreach ($dpk as $row) : ?>
 				<tr>
-					<th scope="col" width="10%">No</th>
-					<th scope="col" width="70%">Perihal Keluhan</th>
-					<th scope="col">Action</th>
+					<th scope="row" width="10%" style="text-align: center;"><?= ++$start; ?></th>
+					<td width="40%"><?= $row['perihal']; ?></td>
+					<td width="40%"><?= $row['pdivisi']; ?></td>
+					<td class="text-center">
+						<a href="<?= base_url('/') ?>admin/edittpk/<?= $row['id']; ?>" class="btn btn-sm btn-success" role="button" data-toggle="tooltip" data-placement="right" title="Edit"><i class="fas fa-fw fa-edit"></i></a>
+						<a href="<?= base_url('/') ?>admin/hapustpk/<?= $row['id']; ?>" class="btn btn-sm btn-danger" role="button" onclick="return confirm('Anda yakin ingin menghapus <?= $row['perihal']; ?> ?')" data-toggle="tooltip" data-placement="right" title="Hapus"><i class="fas fa-fw fa-trash-alt"></i></a>
 				</tr>
-			</thead>
-			<tbody>
-				<?php if (empty($dpk)) : ?>
-					<div class="alert alert-danger alert-dismissible fade show" role="alert">
-						Perihal Keluhan Kosong.
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-				<?php endif; ?>
-				<?php $start = 0;
-				foreach ($dpk as $row) : ?>
-					<tr>
-						<th scope="row" width="10%" style="text-align: center;"><?= ++$start; ?></th>
-						<td width="70%"><?= $row['perihal']; ?></td>
-						<td class="text-center">
-							<a href="<?= base_url('/') ?>admin/edittpk/<?= $row['id']; ?>" class="btn btn-sm btn-success" role="button" data-toggle="tooltip" data-placement="right" title="Edit"><i class="fas fa-fw fa-edit"></i></a>
-							<a href="<?= base_url('/') ?>admin/hapustpk/<?= $row['id']; ?>" class="btn btn-sm btn-danger" role="button" onclick="return confirm('Anda yakin ingin menghapus <?= $row['perihal']; ?> ?')" data-toggle="tooltip" data-placement="right" title="Hapus"><i class="fas fa-fw fa-trash-alt"></i></a>
-					</tr>
-				<?php endforeach; ?>
-			</tbody>
-		</table>
-		<br>
-	</div>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	<br>
+</div>
 </div>

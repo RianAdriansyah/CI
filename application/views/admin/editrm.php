@@ -52,7 +52,7 @@
 									<?php
 									foreach ($fakultas as $f) {
 										?>
-										<option <?php echo $fakultas_selected == $f->fakultas ? 'selected="selected"' : '' ?>value="<?php echo $f->fakultas ?>"><?php echo $f->fakultas ?></option>
+										<option <?php echo $edit['fakultas'] == $f->fakultas ? 'selected="selected"' : '' ?>value="<?php echo $f->fakultas ?>"><?php echo $f->fakultas ?></option>
 									<?php
 									}
 									?>
@@ -64,7 +64,7 @@
 									<?php
 									foreach ($jurusan as $j) {
 										?>
-										<option <?php echo $jurusan_selected == $j->jfakultas ? 'selected="selected"' : '' ?>class="<?php echo $j->jfakultas ?>" value="<?php echo $j->jurusan ?>"><?php echo $j->jurusan ?></option>
+										<option <?php echo $edit['jurusan'] == $j->jurusan ? 'selected="selected"' : '' ?>class="<?php echo $j->jfakultas ?>" value="<?php echo $j->jurusan ?>"><?php echo $j->jurusan ?></option>
 									<?php
 									}
 									?>

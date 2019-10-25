@@ -101,6 +101,14 @@
                             <td class="tbody" width="5%">Email</td>
                             <td class="tbody" width="95%">: <?= $row->email ?></td>
                         </tr>
+                        <tr>
+                            <td class="tbody" width="5%">
+                                Unit          
+                             </td>
+                             <td class="tbody" width="36%">
+                                : <?= $row->unit ?>             
+                             </td>
+                        </tr>
                     </table>
                 </td>
                 <td style="border: 1px solid black;" width="47.5%">

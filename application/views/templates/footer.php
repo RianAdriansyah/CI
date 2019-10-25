@@ -5,6 +5,9 @@
   $("#jurusan").chained("#fakultas");
 </script>
 <script>
+  $("#perihal").chained("#divisi");
+</script>
+<script>
   $(function() {
     $('[data-toggle="tooltip"]').tooltip()
   })

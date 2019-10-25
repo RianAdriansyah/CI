@@ -150,6 +150,7 @@ class crud_model extends CI_model
 			"unit" => $this->input->post('unit', true),
 			"email" => $this->input->post('email', true),
 			"perihal" => $this->input->post('perihal', true),
+			"divisi" => $this->input->post('divisi', true),
 			"keluhan" => $this->input->post('keluhan', true),
 			"status" => $this->input->post('status', true),
 			"solusi" => $this->input->post('solusi', true),
@@ -493,6 +494,7 @@ class crud_model extends CI_model
 			"telp" => ltrim($this->input->post('telp', true), '0'),
 			"fakultas" => $this->input->post('fakultas', true),
 			"jurusan" => $this->input->post('jurusan', true),
+			"divisi" => $this->input->post('divisi', true),
 			"email" => $this->input->post('email', true),
 			"perihal" => $this->input->post('perihal', true),
 			"keluhan" => $this->input->post('keluhan', true),
@@ -819,6 +821,15 @@ class crud_model extends CI_model
 
 		$this->db->insert('fakultas', $data);
 	}
+	public function tambahdivisi()
+	{
+		$data = [
+			"namadivisi" => $this->input->post('divisi', true),
+			"email" => $this->input->post('email', true)
+		];
+
+		$this->db->insert('divisi', $data);
+	}
 
 	public function tambahu()
 	{
@@ -832,7 +843,8 @@ class crud_model extends CI_model
 	public function tambahpk()
 	{
 		$data = [
-			"perihal" => $this->input->post('perihal', true)
+			"perihal" => $this->input->post('perihal', true),
+			"pdivisi" => $this->input->post('pdivisi', true)
 		];
 
 		$this->db->insert('perihal_keluhan', $data);
@@ -893,6 +905,11 @@ class crud_model extends CI_model
 		$this->db->where('id', $id);
 		$this->db->delete('jurusan');
 	}
+	public function hapustdivisi($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('divisi');
+	}
 
 	public function gettf()
 	{
@@ -935,6 +952,16 @@ class crud_model extends CI_model
 		$this->db->order_by('jurusan', 'ASC');
 		return $this->db->get('jurusan')->result_array();
 	}
+	public function getddivisi()
+	{
+		$this->db->order_by('namadivisi', 'ASC');
+		return $this->db->get('divisi')->result_array();
+	}
+	public function gettdivisi()
+	{
+		$this->db->order_by('namadivisi', 'ASC');
+		return $this->db->get('divisi')->result_array();
+	}
 
 	public function getdj()
 	{
@@ -945,6 +972,10 @@ class crud_model extends CI_model
 	public function gettfid($id)
 	{
 		return $this->db->get_where('fakultas', ['id' => $id])->row_array();
+	}
+	public function gettdivisiid($id)
+	{
+		return $this->db->get_where('divisi', ['id' => $id])->row_array();
 	}
 
 	public function gettuid($id)
@@ -999,11 +1030,22 @@ class crud_model extends CI_model
 		$this->db->where('jfakultas', $fakultaschain);
 		$this->db->update('jurusan', $data);
 	}
+	public function edittdchain()
+	{
+		$dchain = $this->input->post('dchain', true);
+		$data = [
+			"pdivisi" => $this->input->post('divisi', true)
+		];
+
+		$this->db->where('pdivisi', $dchain);
+		$this->db->update('perihal_keluhan', $data);
+	}
 
 	public function edittpk()
 	{
 		$data = [
-			"perihal" => $this->input->post('perihal', true)
+			"perihal" => $this->input->post('perihal', true),
+			"pdivisi" => $this->input->post('pdivisi', true)
 		];
 
 		$this->db->where('id', $this->input->post('id'));
@@ -1036,6 +1078,16 @@ class crud_model extends CI_model
 		$this->db->where('id', $this->input->post('id'));
 		$this->db->update('jurusan', $data);
 	}
+	public function edittdivisi()
+	{
+		$data = [
+			"namadivisi" => $this->input->post('divisi', true),
+			"email" => $this->input->post('email', true)
+		];
+
+		$this->db->where('id', $this->input->post('id'));
+		$this->db->update('divisi', $data);
+	}
 
 	/*============================================================================================================================================================================================================================*/
 
@@ -1043,6 +1095,11 @@ class crud_model extends CI_model
 	{
 		$this->db->order_by('fakultas.id', 'ASC');
 		return $this->db->get('fakultas')->result();
+	}
+	public function get_divisi2()
+	{
+		$this->db->order_by('divisi.id', 'ASC');
+		return $this->db->get('divisi')->result();
 	}
 
 	public function get_unit()
@@ -1056,5 +1113,11 @@ class crud_model extends CI_model
 		$this->db->order_by('jurusan.jurusan', 'ASC');
 		$this->db->join('fakultas', 'jurusan.jfakultas = fakultas.fakultas');
 		return $this->db->get('jurusan')->result();
+	}
+	public function get_pk()
+	{
+		$this->db->order_by('perihal_keluhan.perihal', 'ASC');
+		$this->db->join('divisi', 'perihal_keluhan.pdivisi = divisi.namadivisi');
+		return $this->db->get('perihal_keluhan')->result();
 	}
 }

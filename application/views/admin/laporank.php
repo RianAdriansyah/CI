@@ -160,10 +160,19 @@
                                 Perihal     
                              </td>
                              <td class="tbody" width="36%">
-                                : <?= $row->perihal?>             
+                                : <?= $row->perihal ?>             
                              </td>
                         </tr>
                         <tr>
+                            <td class="tbody" width="5%">
+                                Unit          
+                             </td>
+                             <td class="tbody" width="36%">
+                                : <?= $row->unit ?>             
+                             </td>
+                        </tr>
+                        <tr>
+                        
                             <td class="tbody" width="5%">
                                 Status       
                              </td>
@@ -180,10 +189,6 @@
                                     }
                                 ?>
                             </td>
-                        </tr>
-                        <tr>
-                            <td class="tbody" width="5%">Unit</td>
-                            <td class="tbody" width="95%">: <?= $row->unit ?></td>
                         </tr>
                     </table>
                 </td>

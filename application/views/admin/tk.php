@@ -66,20 +66,59 @@
                         </select>
                         <?= form_error('jurusan', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        <label for="unit">Unit</label>
+                        <select id="unit" name="unit" class="form-control">
+                            <option value="" disabled selected>-- Pilih Unit --</option>
+                            <?php
+                            foreach ($unit as $u) {
+                                ?>
+                                <option value="<?= $u['unit']; ?>"><?= $u['unit']; ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                        <?= form_error('unit', '<small class="text-danger pl-3">', '</small>'); ?>
+                    </div>
+                    <div class="form-group col-md">
+
+                        <label for="divisi">Divisi</label>
+                        <select id="divisi" name="divisi" class="form-control">
+                            <option value="" disabled selected>-- Pilih Divisi --</option>
+                            <?php
+                            foreach ($divisi as $f) {
+                                ?>
+                                <option <?php echo $divisi_selected == $f->namadivisi ? 'selected="selected"' : '' ?>value="<?php echo $f->namadivisi ?>"><?php echo $f->namadivisi ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                        <?= form_error('divisi', '<small class="text-danger pl-3">', '</small>'); ?>
+
+                    </div>
                     <div class="form-group col-md">
                         <label for="perihal">Perihal Keluhan</label>
                         <select id="perihal" name="perihal" class="form-control">
                             <option value="" disabled selected>-- Pilih Perihal --</option>
-                            <?php foreach ($perihal as $k) : ?>
-                                <option value="<?= $k['perihal']; ?>"><?= $k['perihal']; ?></option>
-                            <?php endforeach; ?>
+                            <?php
+                            foreach ($perihal as $j) {
+                                ?>
+                                <option <?php echo $perihal_selected == $j->pdivisi ? 'selected="selected"' : '' ?>class="<?php echo $j->pdivisi ?>" value="<?php echo $j->perihal ?>"><?php echo $j->perihal ?></option>
+                            <?php
+                            }
+                            ?>
+                            }
+                            ?>
                         </select>
                         <?= form_error('perihal', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md">
-                        <label for="keluhan">Deskripsi keluhan</label>
+                        <label for="keluhan">Deskripsi Keluhan</label>
                         <textarea class="form-control" id="keluhan" name="keluhan" rows="4" placeholder="diisi dengan jelas"></textarea>
                     </div>
                 </div>
