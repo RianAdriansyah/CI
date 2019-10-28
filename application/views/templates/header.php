@@ -21,6 +21,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url("/assets/css/stylee.css"); ?>">
 
   <script src="https://kit.fontawesome.com/79bf77632a.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <title><?= $judul ?></title>
 </head>

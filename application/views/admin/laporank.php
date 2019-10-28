@@ -92,10 +92,10 @@
                              <td class="tbody" width="36%">
                                 : <?= $row->nama ?>           
                              </td>
-                             <td class="tbody" style="border: 0.5px solid black;" class="text" width="30%" rowspan="10">
+                             <td class="tbody" style="border: 0.5px solid black;" class="text" width="30%" rowspan="14">
                                 Permohonan :<br> <?= $row->keluhan ?>           
                              </td>
-                             <td class="tbody" style="border: 0.5px solid black;" class="text" width="30%" rowspan="10">
+                             <td class="tbody" style="border: 0.5px solid black;" class="text" width="30%" rowspan="14">
                                 Solusi :<br> <?= $row->solusi ?>           
                              </td>
                         </tr>
@@ -113,6 +113,14 @@
                              </td>
                              <td class="tbody" width="36%">
                                 : <?= $row->fakultas ?>             
+                             </td>
+                        </tr>
+                        <tr>
+                            <td class="tbody" width="5%">
+                                Jurusan          
+                             </td>
+                             <td class="tbody" width="36%">
+                                : <?= $row->jurusan ?>             
                              </td>
                         </tr>
                         <tr>
@@ -157,6 +165,14 @@
                         </tr>
                         <tr>
                             <td class="tbody" width="5%">
+                                Divisi     
+                             </td>
+                             <td class="tbody" width="36%">
+                                : <?= $row->divisi ?>             
+                             </td>
+                        </tr>
+                        <tr>
+                            <td class="tbody" width="5%">
                                 Perihal     
                              </td>
                              <td class="tbody" width="36%">
@@ -168,7 +184,11 @@
                                 Unit          
                              </td>
                              <td class="tbody" width="36%">
-                                : <?= $row->unit ?>             
+                             <?php if($row->unit == null) :?>
+                                : Tidak Ada  
+                            <?php else: ?>
+                                : <?= $row->unit ?>  
+                            <?php endif; ?>
                              </td>
                         </tr>
                         <tr>

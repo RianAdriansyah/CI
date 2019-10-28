@@ -23,6 +23,21 @@
 			<?php endif; ?>
 
 			<form style="padding: 5px; margin-top: 10px; margin-bottom: 20px;" action="" method="post">
+				<div class="alert alert-danger" role="alert">
+					<div class="form-row">
+						<label for="">
+							<b>&nbsp;Status</b>
+						</label>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-2">
+							<input type="radio" value="Enable" name="rdbutton"> Dosen / Mahasiswa
+						</div>
+						<div class="form-group col-md-2">
+							<input type="radio" value="Disabled" name="rdbutton"> Lembaga
+						</div>
+					</div>
+				</div>
 				<div class="form-row">
 					<div class="form-group col-md">
 						<label for="nama">Nama Lengkap</label>
@@ -54,8 +69,8 @@
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md">
-						<label for="fakultas">Fakultas</label>
-						<select id="fakultas" name="fakultas" class="form-control">
+						<label for="fakultas">Fakultas</label> <br>
+						<select id="fakultas" name="fakultas" class="form-control" disabled>
 							<option value="" disabled selected>-- Pilih Fakultas --</option>
 							<?php
 							foreach ($fakultas as $f) {
@@ -66,10 +81,11 @@
 							?>
 						</select>
 						<?= form_error('fakultas', '<small class="text-danger pl-3">', '</small>'); ?>
+
 					</div>
 					<div class="form-group col-md">
 						<label for="jurusan">Jurusan</label>
-						<select id="jurusan" name="jurusan" class="form-control">
+						<select id="jurusan" name="jurusan" class="form-control" disabled>
 							<option value="" disabled selected>-- Pilih Jurusan --</option>
 							<?php
 							foreach ($jurusan as $j) {
@@ -81,12 +97,11 @@
 						</select>
 						<?= form_error('jurusan', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
-
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md">
-						<label for="unit">Unit</label>
-						<select id="unit" name="unit" class="form-control">
+						<label for="unit">Unit</label> <br>
+						<select id="unit" name="unit" class="form-control" Disabled>
 							<option value="" disabled selected>-- Pilih Unit --</option>
 							<?php
 							foreach ($unit as $u) {
@@ -98,6 +113,9 @@
 						</select>
 						<?= form_error('unit', '<small class="text-danger pl-3">', '</small>'); ?>
 					</div>
+
+				</div>
+				<div class="form-row">
 					<div class="form-group col-md">
 
 						<label for="divisi">Divisi</label>
@@ -133,7 +151,7 @@
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md">
-						<label for="keluhan">Deskripsi keluhan</label>
+						<label for="keluhan">Deskripsi Keluhan</label>
 						<textarea class="form-control" id="keluhan" name="keluhan" rows="4" placeholder="diisi dengan jelas"></textarea>
 					</div>
 				</div>

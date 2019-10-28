@@ -1,3 +1,9 @@
+<style>
+th {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+</style>
+
 <div class="breadcrumbs">
     <div class="col-dm">
         <div class="page-header float-left">
@@ -26,7 +32,7 @@
                         <div class="form-row">
                             <table class="table">
                                 <tr>
-                                    <th style="font-size: 18px;" class="stat-text text-dark">Laporan</th>
+                                    <th>Laporan</th>
                                     <th>
                                         <select id="l" name="l" class="form-control">
                                             <option value="laporandm">Pendaftaran Email Mahasiswa</option>
@@ -43,7 +49,7 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th style="font-size: 18px;" class="stat-text text-dark">Bulan</th>
+                                    <th>Bulan</th>
                                     <th>
                                         <select id="m" name="m" class="form-control">
                                             <option value="01">Januari</option>
@@ -70,8 +76,8 @@
                                             <option value="2017">2017</option>
                                             <option value="2018">2018</option>
                                             <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
                                             <option value="2021">2021</option>
-                                            <option value="2022">2022</option>
                                         </select>
                                         <!-- <input type="text" class="form-control" id="y" name="y"> -->
                                     </th>
@@ -79,7 +85,7 @@
                                 <tr>
                                     <th colspan="2">
                                         <div class="float-right">
-                                            <button type="submit" id="kirim" name="kirim" class="btn btn-success btn-block">Buka</button>
+                                            <button type="submit" id="kirim" name="kirim" class="btn btn-success btn-block rounded" formtarget="_blank"  data-toggle="tooltip" data-placement="right" title="Buka"><i class="fas fa-folder-open"></i></button>
                                         </div>
                                     </th>
                                 </tr>

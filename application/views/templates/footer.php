@@ -12,6 +12,18 @@
     $('[data-toggle="tooltip"]').tooltip()
   })
 </script>
+<script>
+  $('input[name="rdbutton"]').on('change', function() {
+    $('select[name="fakultas"]').attr('disabled', this.value != "Enable")
+  });
+  $('input[name="rdbutton"]').on('change', function() {
+    $('select[name="jurusan"]').attr('disabled', this.value != "Enable")
+  });
+
+  $('input[name="rdbutton"]').on('change', function() {
+    $('select[name="unit"]').attr('disabled', this.value == "Enable")
+  });
+</script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>

@@ -65,6 +65,18 @@
     });
   })(jQuery);
 </script>
+<script>
+  $('input[name="rdbutton"]').on('change', function() {
+    $('select[name="fakultas"]').attr('disabled', this.value != "Enable")
+  });
+  $('input[name="rdbutton"]').on('change', function() {
+    $('select[name="jurusan"]').attr('disabled', this.value != "Enable")
+  });
+
+  $('input[name="rdbutton"]').on('change', function() {
+    $('select[name="unit"]').attr('disabled', this.value == "Enable")
+  });
+</script>
 
 
 </body>
