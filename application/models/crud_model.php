@@ -938,6 +938,7 @@ class crud_model extends CI_model
 	public function getdpk()
 	{
 		$this->db->order_by('id', 'DESC');
+		// $this->db->join('divisi', 'perihal_keluhan.pdivisi = divisi.id');
 		return $this->db->get('perihal_keluhan')->result_array();
 	}
 

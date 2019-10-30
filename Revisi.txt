@@ -22,7 +22,7 @@ tambah kolom +62 di nomor telepon (sudah)
 --BARU--
 
 Tambah pilihan status Sedang Dikerjakan(sudah)
-ada verifikasi form ke email divisi
+ada verifikasi form ke email divisi (sudah)
 select tahun di pdf(sudah)
 di depan hanya pendaftaran, keluhan,pengajuan layanan(sudah)
 
@@ -51,9 +51,11 @@ SPI
 Perencanaan
 REKTORAT
 
-Fakultas diisi unit gabisa di isi dan sebaliknya
+Fakultas diisi unit gabisa di isi dan sebaliknya (sudah)
 
 dibagian deskripsi keluhan ditambah placeholder "diisi dengan jelas keluhannya"(sudah)
+
+ALHAMDULILLAH
 
 Wassalamualaikum!
 
@@ -75,3 +77,4 @@ ta = penambahan admin
 tf = tambah fakultas
 tj = tambah jurusan
 tpk = tambah perihal keluhan
+tdivisi = Tambah Divisi

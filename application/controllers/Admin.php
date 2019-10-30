@@ -233,6 +233,8 @@ class Admin extends CI_Controller
 			$this->crud_model->daftarm();
 			$this->session->set_flashdata('te', 'Pendaftaran Email Mahasiswa');
 
+			$tujuan = $this->db->get_where('divisi', array('id' => '12'))->row();
+
 			// Konfigurasi email
 			$config = [
 				'mailtype'  => 'html',
@@ -253,7 +255,7 @@ class Admin extends CI_Controller
 			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
 
 			// Email penerima
-			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+			$this->email->to($tujuan->email); // Ganti dengan email tujuan kamu
 
 			// Lampiran email, isi dengan url/path file
 			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
@@ -366,6 +368,8 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->resetm();
 			$this->session->set_flashdata('trm', 'Form Reset Password Mahasiswa');
+			$tujuan = $this->db->get_where('divisi', array('id' => '12'))->row();
+
 			// Konfigurasi email
 			$config = [
 				'mailtype'  => 'html',
@@ -386,7 +390,7 @@ class Admin extends CI_Controller
 			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
 
 			// Email penerima
-			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+			$this->email->to($tujuan->email); // Ganti dengan email tujuan kamu
 
 			// Lampiran email, isi dengan url/path file
 			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
@@ -498,6 +502,8 @@ class Admin extends CI_Controller
 		} else {
 			$this->crud_model->daftard();
 			$this->session->set_flashdata('td', 'Pendaftaran Email Dosen');
+			$tujuan = $this->db->get_where('divisi', array('id' => '12'))->row();
+
 			// Konfigurasi email
 			$config = [
 				'mailtype'  => 'html',
@@ -518,7 +524,7 @@ class Admin extends CI_Controller
 			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
 
 			// Email penerima
-			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+			$this->email->to($tujuan->email); // Ganti dengan email tujuan kamu
 
 			// Lampiran email, isi dengan url/path file
 			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
@@ -579,6 +585,8 @@ class Admin extends CI_Controller
 			$this->crud_model->resetd();
 			$this->session->set_flashdata('trd', 'Reset Pasword Email Dosen');
 
+			$tujuan = $this->db->get_where('divisi', array('id' => '12'))->row();
+
 			// Konfigurasi email
 			$config = [
 				'mailtype'  => 'html',
@@ -599,7 +607,7 @@ class Admin extends CI_Controller
 			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
 
 			// Email penerima
-			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+			$this->email->to($tujuan->email); // Ganti dengan email tujuan kamu
 
 			// Lampiran email, isi dengan url/path file
 			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
@@ -759,6 +767,8 @@ class Admin extends CI_Controller
 			$this->crud_model->resetl();
 			$this->session->set_flashdata('trl', 'Reset Pasword Email Lembaga');
 
+			$tujuan = $this->db->get_where('divisi', array('id' => '12'))->row();
+
 			// Konfigurasi email
 			$config = [
 				'mailtype'  => 'html',
@@ -779,7 +789,7 @@ class Admin extends CI_Controller
 			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
 
 			// Email penerima
-			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+			$this->email->to($tujuan->email); // Ganti dengan email tujuan kamu
 
 			// Lampiran email, isi dengan url/path file
 			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
@@ -835,6 +845,8 @@ class Admin extends CI_Controller
 			$this->crud_model->daftarl();
 			$this->session->set_flashdata('tl', 'Pendaftaran Email Lembaga');
 
+			$tujuan = $this->db->get_where('divisi', array('id' => '12'))->row();
+
 			// Konfigurasi email
 			$config = [
 				'mailtype'  => 'html',
@@ -855,7 +867,7 @@ class Admin extends CI_Controller
 			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
 
 			// Email penerima
-			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+			$this->email->to($tujuan->email); // Ganti dengan email tujuan kamu
 
 			// Lampiran email, isi dengan url/path file
 			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
@@ -1005,7 +1017,8 @@ class Admin extends CI_Controller
 			redirect('admin');
 		}
 
-		$data['judul'] = 'Tambah Form Formulir Keluhan | SIAP UINSGD';
+		$data['judul'] = 'Tambah Formulir Keluhan | SIAP UINSGD';
+		$data['judulemail'] = 'Formulir Keluhan | SIAP UINSGD';
 		$data['admin'] = $this->db->get_where('admin', ['user' =>
 		$this->session->userdata('user')])->row_array();
 
@@ -1028,6 +1041,12 @@ class Admin extends CI_Controller
 			$this->crud_model->keluh();
 			$this->session->set_flashdata('tk', 'Form Keluhan');
 
+			$tujuan = $this->db->get_where('divisi', array('namadivisi' => $this->input->post('divisi')))->row();
+			$pesan = $this->db->get_where('keluhan', array('keluhan' => $this->input->post('keluhan')))->row();
+			$eperihal = $this->db->get_where('keluhan', array('perihal' => $this->input->post('perihal')))->row();
+			$enama = $this->db->get_where('keluhan', array('nama' => $this->input->post('nama')))->row();
+			$eni = $this->db->get_where('keluhan', array('ni' => $this->input->post('ni')))->row();
+
 			// Konfigurasi email
 			$config = [
 				'mailtype'  => 'html',
@@ -1048,28 +1067,38 @@ class Admin extends CI_Controller
 			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
 
 			// Email penerima
-			if ($this->input->post('divisi') == "Pangkalan Data") {
-				$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
-			} elseif ($this->input->post('divisi') == "Infrastruktur & Jaringan") {
-				$this->email->to('tesaplikasici@gmail.com'); // Ganti dengan email tujuan kamu
-			} elseif ($this->input->post('divisi') == "Pengembangan Aplikasi") {
-				$this->email->to('assalaamsmk@gmail.com'); // Ganti dengan email tujuan kamu
-			} elseif ($this->input->post('divisi') == "Layanan & Administrasi Umum") {
-				$this->email->to('tesaplikasici@gmail.com'); // Ganti dengan email tujuan kamu
-			} elseif ($this->input->post('divisi') == "Monitoring & Security") {
-				$this->email->to('tesaplikasici@gmail.com'); // Ganti dengan email tujuan kamu
-			}
-
+			$this->email->to($tujuan->email);
 
 			// Lampiran email, isi dengan url/path file
 			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
 
 			// Subject email
-			$this->email->subject($data['judul']);
+			$this->email->subject($data['judulemail']);
 
 			// Isi email
 
-			$this->email->message('Formulir Keluhan Masuk ! Cek <a class="btn btn-primary" href="localhost/ci/admin/k">Disini</a>');
+			$this->email->message('Formulir Keluhan Masuk ! <br>
+			<tr>
+			<td>Nama</td> 
+			<td>:</td> 
+			<td><b>' . $enama->nama . '</b></td> 
+			</tr>
+			<tr>
+			<td>NIM / NIP</td> 
+			<td>:</td> 
+			<td><b>' . $eni->ni . '</b></td> 
+			</tr>
+			<tr>
+			<td>Perihal Keluhan</td> 
+			<td>:</td> 
+			<td><b>' . $eperihal->perihal . '</b></td> 
+			</tr>
+			<tr>
+			<td>Keluhan</td> 
+			<td>:</td> 
+			<td><b>' . $pesan->keluhan . '</b></td> 
+			</tr>
+			Untuk Lebih Jelasnya Cek <a class="btn btn-primary" href="localhost/ci/admin/k">Disini</a>');
 
 
 			// Tampilkan pesan sukses atau error
@@ -1178,6 +1207,8 @@ class Admin extends CI_Controller
 			$this->crud_model->ganti_server();
 			$this->session->set_flashdata('tgs', 'Pergantian Server Data Center');
 
+			$tujuan = $this->db->get_where('divisi', array('id' => '13'))->row();
+
 			// Konfigurasi email
 			$config = [
 				'mailtype'  => 'html',
@@ -1198,7 +1229,7 @@ class Admin extends CI_Controller
 			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
 
 			// Email penerima
-			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+			$this->email->to($tujuan->email); // Ganti dengan email tujuan kamu
 
 			// Lampiran email, isi dengan url/path file
 			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
@@ -1304,6 +1335,8 @@ class Admin extends CI_Controller
 			$this->crud_model->kunjungan_dc();
 			$this->session->set_flashdata('tdc', 'Kunjungan Server Data Center');
 
+			$tujuan = $this->db->get_where('divisi', array('id' => '12'))->row();
+
 			// Konfigurasi email
 			$config = [
 				'mailtype'  => 'html',
@@ -1324,7 +1357,7 @@ class Admin extends CI_Controller
 			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
 
 			// Email penerima
-			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+			$this->email->to($tujuan->email); // Ganti dengan email tujuan kamu
 
 			// Lampiran email, isi dengan url/path file
 			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
@@ -1430,6 +1463,8 @@ class Admin extends CI_Controller
 			$this->crud_model->jaringan_baru();
 			$this->session->set_flashdata('tjb', 'Pemasangan Jaringan Baru');
 
+			$tujuan = $this->db->get_where('divisi', array('id' => '13'))->row();
+
 			// Konfigurasi email
 			$config = [
 				'mailtype'  => 'html',
@@ -1450,7 +1485,7 @@ class Admin extends CI_Controller
 			$this->email->from('pelayanan@uinsgd.ac.id', 'Pelayanan | UINSGD');
 
 			// Email penerima
-			$this->email->to('rianjh2@gmail.com'); // Ganti dengan email tujuan kamu
+			$this->email->to($tujuan->email); // Ganti dengan email tujuan kamu
 
 			// Lampiran email, isi dengan url/path file
 			// $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');

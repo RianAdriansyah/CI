@@ -31,10 +31,10 @@
 					</div>
 					<div class="form-row">
 						<div class="form-group col-md-2">
-							<input type="radio" value="Enable" name="rdbutton"> Dosen / Mahasiswa
+							<input type="radio" value="Enable" name="rdbutton" required> Dosen / Mahasiswa
 						</div>
 						<div class="form-group col-md-2">
-							<input type="radio" value="Disabled" name="rdbutton"> Lembaga
+							<input type="radio" value="Disabled" name="rdbutton" required> Lembaga
 						</div>
 					</div>
 				</div>
@@ -172,9 +172,6 @@
 				<input type="hidden" id="jam" name="jam" value="<?= date("H:i:s") ?>">
 
 				<div class="form-row">
-					<div class="form-group col-md">
-						<a type="button" class="btn btn-primary btn-block" href="<?= base_url('/'); ?>admin/k"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
-					</div>
 					<div class="form-group col-md">
 						<button type="submit" id="kirim" name="kirim" class="btn btn-success btn-block">Kirim Formulir</button>
 					</div>

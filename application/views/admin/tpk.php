@@ -77,7 +77,7 @@
 					</div>
 
 					<div class="form-group">
-						<button type="submit" id="kirim" name="kirim" class="btn btn-primary btn-block rounded"><i class="fas fa-plus-circle"></i></button>
+						<button type="submit" id="kirim" name="kirim" class="btn btn-primary btn-block rounded" data-toggle="tooltip" data-placement="right" title="Tambah Perihal"><i class="fas fa-plus-circle"></i></button>
 					</div>
 				</form>
 			</div>
@@ -113,7 +113,7 @@
 				<tr>
 					<th scope="row" width="10%" style="text-align: center;"><?= ++$start; ?></th>
 					<td width="40%"><?= $row['perihal']; ?></td>
-					<td width="40%"><?= $row['pdivisi']; ?></td>
+					<td width="40%"><?= $row['pdivisi'] ?></td>
 					<td class="text-center">
 						<a href="<?= base_url('/') ?>admin/edittpk/<?= $row['id']; ?>" class="btn btn-sm btn-success" role="button" data-toggle="tooltip" data-placement="right" title="Edit"><i class="fas fa-fw fa-edit"></i></a>
 						<a href="<?= base_url('/') ?>admin/hapustpk/<?= $row['id']; ?>" class="btn btn-sm btn-danger" role="button" onclick="return confirm('Anda yakin ingin menghapus <?= $row['perihal']; ?> ?')" data-toggle="tooltip" data-placement="right" title="Hapus"><i class="fas fa-fw fa-trash-alt"></i></a>

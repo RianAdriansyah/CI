@@ -16,10 +16,10 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-2">
-                            <input type="radio" value="Enable" name="rdbutton"> Dosen / Mahasiswa
+                            <input type="radio" value="Enable" name="rdbutton" required> Dosen / Mahasiswa
                         </div>
                         <div class="form-group col-md-2">
-                            <input type="radio" value="Disabled" name="rdbutton"> Lembaga
+                            <input type="radio" value="Disabled" name="rdbutton" required> Lembaga
                         </div>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                 <div class="form-row">
                     <div class="form-group col-md">
                         <label for="keluhan">Deskripsi Keluhan</label>
-                        <textarea class="form-control" id="keluhan" name="keluhan" rows="4" placeholder="diisi dengan jelas"></textarea>
+                        <textarea class="form-control" id="keluhan" name="keluhan" rows="4" placeholder="diisi dengan jelas" value="<?= set_value('keluhan'); ?>"></textarea>
                     </div>
                 </div>
                 <div class="form-row">

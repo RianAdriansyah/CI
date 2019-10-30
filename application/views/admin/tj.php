@@ -66,7 +66,7 @@
 					</div>
 					<div class="form-row">
 						<div class="form-group col-md">
-							<button type="submit" id="kirim" name="kirim" class="btn btn-primary btn-block rounded"><i class="fas fa-plus-circle"></i></button>
+							<button type="submit" id="kirim" name="kirim" class="btn btn-primary btn-block rounded" data-toggle="tooltip" data-placement="right" title="Tambah Jurusan"><i class="fas fa-plus-circle"></i></button>
 						</div>
 					</div>
 				</form>

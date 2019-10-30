@@ -57,7 +57,7 @@
 							<input type="text" class="form-control" id="fakultas" name="fakultas">
 						</div>
 						<div class="form-group col-sm-2">
-							<button type="submit" id="kirim" name="kirim" class="btn btn-primary btn-block rounded"><i class="fas fa-plus-circle"></i></button>
+							<button type="submit" id="kirim" name="kirim" class="btn btn-primary btn-block rounded" data-toggle="tooltip" data-placement="right" title="Tambah Fakultas"><i class="fas fa-plus-circle"></i></button>
 						</div>
 					</div>
 				</form>
