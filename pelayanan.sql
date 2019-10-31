@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2019 at 04:14 AM
+-- Generation Time: Oct 31, 2019 at 02:48 AM
 -- Server version: 5.7.19
 -- PHP Version: 7.3.7
 
@@ -189,7 +189,10 @@ INSERT INTO `daftar_email_mahasiswa` (`id`, `nama`, `nim`, `fakultas`, `jurusan`
 (65, 'Muramasa Senju', '111', 'Adab & Humaniora', 'Sejarah dan Peradaban Islam', 'Pelayanan', '6281910186646', 'member@gmail.com', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '09:29:33', 'Belum Di Edit'),
 (66, 'Naruto', '111', 'Ilmu Sosial & Ilmu Politik', 'Administrasi Negara', 'Pelayanan', '6281910186646', 'member@gmail.com', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '09:31:31', 'Belum Di Edit'),
 (67, 'Naruto', '111', 'Dakwah & Komunikasi', 'Bimbingan dan Penyuluhan Islam', 'Pelayanan', '6281910186646', 'zaynmalik@gmail.com', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '09:51:57', 'Belum Di Edit'),
-(68, 'Naruto', '3', 'Adab & Humaniora', 'Bahasa dan Sastra Inggris', 'Pelayanan', '6281910186646', 'member@gmail.com', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '09:52:58', 'Belum Di Edit');
+(68, 'Naruto', '3', 'Adab & Humaniora', 'Bahasa dan Sastra Inggris', 'Pelayanan', '6281910186646', 'member@gmail.com', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '09:52:58', 'Belum Di Edit'),
+(69, 'RianAd', '3232', 'Psikologi', 'Psikologi', NULL, '6281910186646', 'zaynmalik@gmail.com', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '14:09:05', 'Belum Di Edit'),
+(70, 'RianAd', '23456', 'Ilmu Sosial & Ilmu Politik', 'Administrasi Negara', 'Pelayanan', '6281910186646', 'zaynmalik@gmail.com', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '11:45:37', 'Belum Di Edit'),
+(71, 'Zayn Malik', '234567876', 'Tarbiyah & Keguruan', 'Pendidikan Fisika ', 'Pelayanan', '6281910186646', 'zaynmalik@gmail.com', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '11:47:51', 'Belum Di Edit');
 
 -- --------------------------------------------------------
 
@@ -208,8 +211,14 @@ CREATE TABLE `divisi` (
 --
 
 INSERT INTO `divisi` (`id`, `namadivisi`, `email`) VALUES
-(1, 'Pelayanan', 'rianjh2@gmail.com'),
-(2, 'Infrastruktur & Jaringan', 'rianjh2@gmail.com');
+(11, 'Pengembangan Aplikasi', 'rianjh2@gmail.com'),
+(12, 'Pangkalan Data', 'tesaplikasici@gmail.com'),
+(13, 'Infrastruktur & Jaringan', 'tesaplikasici@gmail.com'),
+(14, 'Layanan & Administrasi Umum', 'tesaplikasici@gmail.com'),
+(15, 'Monitoring & Security', 'assalaamsmk@gmail.com'),
+(16, 'Tidak Ada', 'rianjh2@gmail.com'),
+(17, 'Lain lain', 'admin@gmail.com'),
+(18, 'Pelatihan & Sertifikasi', 'tesaplikasici@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -234,7 +243,8 @@ INSERT INTO `fakultas` (`id`, `fakultas`) VALUES
 (5, 'Psikologi'),
 (6, 'Sains & Teknologi'),
 (7, 'Syariah & Hukum'),
-(8, 'Ushuluddin');
+(8, 'Ushuluddin'),
+(9, 'Tidak Ada');
 
 -- --------------------------------------------------------
 
@@ -267,7 +277,9 @@ INSERT INTO `ganti_server` (`id`, `nama`, `ni`, `telp`, `email`, `divisi`, `perm
 (1, 'rifqi', '213312', '8123456789', 'member@gmail.com', '', 'contoh', 'Belum Ada Solusi', 'Belum Dikerjakan', '20.09.2019', '', '', '07:46:51', '08.10.2019 07:59:06 oleh Super Admin'),
 (2, 'Rian Adriansyah', '998546', '6281910186646', 'rianjh2@gmail.com', '', 'Reset Domain', 'Belum Ada Solusi', 'Sudah Dikerjakan', '07.10.2019', '10', '2019', '13:21:41', '07.10.2019 13:41:15 oleh Super Admin'),
 (3, 'Muramasa Senju', '222357890', '6281910186646', 'member@gmail.com', '', 'DLL', 'Belum Ada Solusi', 'Sedang Dikerjakan', '15.10.2019', '10', '2019', '10:32:17', '21.10.2019 11:32:10 oleh Super Admin'),
-(4, 'Naruto', '65764', '6281910186646', 'member@gmail.com', 'Infrastruktur & Jaringan', 'hehe', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '10:32:55', 'Belum Di Edit');
+(4, 'Naruto', '65764', '6281910186646', 'member@gmail.com', 'Infrastruktur & Jaringan', 'hehe', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '10:32:55', 'Belum Di Edit'),
+(5, 'Rian Adriansyah', '666', '6281910186646', 'rianjh2@gmail.com', 'Pelayanan', 'HAHAHAH', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '14:26:53', 'Belum Di Edit'),
+(6, 'Rian Adriansyah', '343', '6281910186646', 'rianjh2@gmail.com', 'Pelayanan', 'HAHAHAHA', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '14:51:35', 'Belum Di Edit');
 
 -- --------------------------------------------------------
 
@@ -299,7 +311,8 @@ CREATE TABLE `jaringan_baru` (
 INSERT INTO `jaringan_baru` (`id`, `nama`, `ni`, `telp`, `email`, `divisi`, `permohonan`, `solusi`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
 (1, 'rifqi', '213312', '08123456789', 'hgergashi@yahoo.com', '', 'Contoh', 'Belum Ada Solusi', 'Sudah Dikerjakan', '20.09.2019', '', '', '07:47:50', '20.09.2019 08:37:09 oleh Pelayanan UINSGD 01'),
 (2, 'Rian Adriansyah', '1234', '6281910186646', 'zaynmalik@gmail.com', '', 'okok', 'Belum Ada Solusi', 'Sedang Dikerjakan', '07.10.2019', '10', '2019', '14:37:55', '21.10.2019 11:32:39 oleh Super Admin'),
-(3, 'RianAd', '34567', '6281910186646', 'admin@gmail.com', 'Infrastruktur & Jaringan', 'd', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '10:33:48', 'Belum Di Edit');
+(3, 'RianAd', '34567', '6281910186646', 'admin@gmail.com', 'Infrastruktur & Jaringan', 'd', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '10:33:48', 'Belum Di Edit'),
+(4, 'Rian Adriansyah', '885', '6281910186646', 'rianjh2@gmail.com', 'Infrastruktur & Jaringan', 'haha', 'Belum Ada Solusi', 'Sedang Dikerjakan', '23.10.2019', '10', '2019', '13:58:54', '23.10.2019 13:59:20 oleh Super Admin');
 
 -- --------------------------------------------------------
 
@@ -361,7 +374,7 @@ INSERT INTO `jurusan` (`id`, `jurusan`, `jfakultas`) VALUES
 (41, 'Sosiologi', 'Ilmu Sosial & Ilmu Politik'),
 (42, 'Administrasi Negara', 'Ilmu Sosial & Ilmu Politik'),
 (43, 'Manajemen', 'Ilmu Sosial & Ilmu Politik'),
-(44, 'Tidak ada', 'Tidak ada'),
+(44, 'Tidak Ada', 'Tidak Ada'),
 (45, 'Staf Lainnya', 'Staf Lainnya'),
 (46, 'Staf Puskom', 'Staf Puskom'),
 (47, 'Staf Administrasi', 'Staf Administrasi'),
@@ -378,11 +391,12 @@ CREATE TABLE `keluhan` (
   `id` int(8) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `ni` varchar(18) NOT NULL,
-  `fakultas` varchar(50) NOT NULL,
-  `jurusan` varchar(50) NOT NULL,
+  `fakultas` varchar(50) DEFAULT NULL,
+  `jurusan` varchar(50) DEFAULT NULL,
   `telp` varchar(13) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `unit` varchar(128) NOT NULL,
+  `unit` varchar(128) DEFAULT NULL,
+  `divisi` varchar(128) NOT NULL,
   `perihal` varchar(50) NOT NULL,
   `keluhan` text NOT NULL,
   `solusi` text NOT NULL,
@@ -398,71 +412,119 @@ CREATE TABLE `keluhan` (
 -- Dumping data for table `keluhan`
 --
 
-INSERT INTO `keluhan` (`id`, `nama`, `ni`, `fakultas`, `jurusan`, `telp`, `email`, `unit`, `perihal`, `keluhan`, `solusi`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
-(1, 'rifqi', '213312', 'Adab & Humaniora', 'Administrasi Negara', '08123456789', 'hgergashi@yahoo.com', '', 'Beasiswa', 'COntoh', 'Belum Ada Solusi', 'Belum Dikerjakan', '20.09.2019', '', '', '07:47:20', '25.09.2019 09:03:47 oleh Super Admin'),
-(2, 'weqew', '', 'Ushuluddin', '', '0813456789', 'mailadmin1@uinsgd.ac.id', '', 'Lain-lain', 'apa?123', 'Belum Ada Solusi', 'Belum Dikerjakan', '22.09.2019', '', '', '11:44:23', 'Belum Di Edit'),
-(3, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(4, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(5, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(6, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(7, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(8, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(9, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(10, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(11, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(12, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(13, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(14, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(15, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(16, 'sam', '31', 'Adab & Humaniora', 'Administrasi Negara', '634', 'mailadmin1@uinsgd.ac.id', '', 'Hotspot', 'rtyry', 'rtryr', 'Sudah Dikerjakan', '', '', '', '', '24.09.2019 11:31:38 oleh C'),
-(17, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(18, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(19, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(20, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(21, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(22, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(23, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(24, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(25, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(26, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(27, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(28, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(29, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(30, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(31, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(32, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(33, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(34, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(35, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(36, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(37, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(38, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(39, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(40, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(41, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(42, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(43, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(44, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(45, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(46, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(47, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(48, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(49, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(50, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(51, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(52, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(53, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(54, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(55, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(56, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(57, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(58, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
-(59, 'sam', '31', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', '634', 'mailadmin1@uinsgd.ac.id', '', 'Beasiswa', 'rtyry', 'rtryr', 'Belum Dikerjakan', '', '', '', '', '21.10.2019 13:51:03 oleh Super Admin'),
-(60, 'rifqi', '213312', 'Adab & Humaniora', 'Administrasi Negara', '08123456789', 'hgergashi@yahoo.com', '', 'ICT', 'hahahahha', 'Belum Ada Solusi', 'Sudah Dikerjakan', '24.09.2019', '09', '2019', '08:22:28', '24.09.2019 09:07:47 oleh Super Admin'),
-(61, 'ggegegrege', '213312', 'Adab & Humaniora', 'Administrasi Negara', '08123456789', 'fisip@uinsgd.ac.id', '', 'Dosen PDDIKTI', 'aaaaaaaaaaa', 'Belum Ada Solusi', 'Sudah Dikerjakan', '24.09.2019', '09', '2019', '09:05:01', '24.09.2019 11:16:04 oleh ad'),
-(62, 'Rian Adriansyah', '345678', 'Sains & Teknologi', 'Teknik Elektro', '6281910186646', 'zaynmalik@gmail.com', '', 'On Site Internet', 'blagohuddgo;jjkjhgjgd', 'Belum Ada Solusi', 'Belum Dikerjakan', '07.10.2019', '10', '2019', '13:53:32', 'Belum Di Edit'),
-(63, 'RianAd', '24556656565', 'Sains & Teknologi', 'Matematika', '6281910186646', 'member@gmail.com', '', 'Hotspot', 'sfsdfjjdffjfdd', 'Belum Ada Solusi', 'Belum Dikerjakan', '07.10.2019', '10', '2019', '13:57:39', 'Belum Di Edit'),
-(64, 'Sulaiman', '1178890', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', '6285794309431', 'sulaiman@gmail.com', '', 'Infrastruktur & Jaringan', 'Wifi Rusak', 'Belum Ada Solusi', 'Sedang Dikerjakan', '18.10.2019', '10', '2019', '14:47:01', '21.10.2019 11:32:27 oleh Super Admin');
+INSERT INTO `keluhan` (`id`, `nama`, `ni`, `fakultas`, `jurusan`, `telp`, `email`, `unit`, `divisi`, `perihal`, `keluhan`, `solusi`, `status`, `tanggal`, `m`, `y`, `jam`, `edit`) VALUES
+(1, 'rifqi', '213312', 'Adab & Humaniora', 'Administrasi Negara', '08123456789', 'hgergashi@yahoo.com', '', '', 'Beasiswa', 'COntoh', 'Belum Ada Solusi', 'Belum Dikerjakan', '20.09.2019', '', '', '07:47:20', '25.09.2019 09:03:47 oleh Super Admin'),
+(2, 'weqew', '', 'Ushuluddin', '', '0813456789', 'mailadmin1@uinsgd.ac.id', '', '', 'Lain-lain', 'apa?123', 'Belum Ada Solusi', 'Belum Dikerjakan', '22.09.2019', '', '', '11:44:23', 'Belum Di Edit'),
+(3, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(4, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(5, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(6, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(7, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(8, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(9, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(10, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(11, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(12, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(13, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(14, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(15, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(16, 'sam', '31', 'Adab & Humaniora', 'Administrasi Negara', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'Hotspot', 'rtyry', 'rtryr', 'Sudah Dikerjakan', '', '', '', '', '24.09.2019 11:31:38 oleh C'),
+(17, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(18, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(19, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(20, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(21, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(22, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(23, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(24, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(25, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(26, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(27, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(28, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(29, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(30, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(31, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(32, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(33, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(34, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(35, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(36, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(37, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(38, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(39, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(40, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(41, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(42, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(43, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(44, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(45, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(46, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(47, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(48, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(49, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(50, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(51, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(52, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(53, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(54, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(55, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(56, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(57, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(58, 'sam', '31', 'gsd', '', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'lain', 'rtyry', 'rtryr', '', '', '', '', '', ''),
+(59, 'sam', '31', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', '634', 'mailadmin1@uinsgd.ac.id', '', '', 'Beasiswa', 'rtyry', 'rtryr', 'Belum Dikerjakan', '', '', '', '', '21.10.2019 13:51:03 oleh Super Admin'),
+(60, 'rifqi', '213312', 'Adab & Humaniora', 'Administrasi Negara', '08123456789', 'hgergashi@yahoo.com', '', '', 'ICT', 'hahahahha', 'Belum Ada Solusi', 'Sudah Dikerjakan', '24.09.2019', '09', '2019', '08:22:28', '24.09.2019 09:07:47 oleh Super Admin'),
+(61, 'ggegegrege', '213312', 'Adab & Humaniora', 'Administrasi Negara', '08123456789', 'fisip@uinsgd.ac.id', '', '', 'Dosen PDDIKTI', 'aaaaaaaaaaa', 'Belum Ada Solusi', 'Sudah Dikerjakan', '24.09.2019', '09', '2019', '09:05:01', '24.09.2019 11:16:04 oleh ad'),
+(62, 'Rian Adriansyah', '345678', 'Sains & Teknologi', 'Teknik Elektro', '6281910186646', 'zaynmalik@gmail.com', '', '', 'On Site Internet', 'blagohuddgo;jjkjhgjgd', 'Belum Ada Solusi', 'Belum Dikerjakan', '07.10.2019', '10', '2019', '13:53:32', 'Belum Di Edit'),
+(63, 'RianAd', '24556656565', 'Sains & Teknologi', 'Matematika', '6281910186646', 'member@gmail.com', '', '', 'Hotspot', 'sfsdfjjdffjfdd', 'Belum Ada Solusi', 'Belum Dikerjakan', '07.10.2019', '10', '2019', '13:57:39', 'Belum Di Edit'),
+(64, 'Sulaiman', '1178890', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', '6285794309431', 'sulaiman@gmail.com', '', '', 'Infrastruktur & Jaringan', 'Wifi Rusak', 'Belum Ada Solusi', 'Sedang Dikerjakan', '18.10.2019', '10', '2019', '14:47:01', '21.10.2019 11:32:27 oleh Super Admin'),
+(65, 'Rian Adriansyah', '56778', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', '6281910186646', 'rianjh2@gmail.com', 'Mahad', '', 'Lain-lain', 'jhjhkkjkl', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '13:22:05', '23.10.2019 13:32:00 oleh Super Admin'),
+(66, 'Rian Adriansyah', '99', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', '6281910186646', 'zaynmalik@gmail.com', 'Tidak Ada', '', 'On Site Internet', 'jj', 'Belum Ada Solusi', 'Sedang Dikerjakan', '23.10.2019', '10', '2019', '13:47:48', '23.10.2019 13:52:54 oleh Super Admin'),
+(67, 'Muramasa Senju', '666', 'Adab & Humaniora', 'Bahasa dan Sastra Inggris', '6281910186646', 'member@gmail.com', 'Perencanaan', '', 'SIMAK & SALAM', 'hahahaha', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '14:06:38', 'Belum Di Edit'),
+(68, 'Rian Adriansyah', '0819101866', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', '6281910186646', 'rianjh2@gmail.com', 'Pusat Bisnis', 'Infrastruktur & Jaringan', 'ICT', 'SUSAH LOGIN', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '14:53:44', '23.10.2019 14:58:53 oleh Super Admin'),
+(69, 'Rian Adriansyah', '56476890', 'Tidak Ada', 'Tidak ada', '6281910186646', 'rianjh2@gmail.com', 'Pusat Bahasa', 'Pelayanan', 'Hotspot', 'LEMOT', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '15:04:09', 'Belum Di Edit'),
+(70, 'Rian Adriansyah', '12345678', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', '6281910186646', 'rianjh2@gmail.com', 'Pusat Bahasa', 'Infrastruktur & Jaringan', 'SIMAK & SALAM', 'RESET', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '15:05:44', '23.10.2019 19:57:48 oleh Super Admin'),
+(71, 'Alby boy', '8765432', 'Tidak Ada', 'Tidak ada', '6281910186646', 'arifridhwan68@gmail.com', 'LPM', 'Infrastruktur & Jaringan', 'Infrastruktur & Jaringan', 'HAHAHAHA', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '15:09:18', 'Belum Di Edit'),
+(72, 'Naruto', '876', 'Psikologi', 'Psikologi', '6281910186646', 'arifridhwan68@gmail.com', 'Tidak Ada', '', 'Hotspot', 'hahaha', 'Belum Ada Solusi', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '20:32:32', 'Belum Di Edit'),
+(73, 'Rian Adriansyah', '12345678', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', '6281910186646', 'rianjh2@gmail.com', 'Tidak Ada', 'Pelayanan', 'ICT', 'Koneksi Lemot', 'Belum Ada Solusi', 'Sedang Dikerjakan', '24.10.2019', '10', '2019', '09:04:31', '24.10.2019 09:25:48 oleh Super Admin'),
+(74, 'Rian Adriansyah', '1234567', 'Tarbiyah & Keguruan', 'Pendidikan Bahasa Arab ', '6281910186646', 'zaynmalik@gmail.com', 'Tidak Ada', 'Atuh', 'Hayyuuuuuuuuuu', 'HAHAHA', 'Belum Ada Solusi', 'Belum Dikerjakan', '24.10.2019', '10', '2019', '10:10:58', 'Belum Di Edit'),
+(75, 'Rian Adriansyah', '76543', 'Tarbiyah & Keguruan', 'Pendidikan Agama Islam ', '6281910186646', 'zaynmalik@gmail.com', 'Tidak Ada', 'Infrastruktur & Jaringan', 'Infrastruktur & Jaringan', 'susah login', 'Belum Ada Solusi', 'Belum Dikerjakan', '24.10.2019', '10', '2019', '10:48:28', 'Belum Di Edit'),
+(76, 'Liam Payne', '345678987', 'Tidak Ada', 'Tidak Ada', '6281910186646', 'lp@gmail.com', 'Perpustakaan', 'Infrastruktur & Jaringan', 'Infrastruktur & Jaringan', 'waduh', 'Belum Ada Solusi', 'Belum Dikerjakan', '24.10.2019', '10', '2019', '10:58:54', 'Belum Di Edit'),
+(77, 'Muramasa Senju', '3546789', 'Tidak Ada', 'Tidak Ada', '6281910186646', 'rianjh2@gmail.com', 'Pusat Teknologi Informasi & Pangkalan Data', 'Infrastruktur & Jaringan', 'Infrastruktur & Jaringan', 'Ngeluh teroooos', 'Belum Ada Solusi', 'Belum Dikerjakan', '24.10.2019', '10', '2019', '11:13:42', 'Belum Di Edit'),
+(78, 'Rian Adriansyah', '345678', 'Ilmu Sosial & Ilmu Politik', 'Administrasi Negara', '6281910186646', 'rianjh2@gmail.com', 'Tidak Ada', 'Test', 'Ujikom', '12345678', 'Belum Ada Solusi', 'Belum Dikerjakan', '24.10.2019', '10', '2019', '14:22:58', 'Belum Di Edit'),
+(79, 'Rian Adriansyah', '987654', 'Ushuluddin', 'Perbandingan Agama', '6281910186646', 'rianjh2@gmail.com', 'Tidak Ada', 'Pelayanan', 'ICT', 'sdfgfhj', 'Belum Ada Solusi', 'Belum Dikerjakan', '24.10.2019', '10', '2019', '14:24:50', 'Belum Di Edit'),
+(83, 'Rian Adriansyah', '234', NULL, 'Tidak Ada', '6281910186646', 'rianjh2@gmail.com', 'Pusat Kerja Sama', 'Layanan & Administrasi Umum', 'Coba', 'WAH', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '08:39:30', 'Belum Di Edit'),
+(84, 'Rian Adriansyah', '76', 'Ushuluddin', 'Akidah Filsafat', '6281910186646', 'rianjh2@gmail.com', 'Tidak Ada', 'Layanan & Administrasi Umum', 'Coba', 'sdfghjkl', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '08:42:13', 'Belum Di Edit'),
+(85, 'Muramasa Senju', '8976543467', 'Ilmu Sosial & Ilmu Politik', 'Manajemen', '6281910186646', 'nama@uinsgd.ac.id', NULL, 'Layanan & Administrasi Umum', 'Coba', 'yi', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '08:53:02', 'Belum Di Edit'),
+(86, 'Rian Adriansyah', '654', NULL, NULL, '6281910186646', 'admin@gmail.com', 'Pusat Bisnis', 'Layanan & Administrasi Umum', 'Coba', 'mmm', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '10:46:41', 'Belum Di Edit'),
+(87, 'Rian Adriansyah', '8765', 'Tarbiyah & Keguruan', 'Pendidikan Guru Madrasah Ibtidaiyah (PGMI)', '6281910186646', 'rianjh2@gmail.com', 'Tidak Ada', 'Pangkalan Data', 'Rocketmail', 'kj', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '14:11:29', '25.10.2019 15:09:16 oleh Super Admin'),
+(88, 'Zayn Malik', '234567', 'Tarbiyah & Keguruan', 'Pendidikan Fisika ', '6281910186646', 'rianjh2@gmail.com', 'Tidak Ada', 'Pangkalan Data', 'Email', 'susah login', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '15:12:34', 'Belum Di Edit'),
+(89, 'Louist', '7654321', 'Syariah & Hukum', 'Hukum Pidana Islam ', '6281910186646', 'louist91@gmail.com', NULL, 'Pangkalan Data', 'Email', 'kjhgfxcvb', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '15:15:36', 'Belum Di Edit'),
+(90, 'Harry Styles', '234567', 'Ushuluddin', 'Akidah Filsafat', '6281910186646', 'rianjh2@gmail.com', NULL, 'Pangkalan Data', 'Email', 'SISISISI', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '15:19:50', 'Belum Di Edit'),
+(91, 'Liam Payne', '1234', 'Sains & Teknologi', 'Kimia', '6281910186646', 'lp@gmail.com', NULL, 'Pangkalan Data', 'Email', 'WOW', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '15:21:04', 'Belum Di Edit'),
+(92, 'Brandon', '8765', 'Syariah & Hukum', 'Manajemen Keuangan Syariah', '6281910186646', 'lp@gmail.com', NULL, 'Pangkalan Data', 'Rocketmail', 'WADUHH', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '15:25:56', 'Belum Di Edit'),
+(93, 'Rian Adriansyah', '7654', 'Psikologi', 'Psikologi', '6281910186646', 'member@gmail.com', NULL, 'Pangkalan Data', 'Rocketmail', 'IBU IBU ANJAY', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '15:29:02', 'Belum Di Edit'),
+(94, 'Sagiri', '6786754', 'Syariah & Hukum', 'Peradilan Agama dan Hukum Keluarga Islam', '6281910186646', 'senju@gmail.com', NULL, 'Pangkalan Data', 'Email', 'CUTE', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '15:30:00', 'Belum Di Edit'),
+(95, 'Zedd', '2345', 'Psikologi', 'Psikologi', '6281910186646', 'zedd@gmail.com', NULL, 'Pangkalan Data', 'Email', 'WIDIH', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '15:31:20', 'Belum Di Edit'),
+(96, 'ZEDD', '234567', 'Ilmu Sosial & Ilmu Politik', 'Administrasi Negara', '6281910186646', 'zedd@gmail.com', NULL, 'Pangkalan Data', 'Email', 'Truth', 'Belum Ada Solusi', 'Belum Dikerjakan', '25.10.2019', '10', '2019', '15:35:28', 'Belum Di Edit'),
+(98, 'Rian Adriansyah', '54', 'Tarbiyah & Keguruan', 'Pendidikan Biologi', '6281910186646', 'rianjh2@gmail.com', NULL, 'Infrastruktur & Jaringan', 'Infrastruktur & Jaringan', 'LAB 3.4 MATI', 'Belum Ada Solusi', 'Belum Dikerjakan', '28.10.2019', '10', '2019', '13:36:19', 'Belum Di Edit'),
+(100, 'Ziam', '765', NULL, NULL, '6281910186646', 'zaynmalik@gmail.com', 'Mail Management', 'Lain lain', 'Lain-lain', 'MENCOBA', 'Belum Ada Solusi', 'Belum Dikerjakan', '28.10.2019', '10', '2019', '14:47:29', 'Belum Di Edit'),
+(101, 'Rian Adriansyah', '89765', NULL, NULL, '6281910186646', 'rianjh2@gmail.com', 'Pusat Kajian Wahyu Memandu Ilmu', 'Infrastruktur & Jaringan', 'Infrastruktur & Jaringan', 'ss', 'Belum Ada Solusi', 'Belum Dikerjakan', '29.10.2019', '10', '2019', '09:51:36', 'Belum Di Edit'),
+(102, 'Zayn Malik', '2345678', 'Tarbiyah & Keguruan', 'Pendidikan Bahasa Inggris ', '6281910186646', 'admin@gmail.com', NULL, 'Layanan & Administrasi Umum', 'Permohonan Ijazah Nasional', 'WOW', 'Belum Ada Solusi', 'Belum Dikerjakan', '29.10.2019', '10', '2019', '09:54:03', 'Belum Di Edit'),
+(103, 'Rian Adriansyah', '33577907', NULL, NULL, '6281910186646', 'rianjh2@gmail.com', 'Kemahasiswaan', 'Infrastruktur & Jaringan', 'Infrastruktur & Jaringan', 'COBA', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '10:00:08', 'Belum Di Edit'),
+(104, 'Rian Adriansyah', '3456655', NULL, NULL, '6281910186646', 'rianjh2@gmail.com', 'Pusat Bahasa', 'Infrastruktur & Jaringan', 'Infrastruktur & Jaringan', 'Tes', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '10:02:03', 'Belum Di Edit'),
+(105, 'Rian Adriansyah', '3456655', NULL, NULL, '6281910186646', 'rianjh2@gmail.com', 'Pusat Bahasa', 'Infrastruktur & Jaringan', 'Infrastruktur & Jaringan', 'Tes', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '10:02:03', 'Belum Di Edit'),
+(106, 'Rian Adriansyah', '34567', 'Tarbiyah & Keguruan', 'Pendidikan Bahasa Arab ', '6281910186646', 'admin@gmail.com', NULL, 'Pangkalan Data', 'Email', 'WOW', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '11:24:55', 'Belum Di Edit'),
+(107, 'Zayn Malik', '8765432', NULL, NULL, '6281910186646', 'zaynmalik@gmail.com', 'Staf Puskom', 'Pangkalan Data', 'ICT', 'SUSAH WOI', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '11:29:04', 'Belum Di Edit'),
+(108, 'Liam Payne', '5436576', NULL, NULL, '6281910186646', 'member@gmail.com', 'Poliklinik', 'Layanan & Administrasi Umum', 'Pelaporan PDDIKTI', 'ANJAY', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '11:31:32', 'Belum Di Edit'),
+(109, 'Louis', '567899765', NULL, NULL, '6281910186646', 'rianjh2@gmail.com', 'Perpustakaan', 'Layanan & Administrasi Umum', 'Permohonan Ijazah Nasional', 'QQQ', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '11:33:51', 'Belum Di Edit'),
+(110, 'Rian Adriansyah', '234567', NULL, NULL, '6281910186646', 'zaynmalik@gmail.com', 'LP2M', 'Pangkalan Data', 'Hotspot', 'AAAAAA', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '11:35:34', 'Belum Di Edit'),
+(111, 'Rian Adriansyah', '324567', NULL, NULL, '6281910186646', 'rianjh2@gmail.com', 'LP2M', 'Pangkalan Data', 'SIMAK & SALAM', 'RESET PASSWORD', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '11:38:58', 'Belum Di Edit'),
+(112, 'Harry Styles', '765', NULL, NULL, '6281910186646', 'rianjh2@gmail.com', 'Mail Management', 'Pangkalan Data', 'ICT', 'PINDAH KELAS', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '13:33:38', 'Belum Di Edit'),
+(113, 'Louis Tomlinson', '23456789', NULL, NULL, '6281910186646', 'rianjh2@gmail.com', 'Pusat Bahasa', 'Pangkalan Data', 'ICT', 'KELAS PENUH ', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '13:35:14', 'Belum Di Edit'),
+(114, 'Rian Adriansyah', '2345643', 'Sains & Teknologi', 'Pertanian/Agroteknologi', '6281910186646', 'rianjh2@gmail.com', NULL, 'Pangkalan Data', 'SIMAK & SALAM', 'Mau Reset Password', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '13:45:21', 'Belum Di Edit'),
+(115, 'Zayn Malik', '786534', NULL, NULL, '6281910186646', 'zaynmalik@gmail.com', 'Mail Management', 'Pangkalan Data', 'Hotspot', 'Kecepatannya kurang', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '13:50:12', 'Belum Di Edit'),
+(116, 'Louis Tomlinson', '4567', 'Ilmu Sosial & Ilmu Politik', 'Manajemen', '6281910186646', 'rianjh2@gmail.com', NULL, 'Pangkalan Data', 'SIMAK & SALAM', 'Reset', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '13:56:50', 'Belum Di Edit'),
+(117, 'Muramasa Senju', '687542', NULL, NULL, '6281910186646', 'rianjh2@gmail.com', 'Pusat Karir', 'Pangkalan Data', 'ICT', 'KELAS HABIS EUY', 'Belum Ada Solusi', 'Belum Dikerjakan', '30.10.2019', '10', '2019', '13:58:32', 'Belum Di Edit');
 
 -- --------------------------------------------------------
 
@@ -568,27 +630,29 @@ INSERT INTO `kunjungan_dc` (`id`, `nama`, `ni`, `telp`, `email`, `divisi`, `perm
 
 CREATE TABLE `perihal_keluhan` (
   `id` int(3) NOT NULL,
-  `perihal` varchar(100) NOT NULL
+  `perihal` varchar(100) NOT NULL,
+  `pdivisi` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `perihal_keluhan`
 --
 
-INSERT INTO `perihal_keluhan` (`id`, `perihal`) VALUES
-(1, 'ICT'),
-(2, 'SIMAK & SALAM'),
-(3, 'Subdomain'),
-(4, 'Beasiswa'),
-(5, 'On Site Internet'),
-(6, 'Hotspot'),
-(7, 'Pelaporan PDDIKTI'),
-(8, 'Mahasiswa PDDIKTI'),
-(9, 'Dosen PDDIKTI'),
-(10, 'Permohonan Ijazah Nasional'),
-(11, 'Lain-lain'),
-(12, 'Infrastruktur & Jaringan'),
-(13, 'Email');
+INSERT INTO `perihal_keluhan` (`id`, `perihal`, `pdivisi`) VALUES
+(1, 'ICT', 'Pangkalan Data'),
+(2, 'SIMAK & SALAM', 'Pangkalan Data'),
+(3, 'Subdomain', 'Infrastruktur & Jaringan'),
+(4, 'Beasiswa', 'Layanan & Administrasi Umum'),
+(5, 'On Site Internet', 'Infrastruktur & Jaringan'),
+(6, 'Hotspot', 'Pangkalan Data'),
+(7, 'Pelaporan PDDIKTI', 'Layanan & Administrasi Umum'),
+(8, 'Mahasiswa PDDIKTI', 'Monitoring & Security'),
+(9, 'Dosen PDDIKTI', 'Monitoring & Security'),
+(10, 'Permohonan Ijazah Nasional', 'Layanan & Administrasi Umum'),
+(11, 'Lain-lain', 'Lain lain'),
+(12, 'Infrastruktur & Jaringan', 'Infrastruktur & Jaringan'),
+(13, 'Email', 'Pangkalan Data'),
+(20, 'Cek', 'Tidak Ada');
 
 -- --------------------------------------------------------
 
@@ -623,7 +687,7 @@ INSERT INTO `reset_password_dosen` (`id`, `nama`, `nip`, `fakultas`, `jurusan`, 
 (2, 'Asuma', '223', 'Tidak ada', 'Tidak ada', '', '6281910186646', 'nama@uinsgd.ac.id', 'apanama@uinsgd.ac.id', 'Belum Dikerjakan', '07.10.2019', '10', '2019', '11:43:43', 'Belum Di Edit'),
 (3, 'Rian Adriansyah', '11221', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', '', '6281910186646', 'rian@uinsgd.ac.id', 'apanama@uinsgd.ac.id', 'Sudah Dikerjakan', '07.10.2019', '10', '2019', '11:45:02', '21.10.2019 10:51:21 oleh Super Admin'),
 (4, 'Alby boy', '567', 'Adab & Humaniora', 'Bahasa dan Sastra Arab', '', '6281910186646', 'nama@uinsgd.ac.id', 'apanama@uinsgd.ac.id', 'Sedang Dikerjakan', '21.10.2019', '10', '2019', '10:53:19', '21.10.2019 11:31:49 oleh Super Admin'),
-(5, 'Naruto', '887', 'Psikologi', 'Psikologi', 'Pelayanan', '6281910186646', 'nama@uinsgd.ac.id', 'apanama@uinsgd.ac.id', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '10:31:04', 'Belum Di Edit');
+(5, 'Naruto', '887', 'Psikologi', 'Psikologi', 'Pelayanan', '6281910186646', 'nama@uinsgd.ac.id', 'apanama@uinsgd.ac.id', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '10:31:04', '25.10.2019 15:00:57 oleh Super Admin');
 
 -- --------------------------------------------------------
 
@@ -657,7 +721,8 @@ INSERT INTO `reset_password_lembaga` (`id`, `nama_lembaga`, `nama_penanggung`, `
 (4, 'SD', 'Member', '6281910186646', 'nama@uinsgd.ac.id', '', 'Pusat Bahasa', 'Belum Dikerjakan', '21.10.2019', '10', '2019', '09:47:53', 'Belum Di Edit'),
 (5, 'SMA', 'Saya', '6281910186646', 'nama@uinsgd.ac.id', '', '', 'Sedang Dikerjakan', '21.10.2019', '10', '2019', '09:49:11', '21.10.2019 11:31:59 oleh Super Admin'),
 (8, 'SMU', 'Mereka', '6281910186646', 'nama@uinsgd.ac.id', '', 'Perencanaan', 'Belum Dikerjakan', '21.10.2019', '10', '2019', '13:49:58', 'Belum Di Edit'),
-(9, 'TK', 'Admin', '6281910186646', 'nama@uinsgd.ac.id', 'Pelayanan', 'Pusat Bisnis', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '10:31:45', 'Belum Di Edit');
+(9, 'TK', 'Admin', '6281910186646', 'nama@uinsgd.ac.id', 'Pelayanan', 'Pusat Bisnis', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '10:31:45', 'Belum Di Edit'),
+(10, 'SD', 'Member', '6281910186646', 'arifridhwan68@gmail.com', 'Pelayanan', 'Pusat Karir', 'Belum Dikerjakan', '23.10.2019', '10', '2019', '13:52:13', '25.10.2019 14:38:20 oleh Super Admin');
 
 -- --------------------------------------------------------
 
@@ -868,31 +933,31 @@ ALTER TABLE `daftar_email_lembaga`
 -- AUTO_INCREMENT for table `daftar_email_mahasiswa`
 --
 ALTER TABLE `daftar_email_mahasiswa`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `divisi`
 --
 ALTER TABLE `divisi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `fakultas`
 --
 ALTER TABLE `fakultas`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `ganti_server`
 --
 ALTER TABLE `ganti_server`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `jaringan_baru`
 --
 ALTER TABLE `jaringan_baru`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `jurusan`
@@ -904,7 +969,7 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT for table `keluhan`
 --
 ALTER TABLE `keluhan`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- AUTO_INCREMENT for table `kunjungan_dc`
@@ -916,7 +981,7 @@ ALTER TABLE `kunjungan_dc`
 -- AUTO_INCREMENT for table `perihal_keluhan`
 --
 ALTER TABLE `perihal_keluhan`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `reset_password_dosen`
@@ -928,7 +993,7 @@ ALTER TABLE `reset_password_dosen`
 -- AUTO_INCREMENT for table `reset_password_lembaga`
 --
 ALTER TABLE `reset_password_lembaga`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `reset_password_mahasiswa`
