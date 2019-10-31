@@ -495,6 +495,7 @@ class User extends CI_Controller
 		} else {
 			$this->crud_model->keluh();
 			$this->session->set_flashdata('k', 'Formulir Keluhan');
+
 			$tujuan = $this->db->get_where('divisi', array('namadivisi' => $this->input->post('divisi')))->row();
 			$pesan = $this->db->get_where('keluhan', array('keluhan' => $this->input->post('keluhan')))->row();
 			$eperihal = $this->db->get_where('keluhan', array('perihal' => $this->input->post('perihal')))->row();
